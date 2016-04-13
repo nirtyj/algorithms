@@ -12,4 +12,6 @@ public class HelloWorld {
 		System.out.println("Hello World");
 		return true;
 	}
+	
+	// collabedit - http://collabedit.com/68amg
 }
