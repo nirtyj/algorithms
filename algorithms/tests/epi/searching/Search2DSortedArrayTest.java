@@ -10,7 +10,7 @@ import org.junit.Test;
 
 public class Search2DSortedArrayTest {
 
-	private List<List<Integer>> getMatrix() {
+	public static List<List<Integer>> getMatrix() {
 		Integer[] r0 = {-1, 2, 4, 4, 6};
 		Integer[] r1 = {1, 5, 5, 9, 21};
 		Integer[] r2 = {3, 6, 6, 9, 22};
