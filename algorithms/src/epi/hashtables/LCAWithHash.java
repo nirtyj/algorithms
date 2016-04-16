@@ -5,7 +5,7 @@ import java.util.Set;
 
 import epi.binarytree.Node;
 
-public class LCA {
+public class LCAWithHash {
 
 	public Node findLca(Node node1, Node node2)
 	{
