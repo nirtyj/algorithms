@@ -56,16 +56,42 @@ public class LCA {
 		return data;
 	}
 
-	public static BinaryTreeNode<Integer> findLCAWithParent(BinaryTreeNode<Integer> tree, BinaryTreeNode<Integer> node1,
+	public static BinaryTreeNode<Integer> findLCAWithParent(BinaryTreeNode<Integer> node1,
 			BinaryTreeNode<Integer> node2) {
-		LcaData data = LCAHelperWithParent(tree, node1, node2);
-		return data.lca;
+		int depthOfN1 = getDepthInTree(node1);
+		int depthOfN2 = getDepthInTree(node2);
+
+		if (depthOfN1 != depthOfN2) 
+		{
+			int diff = Math.abs(depthOfN1 - depthOfN2);
+			while (diff != 0) {
+				if(depthOfN1 > depthOfN2)
+				{
+					node1 = node1.getParent();
+				}else
+				{
+					node2 = node2.getParent();
+				}
+				diff--;
+			}
+		}
+
+		while (node1 != node2 && node1 != null && node2 != null) {
+			node1 = node1.getParent();
+			node2 = node2.getParent();
+		}
+		
+		return node1;
 	}
 
-	private static LcaData LCAHelperWithParent(BinaryTreeNode<Integer> tree, BinaryTreeNode<Integer> node1,
-			BinaryTreeNode<Integer> node2) {
-
-		return null;
+	public static int getDepthInTree(BinaryTreeNode<Integer> node1) {
+		int depth = 0;
+		while(node1!=null)
+		{
+			node1 = node1.parent;
+			depth++;
+		}
+		return depth;
 	}
 
 }

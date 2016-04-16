@@ -19,23 +19,18 @@ public class LCATest {
 		// should output 3
 		BinaryTreeNode<Integer> x = LCA.findLCA(tree, tree.getLeft(), tree.getRight());
 		assertTrue(x.getData().equals(3));
-		System.out.println(x.getData());
 		// should output 5
 		x =  LCA.findLCA(tree, tree.getRight().getLeft(), tree.getRight().getRight());
 		assertTrue(x.getData().equals(5));
-		System.out.println(x.getData());
 		// should output 5
 		x =  LCA.findLCA(tree, tree.getRight(), tree.getRight().getRight());
 		assertTrue(x.getData().equals(5));
-		System.out.println(x.getData());
 		// should output 3
 		x =  LCA.findLCA(tree, tree.getLeft().getLeft(), tree.getRight().getRight());
 		assertTrue(x.getData().equals(3));
-		System.out.println(x.getData());
 		// should output 3
 		x =  LCA.findLCA(tree, tree.getLeft().getLeft(), tree);
 		assertTrue(x.getData().equals(3));
-		System.out.println(x.getData());
 	}
 	
 	@Test
@@ -63,20 +58,20 @@ public class LCATest {
 	public void testLowestCommonAncestorwithParent1() {		
 		Integer[] vals = {0,1,2,3,4,null,6,7,8,null,null,null,null,13,14,15,16};
 		List<BinaryTreeNode<Integer>> list = BinaryTreeUtils.getTreeAsList(vals);
-		assertTrue(list.get(0) ==  LCA.findLCAWithParent(list.get(0), list.get(0), list.get(16)));		
+		assertTrue(list.get(0) ==  LCA.findLCAWithParent(list.get(0), list.get(16)));		
 	}
 	
 	@Test
 	public void testLowestCommonAncestorwithParent2() {		
 		Integer[] vals = {0,1,2,3,4,null,6,7,8,null,null,null,null,13,14,15,16};
 		List<BinaryTreeNode<Integer>> list = BinaryTreeUtils.getTreeAsList(vals);
-		assertTrue(list.get(7) ==  LCA.findLCAWithParent(list.get(0), list.get(15), list.get(16)));		
+		assertTrue(list.get(7) ==  LCA.findLCAWithParent(list.get(15), list.get(16)));		
 	}
 	
 	@Test
 	public void testLowestCommonAncestorwithParent3() {		
 		Integer[] vals = {0,1,2,3,4,null,6,7,8,null,null,null,null,13,14,15,16};
 		List<BinaryTreeNode<Integer>> list = BinaryTreeUtils.getTreeAsList(vals);
-		assertTrue(list.get(1) ==  LCA.findLCAWithParent(list.get(0), list.get(4), list.get(16)));		
+		assertTrue(list.get(1) ==  LCA.findLCAWithParent(list.get(4), list.get(16)));		
 	}	
 }

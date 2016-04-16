@@ -9,7 +9,7 @@ public class HelloWorldTest {
 	@Test
 	public void test() {
 		HelloWorld test = new HelloWorld();
-		assertTrue(test.runHelloWorld());
+		assertTrue(test.runHelloWorld());	
 	}
-
+	
 }
