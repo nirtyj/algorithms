@@ -7,6 +7,7 @@ public class BinaryTreeNode<T extends Comparable<?>> {
 	BinaryTreeNode<T> right;
 	BinaryTreeNode<T> parent;
 	private BinaryTreeNode<T> sibling;
+	private int nodesInLeftSubTree;
 
 	public BinaryTreeNode() {
 		
@@ -66,5 +67,13 @@ public class BinaryTreeNode<T extends Comparable<?>> {
 	@Override
 	public String toString() {
 		return TreePrinter.prettyPrintTree(this);
+	}
+
+	public int getNodesInLeftSubTree() {
+		return nodesInLeftSubTree;
+	}
+
+	public void setNodesInLeftSubTree(int nodesInLeftSubTree) {
+		this.nodesInLeftSubTree = nodesInLeftSubTree;
 	}
 }
