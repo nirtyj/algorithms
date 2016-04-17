@@ -1,8 +1,10 @@
-package popular;
+package epi.strings;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+
+import epi.strings.StringPalidrome;
 
 public class StringPalidromeTest {
 

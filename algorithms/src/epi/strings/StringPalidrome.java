@@ -1,4 +1,4 @@
-package popular;
+package epi.strings;
 
 public class StringPalidrome {
 
