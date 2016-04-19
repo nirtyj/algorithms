@@ -28,78 +28,65 @@ public class Amazon {
 	}
 }
 
-interface ICard
-{
-    // 1 - 13
-    Integer getValue();
-    
-    // Diamond, hearts, Spade, Clever
-    Suit getSuit();
-    
-    // 1 -9 , J, Q, K
-    String getDisplayValue();
+interface ICard {
+	// 1 - 13
+	Integer getValue();
+
+	// Diamond, hearts, Spade, Clever
+	Suit getSuit();
+
+	// 1 -9 , J, Q, K
+	String getDisplayValue();
 }
 
-enum Suit
-{
-    SPADE(0),
-    DIAMOND(1),
-    HEARTS(2),
-    CLEVER(3);
-    
-    Suit(int val)
-    {
-    	
-    }
-}
+enum Suit {
+	SPADE(0), DIAMOND(1), HEARTS(2), CLEVER(3);
 
-class Card implements ICard
-{
+	Suit(int val) {
 
-    // 1 - 13
-    public Integer getValue(){
-		return null;
-    }
-    
-    // Diamond, hearts, Spade, Clever
-    public Suit getSuit(){
-		return null;
-    }
-    
-    // 1 -9 , J, Q, K
-    public String getDisplayValue()
-    {
-		return null;
-    
-    }
-}
-
-class DeckFactory
-{
-
-   public Deck createDeck( )
-   {
-	return null;
-   
-   }
-    
-    
-}
-
-class Deck
-{
-    List<ICard> cards; 
-
-    public void shuffle() {
 	}
-    
-    public ICard getCard() {
+}
+
+class Card implements ICard {
+
+	// 1 - 13
+	public Integer getValue() {
 		return null;
 	}
-    
-    public boolean isEmpty() {
+
+	// Diamond, hearts, Spade, Clever
+	public Suit getSuit() {
+		return null;
+	}
+
+	// 1 -9 , J, Q, K
+	public String getDisplayValue() {
+		return null;
+
+	}
+}
+
+class DeckFactory {
+
+	public Deck createDeck() {
+		return null;
+
+	}
+
+}
+
+class Deck {
+	List<ICard> cards;
+
+	public void shuffle() {
+	}
+
+	public ICard getCard() {
+		return null;
+	}
+
+	public boolean isEmpty() {
 		return false;
 	}
-    
-    
+
 }
