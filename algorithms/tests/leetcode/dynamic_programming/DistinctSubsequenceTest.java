@@ -1,10 +1,10 @@
-package leetcode;
+package leetcode.dynamic_programming;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import leetcode.DistinctSubsequence;
+import leetcode.dynamic_programming.DistinctSubsequence;
 
 public class DistinctSubsequenceTest {
 

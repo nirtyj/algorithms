@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode.recursion;
 
 import static org.junit.Assert.*;
 
@@ -6,6 +6,8 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.junit.Test;
+
+import leetcode.recursion.CombinationSum2;
 
 public class CombinationSum2Test {
 

@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode.dynamic_programming;
 
 public class DistinctSubsequence {
 
