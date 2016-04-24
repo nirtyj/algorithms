@@ -14,7 +14,8 @@ public class GenerateBinaryTrees {
 			result.add(null);
 		}
 		
-		/**
+		/** 
+		 * number of left sub tree nodes
 		  0=>   0__
 			         \
 			          0
