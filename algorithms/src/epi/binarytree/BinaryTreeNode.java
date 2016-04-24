@@ -17,6 +17,13 @@ public class BinaryTreeNode<T extends Comparable<?>> {
 		this.data = data;
 	}
 
+	public BinaryTreeNode(T data, BinaryTreeNode<T> left, BinaryTreeNode<T> right) {
+		this.data = data;
+		this.left = left;
+		this.right = right;
+		this.parent = null;
+	}
+	
 	public BinaryTreeNode(T data, BinaryTreeNode<T> left, BinaryTreeNode<T> right, BinaryTreeNode<T> parent) {
 		this.data = data;
 		this.left = left;
