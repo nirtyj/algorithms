@@ -87,7 +87,7 @@ public class LongestPalindromicSubstring {
 		return s;
 	}
 
-	public static String palindromHelper(String s, int begin, int end) {
+	private static String palindromHelper(String s, int begin, int end) {
 		while (begin >= 0 && end < s.length()) {
 			if (s.charAt(begin) == s.charAt(end)) {
 				begin--;
