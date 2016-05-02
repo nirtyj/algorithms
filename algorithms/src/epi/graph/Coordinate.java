@@ -2,7 +2,7 @@ package epi.graph;
 
 public class Coordinate {
 	
-	final static int[][] DIRECTIONS = { { -1, 0 }, { 1, 0 }, { 0, 1 }, { 0, -1 } };
+	public final static int[][] DIRECTIONS = { { -1, 0 }, { 1, 0 }, { 0, 1 }, { 0, -1 } };
 	
 	public int x, y;
 
