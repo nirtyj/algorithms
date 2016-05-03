@@ -30,7 +30,7 @@ public class DisjointedGraphs {
 			subGroupToColorMap.put(subgroupCount, colorCount);
 			while (currNode != null) {
 				// unvisited node
-				if (currNode.color != 0) {
+				if (currNode.color == 0) {
 					currNode.color = subgroupCount;
 					currNode = currNode.next;
 				}
