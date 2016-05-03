@@ -2,11 +2,6 @@ package leetcode.dynamic_programming;
 
 public class LongestCommonSubstring {
 
-	/**
-	 * http://algs4.cs.princeton.edu/53substring/Brute.java.html
-	 * 
-	 * http://algs4.cs.princeton.edu/63suffix/LongestCommonSubstring.java.html
-	 */
 	public static String getLongestCommonSubstring(String s1, String s2) {
 		String small = s1;
 		String large = s2;
