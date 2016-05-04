@@ -42,4 +42,9 @@ public class LongestIncreasingSubsequenceTest {
 		assertEquals(2, LongestIncreasingSubsequence.lengthOfLISDp(input));
 	}
 
+	@Test
+	public void test6() {
+		int[] input = {6, 8, 5, 11, 9};
+		assertEquals(3, LongestIncreasingSubsequence.lengthOfLIS(input));
+	}
 }

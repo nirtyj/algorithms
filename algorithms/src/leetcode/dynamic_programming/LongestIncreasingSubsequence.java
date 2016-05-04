@@ -1,13 +1,12 @@
 package leetcode.dynamic_programming;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class LongestIncreasingSubsequence {
 
 	/**
 	 * http://www.geeksforgeeks.org/longest-monotonically-increasing-subsequence-size-n-log-n/
-	 */
-	/**
 	 * http://www.geeksforgeeks.org/dynamic-programming-set-3-longest-increasing-subsequence/
 	 */
 	public static int lengthOfLISRecusion(int[] nums) {
@@ -54,4 +53,49 @@ public class LongestIncreasingSubsequence {
 		return result;
 	}
 
+	/**
+	 * n log n time - http://www.programcreek.com/2014/04/leetcode-longest-increasing-subsequence-java/
+	 *  this cannot figure out the elements. 
+	 *  list is not correct. but size of the list is!!
+	 * for each num in nums
+		     if(list.size()==0)
+		          add num to list
+		     else if(num > last element in list)
+		          add num to list
+		     else 
+		          replace the element in the list which is the smallest but bigger than num
+	 * @param nums
+	 * @return
+	 */
+	public static int lengthOfLIS(int[] nums) {
+	    if(nums==null || nums.length==0)
+	        return 0;
+	 
+	    ArrayList<Integer> list = new ArrayList<Integer>(); 
+	 
+	    for(int num: nums){
+	        if(list.size()==0){
+	            list.add(num);
+	        }else if(num>list.get(list.size()-1)){
+	            list.add(num);
+	        }else{
+	            int i=0; 
+	            int j=list.size()-1;
+	 
+	            while(i<j){
+	                int mid = (i+j)/2;
+	                if(list.get(mid) < num){
+	                    i=mid+1;
+	                }else{
+	                    j=mid;
+	                }
+	            }
+	 
+	            // replaces a previous value that doesnt break the max
+	            list.set(j, num);
+	        }
+	    }
+	 
+	    return list.size();
+	}
 }
