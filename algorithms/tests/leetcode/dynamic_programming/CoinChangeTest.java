@@ -18,5 +18,18 @@ public class CoinChangeTest {
 		int[] coins = {1, 2, 5};
 		assertEquals(3, CoinChange.coinChange(coins, 11));
 	}
+	
+	@Test
+	public void test2() {
+		int[] coins = {1, 5, 10, 25};
+		assertEquals(2, CoinChange.coinChangeDp(coins, 11));
+		assertEquals(4, CoinChange.coinChangeDp(coins, 37));
+	}
+	
+	@Test
+	public void test3() {
+		int[] coins = {1, 2, 5};
+		assertEquals(3, CoinChange.coinChangeDp(coins, 11));
+	}
 
 }
