@@ -19,9 +19,7 @@ public class WordSearch {
 				}
 			}
 		}
-
 		return false;
-
 	}
 
 	private static boolean dfsHelper(char[][] board, int i, int j, int currentIndex, String word) {
