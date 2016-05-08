@@ -2,10 +2,10 @@ package epi.binarytree;
 
 public class BinaryTreeNode<T extends Comparable<?>> {
 	
-	T data;
-	BinaryTreeNode<T> left;
-	BinaryTreeNode<T> right;
-	BinaryTreeNode<T> parent;
+	public T data;
+	public BinaryTreeNode<T> left;
+	public BinaryTreeNode<T> right;
+	public BinaryTreeNode<T> parent;
 	private BinaryTreeNode<T> sibling;
 	private int nodesInLeftSubTree;
 
