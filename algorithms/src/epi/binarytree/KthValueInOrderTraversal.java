@@ -30,6 +30,35 @@ public class KthValueInOrderTraversal {
 		return foundInRight;
 	}
 	
+	/**
+	 * Leet code accepted & verified
+	 * @param root
+	 */
+	public int kthSmallest(BinaryTreeNode<Integer> root, int k) {
+		int[] current = new int[1];
+		BinaryTreeNode<Integer> node = inOrder(root, k, current);
+		if (node != null)
+			return node.data;
+		return 0;
+	}
+
+	private BinaryTreeNode<Integer> inOrder(BinaryTreeNode<Integer> root, int k, int[] current) {
+		if (root == null)
+			return null;
+		if (current[0] == k)
+			return root;
+
+		BinaryTreeNode<Integer> leftFound = inOrder(root.left, k, current);
+		if (leftFound != null)
+			return leftFound;
+
+		current[0] = current[0] + 1;
+		if (current[0] == k)
+			return root;
+
+		return inOrder(root.right, k, current);
+	}
+	
 	 /**
 		    8
 		 6      10
