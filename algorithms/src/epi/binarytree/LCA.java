@@ -20,6 +20,19 @@ public class LCA {
 
 	public static BinaryTreeNode<Integer> findLCA(BinaryTreeNode<Integer> tree, BinaryTreeNode<Integer> node1,
 			BinaryTreeNode<Integer> node2) {
+
+		if (tree == null || tree == node1 || tree == node2)
+			return tree;
+
+		BinaryTreeNode<Integer> left = findLCA(tree.left, node1, node2);
+		BinaryTreeNode<Integer> right = findLCA(tree.right, node1, node2);
+		if (left != null && right != null)
+			return tree;
+		return left != null ? left : right;
+	}
+
+	public static BinaryTreeNode<Integer> findLCALong(BinaryTreeNode<Integer> tree, BinaryTreeNode<Integer> node1,
+			BinaryTreeNode<Integer> node2) {
 		LcaData data = LCAHelper(tree, node1, node2);
 		return data.lca;
 	}
