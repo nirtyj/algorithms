@@ -1,18 +1,6 @@
 package epi.binarytree;
 
-public class ReverseEqualsBinaryTree {
-
-	public static void reverseTree(BinaryTreeNode<Integer> tree) 
-	{
-		BinaryTreeNode<Integer> temp = tree.left;
-		tree.left = tree.right;
-		tree.right = temp;
-		if (tree.left != null)
-			reverseTree(tree.left);
-
-		if (tree.right != null)
-			reverseTree(tree.right);
-	}
+public class TreeEquals {
 
 	public static boolean isEqualTrees(BinaryTreeNode<Integer> node1, BinaryTreeNode<Integer> node2)
 	{

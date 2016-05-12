@@ -1,10 +1,11 @@
 package epi.binarytree;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class ReverseBinaryTreeTest {
+public class TreeEqualsTest {
+
 
 	@Test
 	public void test() {
