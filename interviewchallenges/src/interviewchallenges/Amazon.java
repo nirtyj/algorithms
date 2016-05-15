@@ -90,3 +90,48 @@ class Deck {
 	}
 
 }
+
+/**
+Phone interview:
+
+- Why Amazon?
+- Why do you want to switch company?
+- IS Binary tree a BST,
+- Design a deck of cards
+
+
+Onsite:
+
+ Round 1 : Faizi
+ - tell me about yourself
+ - Projects,
+ - previous experience
+ - culture fit
+ - how did you manage difference with your manager
+ - whats most challenging project
+ - whats most interesting project
+ - 
+ Round 2: Chris
+ - tell me about yourself
+ - background
+ - scalability question
+ - find if numbers are unique
+ - what if the numbers are huge.
+ - merge sort alogrithm
+ - check if there is duplicate in sorted linked list
+ - distributed hash table
+ - distributed hash table with daisy chaining
+ 
+ Round 3: Tahir
+ - Parse an expression tree to the data structure
+ - evaluvate the expression provided the value of x, y etc.
+ 
+ Round 4: Beck
+ - design seller services and flows
+ - using graph modelling for flows
+ 
+ Round 5:
+ - Find the number of Islands in a matrix
+ 	
+ 
+*/
