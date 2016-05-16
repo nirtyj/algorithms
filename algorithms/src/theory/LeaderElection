@@ -1,0 +1,29 @@
+
+Bully Algorithm:
+
+- A node on detecting that Leader doesnt respond to its pings starts its election algorithm
+- tries to elect itself as a leader
+- sends out message, saying if there is any highest PID, respond to me.
+- if None,
+      sends out elected message saying I am the leader to all nodes.
+- if Comes back with a node id, 
+      that node takes over, runs the leader election routine.
+      
+
+Leader election in a ring:
+
+O(n^2):
+
+- All nodes for a unidirected ring where it communicates to one neighbor.
+- Node sends out a message saying this is my current ID to left
+- when receive an id j (from the right):
+  if j > id then
+	forward j to the left (this processor has lost)
+  if j = id then
+	elect self (this processor has won)
+  if j < id then 
+	do nothing
+
+
+      
+
