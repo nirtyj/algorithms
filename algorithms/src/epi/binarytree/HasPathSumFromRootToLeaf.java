@@ -1,6 +1,6 @@
 package epi.binarytree;
 
-public class HasPathSum {
+public class HasPathSumFromRootToLeaf {
 
 	public static boolean hasPathSum(BinaryTreeNode<Integer> tree, int targetSum) {
 		if (tree == null)
