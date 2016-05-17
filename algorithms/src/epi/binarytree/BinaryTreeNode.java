@@ -6,7 +6,7 @@ public class BinaryTreeNode<T extends Comparable<?>> {
 	public BinaryTreeNode<T> left;
 	public BinaryTreeNode<T> right;
 	public BinaryTreeNode<T> parent;
-	private BinaryTreeNode<T> sibling;
+	public BinaryTreeNode<T> next;
 	private int nodesInLeftSubTree;
 
 	public BinaryTreeNode() {
@@ -64,11 +64,11 @@ public class BinaryTreeNode<T extends Comparable<?>> {
 	}
 
 	public BinaryTreeNode<T> getSibling() {
-		return sibling;
+		return next;
 	}
 
 	public void setSibling(BinaryTreeNode<T> sibling) {
-		this.sibling = sibling;
+		this.next = sibling;
 	}
 	
 	@Override
