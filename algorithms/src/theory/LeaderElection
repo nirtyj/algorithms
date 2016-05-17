@@ -1,7 +1,7 @@
 
 Bully Algorithm:
 
-- A node on detecting that Leader doesnt respond to its pings starts its election algorithm
+- A node on detecting that Leader doesn't respond to its pings starts its election algorithm
 - tries to elect itself as a leader
 - sends out message, saying if there is any highest PID, respond to me.
 - if None,
@@ -24,6 +24,22 @@ O(n^2):
   if j < id then 
 	do nothing
 
+ZooKeeper Election:
 
+Lowest number in sequence gets selected as leader.
+A Node while joining gets a new sequence number.
+It follows only previous low sequence number
+
+Let ELECTION be a path of choice of the application. To volunteer to be a leader:
+
+Create znode z with path "ELECTION/guid-n_" with both SEQUENCE and EPHEMERAL flags;
+Let C be the children of "ELECTION", and i be the sequence number of z;
+Watch for changes on "ELECTION/guid-n_j", where j is the largest sequence number such that j < i and n_j is a znode in C;
+
+Upon receiving a notification of znode deletion:
+
+Let C be the new set of children of ELECTION;
+If z is the smallest node in C, then execute leader procedure;
+Otherwise, watch for changes on "ELECTION/guid-n_j", where j is the largest sequence number such that j < i and n_j is a znode in C;
       
 
