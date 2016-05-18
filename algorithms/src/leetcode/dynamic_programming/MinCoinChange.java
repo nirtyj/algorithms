@@ -1,11 +1,14 @@
 package leetcode.dynamic_programming;
 
-public class CoinChange {
+public class MinCoinChange {
+
 
 	/**
-	 * http://www.geeksforgeeks.org/dynamic-programming-set-7-coin-change/
+	 * min number of coins necessary to form the target sum
+	 * @param coins
+	 * @param sum
+	 * @return
 	 */
-	
 	public static int coinChange(int[] coins, int sum) 
 	{
 		if (coins == null || sum == 0)
