@@ -1,17 +1,13 @@
 package epi.binarytree;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class KthValueInOrderTraversal {
 
 	public static BinaryTreeNode<Integer> findKthValue(BinaryTreeNode<Integer> root, Integer k) {
-		List<Integer> tracker = new ArrayList<Integer>(1);
-		tracker.add(0);
+		int[] tracker = new int[1];
 		return kthValueHelper(root, tracker, k);
 	}
 
-	private static BinaryTreeNode<Integer> kthValueHelper(BinaryTreeNode<Integer> root, List<Integer> val, int desiredKey) 
+	private static BinaryTreeNode<Integer> kthValueHelper(BinaryTreeNode<Integer> root, int[] val, int desiredKey) 
 	{
 		if (root == null)
 			return null;
@@ -20,9 +16,9 @@ public class KthValueInOrderTraversal {
 		if (foundInLeft != null)
 			return foundInLeft;
 
-		val.set(0, val.get(0) + 1);
+		val[0]  = val[0] + 1;
 
-		if (val.get(0) == desiredKey)
+		if (val[0] == desiredKey)
 			return root;
 
 		BinaryTreeNode<Integer> foundInRight = kthValueHelper(root.right, val, desiredKey);
