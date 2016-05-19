@@ -76,6 +76,8 @@ public class BinaryMinHeap {
         int leftChildIndex, rightChildIndex, minIndex, tmp;
         leftChildIndex = getLeftChildIndex(nodeIndex);
         rightChildIndex = getRightChildIndex(nodeIndex);
+        
+        // find the index of node which is less than root
         if (rightChildIndex >= data.size()) {
               if (leftChildIndex >= data.size())
                     return;
@@ -87,6 +89,8 @@ public class BinaryMinHeap {
               else
                     minIndex = rightChildIndex;
         }
+        
+        // swap with the min val index and continue with sifting down the min val index
         if (data.get(nodeIndex) > data.get(minIndex)) {
               tmp = data.get(minIndex);
               data.set(minIndex, data.get(nodeIndex));
@@ -94,16 +98,4 @@ public class BinaryMinHeap {
               siftDown(minIndex);
         }
   }
-    
-    
-    public static void main(String args[]){
-    	
-    	
-    	BinaryMinHeap heap = new BinaryMinHeap();
-    	for(int i=0;i<9;i++)
-    		heap.insert(i);
-    	
-    	System.out.println("Number of Levels  :" + heap.getLevels());
-    		
-    }
 }

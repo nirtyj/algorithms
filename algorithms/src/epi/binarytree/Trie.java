@@ -4,6 +4,11 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
+/**
+ * Leet code tested and verified
+ * @author njaganat
+ *
+ */
 public class Trie {
 
 	TrieNode root = new TrieNode();
@@ -56,10 +61,7 @@ public class Trie {
 	private boolean dfsSearch(HashMap<Character, TrieNode> children, String word, int start) {
 		if (start == word.length()) 
 		{
-			if (children.size() == 0)
-				return true;
-			else
-				return false;
+			return false;
 		}
 
 		char c = word.charAt(start);
@@ -74,7 +76,9 @@ public class Trie {
 		else if (c == '.') 
 		{
 			boolean result = false;
+			// at one recursion you have bunch of nodes to check if its present or if its is a end word
 			for (Map.Entry<Character, TrieNode> child : children.entrySet()) {
+				
 				if (start == word.length() - 1 && child.getValue().isEndWord) {
 					return true;
 				}

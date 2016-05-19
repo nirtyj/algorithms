@@ -1,5 +1,10 @@
 package epi.graph;
 
+/**
+ * in a matrix of boolean, takes a co-ordinate that is 1 and nukes all the ones connected to it
+ * @author njaganat
+ *
+ */
 public class PaintBooleanMatrix {
 
 	public static void flipColor(int[][] matrix, Coordinate mark) {
