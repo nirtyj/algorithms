@@ -2,6 +2,11 @@ package ctc.trees_graphs;
 
 import epi.binarytree.BinaryTreeNode;
 
+/**
+ * Test 2s
+ * @author njaganathan
+ *
+ */
 public class CheckSubTree {
 
 	public static boolean isSubTree(BinaryTreeNode<Integer> t1, BinaryTreeNode<Integer> t2) {
