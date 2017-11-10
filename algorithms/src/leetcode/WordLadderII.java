@@ -1,62 +1,44 @@
 package leetcode;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
 /**
- * Breadth first search. optimal
+ * Breadth first search. optimal - Not optimal enough -- 30/39 cases passed .
+ * time limit exceeded
+ * 
  * @author njaganathan
+ *
  */
-public class WordLadder {
+public class WordLadderII {
 
 	private static class WordNode {
 		String word;
 		int noOfSteps;
+		WordNode pre;
 
-		public WordNode(String word, int noOfSteps) {
+		public WordNode(String word, int noOfSteps, WordNode pre) {
 			this.word = word;
 			this.noOfSteps = noOfSteps;
+			this.pre = pre;
 		}
 
-		@Override
-		public int hashCode() {
-			final int prime = 31;
-			int result = 2;
-			result = prime * result + ((word == null) ? 0 : word.hashCode());
-			return result;
-		}
-
-		@Override
-		public boolean equals(Object obj) {
-			if (this == obj)
-				return true;
-			if (obj == null)
-				return false;
-			if (getClass() != obj.getClass())
-				return false;
-			WordNode other = (WordNode) obj;
-			if (word == null) {
-				if (other.word != null)
-					return false;
-			} else if (!word.equals(other.word))
-				return false;
-			return true;
-		}
-
+		LinkedHashSet<String> wordsVisited = new LinkedHashSet<String>();
 	}
 
-	public static int ladderLength(String beginWord, String endWord, List<String> wordList) {
+	public static List<List<String>> findLadders(String beginWord, String endWord, List<String> wordList) {
+
 		Set<String> wordDict = new HashSet<>(wordList);
 
 		if (beginWord.equals(endWord))
-			return 0;
-
-		LinkedList<WordNode> result = new LinkedList<WordNode>();
-		result.add(new WordNode(beginWord, 1));
+			return Collections.emptyList();
 
 		Map<Integer, HashSet<Character>> characterMap = new HashMap<>();
 		wordList.add(beginWord);
@@ -71,16 +53,41 @@ public class WordLadder {
 				chars.add(word.charAt(i));
 			}
 		}
+
+		List<List<String>> finalllResult = new ArrayList<>();
+
+		LinkedList<WordNode> result = new LinkedList<WordNode>();
+		result.add(new WordNode(beginWord, 1, null));
+		HashSet<String> wordsSeen = new HashSet<String>();
+		int minSteps = Integer.MAX_VALUE;
+
 		while (!result.isEmpty()) {
 			WordNode top = result.remove();
-			
-			
+			wordsSeen.add(top.word);
 			System.out.println("-------------------------");
 			System.out.println("top - " + top.word + " at " + top.noOfSteps);
+
 			if (top.word.equals(endWord)) {
 				printLinkedList(result);
-				return top.noOfSteps;
+				if (top.noOfSteps <= minSteps) {
+					minSteps = top.noOfSteps;
+					LinkedList<String> results = new LinkedList<>();
+					WordNode temp = top;
+
+					while (temp != null) {
+						results.addFirst(temp.word);
+						temp = temp.pre;
+					}
+					finalllResult.add(results);
+				}
+				continue;
 			}
+
+			if (top.noOfSteps + 1 > minSteps)
+				continue;
+
+			if (top.noOfSteps + 2 > minSteps)
+				break;
 
 			char[] arr = top.word.toCharArray();
 			for (int i = 0; i < arr.length; i++) {
@@ -90,25 +97,31 @@ public class WordLadder {
 					char temp = arr[i];
 					arr[i] = c;
 					String newWord = new String(arr);
-					if (!newWord.equals(top.word) && wordDict.contains(newWord)) {
-						result.add(new WordNode(newWord, top.noOfSteps + 1));
+					if (!newWord.equals(top.word) && wordDict.contains(newWord) && !top.wordsVisited.contains(newWord)
+							&& !wordsSeen.contains(newWord)) {
+						WordNode node = new WordNode(newWord, top.noOfSteps + 1, top);
+						node.wordsVisited.addAll(top.wordsVisited);
+						node.wordsVisited.add(top.word);
+						result.add(node);
 						System.out.println(" adding - " + newWord);
-						printLinkedList(result);
-						wordDict.remove(newWord);
 					}
 
 					arr[i] = temp;
 				}
 			}
-		}
-		return 0;
 
+		}
+
+		return finalllResult;
 	}
 
 	public static void printLinkedList(LinkedList<WordNode> words) {
+		System.out.println();
 		for (WordNode word : words) {
 			System.out.print(word.word + " : " + word.noOfSteps + " -> ");
 		}
+		System.out.println();
+
 	}
 
 }
