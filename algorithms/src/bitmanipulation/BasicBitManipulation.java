@@ -18,7 +18,6 @@ package bitmanipulation;
  * boolean: boolean data type represents one bit of information.
  * 
  * char: char data type is a single 16-bit Unicode character.
- * test change test change
  */
 public class BasicBitManipulation {
 	
