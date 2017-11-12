@@ -7,6 +7,7 @@ package multithreading;
  *
  * ReaderWriterSolution.java
  *
+ * 
  * This class creates the reader and writer threads and
  * the database they will be using to coordinate access.
  */
