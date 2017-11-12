@@ -17,7 +17,7 @@ import java.util.Set;
  * @author njaganathan
  *
  */
-public class WordLadderII {
+public class WordLadderIIBest {
 
 	private static class WordNode {
 		String word;
@@ -67,15 +67,8 @@ public class WordLadderII {
 			wordsSeen.add(top.word);
 			
 			if (top.word.equals(endWord) && top.noOfSteps <= minSteps) {
-				printLinkedList(result);
-				minSteps = top.noOfSteps;
-				ArrayList<String> results = new ArrayList<>();
-				results.addAll(top.wordsVisited);
-				results.add(top.word);
-				finalllResult.add(results);
-				System.out.println("<------");
-
-				continue;
+				WordLadderIIBest.minSteps = top.noOfSteps;
+				break;
 			}
 
 			if (top.noOfSteps + 1 > minSteps)
@@ -110,9 +103,55 @@ public class WordLadderII {
 
 		}
 
-		return finalllResult;
-	}
+		WordLadderIIBest.minSteps = minSteps;
+		LinkedList<String> list = new LinkedList<String>();
+		list.add(beginWord);
 
+		List<List<String>> resultss = new ArrayList<>();
+		ladderInner(list, endWord, wordDict, characterMap, resultss);
+		
+		return resultss;
+	}
+	private static int minSteps = Integer.MAX_VALUE;
+
+	public static void ladderInner(LinkedList<String> list, String endWord, Set<String> wordDict,
+			Map<Integer, HashSet<Character>> characterMap, List<List<String>> result) {
+		String last = list.getLast();
+		if (list.size()  > minSteps) {
+			return;
+		}
+		if (last.equals(endWord)) {
+			if (list.size() <= minSteps) {
+				if (list.size() < minSteps) {
+					result.clear();
+				}
+				minSteps = list.size();
+				result.add(new ArrayList<>(list));
+			}
+			return;
+		}
+		char[] arr = last.toCharArray();
+		for (int i = 0; i < arr.length; i++) {
+			HashSet<Character> chars = characterMap.get(i);
+			for (char c : chars) {
+				char temp = arr[i];
+
+				arr[i] = c;
+				String newWord = new String(arr);
+				if (!newWord.equals(last) && wordDict.contains(newWord)) {
+					list.add(newWord);
+					wordDict.remove(newWord);
+
+					ladderInner(list, endWord, wordDict, characterMap, result);
+
+					list.removeLast();
+					wordDict.add(newWord);
+				}
+
+				arr[i] = temp;
+			}
+		}
+	}
 	public static void printLinkedList(LinkedList<WordNode> words) {
 		System.out.println();
 		for (WordNode word : words) {
