@@ -1,10 +1,19 @@
 package leetcode;
 
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Queue;
 
 public class CourseSchedule {
 
+	/**
+	 * BFS
+	 * 
+	 * @param numCourses
+	 * @param prerequisites
+	 * @return
+	 */
 	public boolean canFinish(int numCourses, int[][] prerequisites) {
 
 		int len = prerequisites.length;
@@ -50,5 +59,67 @@ public class CourseSchedule {
 			}
 		}
 		return noOfSatisfiedCourses == numCourses;
+	}
+
+	/**
+	 * DFS
+	 * 
+	 * @param numCourses
+	 * @param prerequisites
+	 * @return
+	 */
+	public boolean canFinishDFS(int numCourses, int[][] prerequisites) {
+
+		int len = prerequisites.length;
+		if (numCourses == 0 || len == 0)
+			return true;
+
+		HashMap<Integer, HashSet<Integer>> reverseIndex = new HashMap<>();
+		// build reverse index
+		for (int i = 0; i < prerequisites.length; i++) {
+			if (reverseIndex.containsKey(prerequisites[i][1])) {
+				reverseIndex.get(prerequisites[i][1]).add(prerequisites[i][0]);
+			} else {
+				HashSet<Integer> set = new HashSet<Integer>();
+				set.add(prerequisites[i][0]);
+				reverseIndex.put(prerequisites[i][1], set);
+			}
+		}
+		// one element for each course.
+		int[] pCounter = new int[numCourses];
+
+		// for each course, see if they are finishable
+		for (int i = 0; i < numCourses; i++) {
+			if (!canFinish(pCounter, reverseIndex, i))
+				return false;
+		}
+		return true;
+	}
+
+	private boolean canFinish(int[] pCounter, HashMap<Integer, HashSet<Integer>> reverseIndex, int i) {
+
+		// -1 means loop
+		if (pCounter[i] == -1)
+			return false;
+
+		// already visited - so truncates the tree and returns
+		if (pCounter[i] == 1)
+			return true;
+
+		// currently visiting
+		pCounter[i] = -1;
+		if (reverseIndex.containsKey(i)) {
+			HashSet<Integer> vals = reverseIndex.get(i);
+			// for each course dependencies find if they are finishable
+			for (Integer val : vals) {
+				if (!canFinish(pCounter, reverseIndex, val))
+					return false;
+			}
+		}
+
+		// mark as visited
+		pCounter[i] = 1;
+
+		return true;
 	}
 }
