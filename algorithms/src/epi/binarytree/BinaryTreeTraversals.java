@@ -1,6 +1,7 @@
 package epi.binarytree;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
@@ -61,6 +62,34 @@ public class BinaryTreeTraversals {
 			if (node.getRight() != null)
 				queue.add(node.getRight());
 		}
+		return list;
+	}
+
+	public static List<ArrayList<BinaryTreeNode<Integer>>> getLevelOrderReverseTraversal(BinaryTreeNode<Integer> root) {
+		List<ArrayList<BinaryTreeNode<Integer>>> list = new ArrayList<ArrayList<BinaryTreeNode<Integer>>>();
+		Queue<BinaryTreeNode<Integer>> current = new LinkedList<BinaryTreeNode<Integer>>();
+		Queue<BinaryTreeNode<Integer>> next = new LinkedList<BinaryTreeNode<Integer>>();
+		ArrayList<BinaryTreeNode<Integer>> temp = new ArrayList<>();
+		current.add(root);
+		
+		while (!current.isEmpty()) {
+			BinaryTreeNode<Integer> node = current.poll();
+			temp.add(node);
+
+			if (node.getLeft() != null)
+				next.add(node.getLeft());
+			if (node.getRight() != null)
+				next.add(node.getRight());
+
+			if (current.isEmpty()) {
+				list.add(temp);
+				temp.clear();
+				current = next;
+				next = new LinkedList<BinaryTreeNode<Integer>>();
+			}
+		}
+
+		Collections.reverse(list);
 		return list;
 	}
 
