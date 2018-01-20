@@ -31,6 +31,21 @@ public class LCA {
 		return left != null ? left : right;
 	}
 
+	public BinaryTreeNode<Integer> lowestCommonAncestorBST(BinaryTreeNode<Integer> root, BinaryTreeNode<Integer> p,
+			BinaryTreeNode<Integer> q) {
+		BinaryTreeNode<Integer> m = root;
+
+		if (m.data > p.data && m.data < q.data) {
+			return m;
+		} else if (m.data > p.data && m.data > q.data) {
+			return lowestCommonAncestorBST(root.left, p, q);
+		} else if (m.data < p.data && m.data < q.data) {
+			return lowestCommonAncestorBST(root.right, p, q);
+		}
+
+		return root;
+	}
+
 	public static BinaryTreeNode<Integer> findLCALong(BinaryTreeNode<Integer> tree, BinaryTreeNode<Integer> node1,
 			BinaryTreeNode<Integer> node2) {
 		LcaData data = LCAHelper(tree, node1, node2);
