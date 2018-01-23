@@ -2,6 +2,23 @@ package epi.binarytree;
 
 public class LCA {
 
+	/**
+	 * Leetcode verified
+	 *
+	 */
+	public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+		if (root == null || root == p || root == q)
+			return root;
+
+		TreeNode left = lowestCommonAncestor(root.left, p, q);
+		TreeNode right = lowestCommonAncestor(root.right, p, q);
+
+		if (left != null && right != null)
+			return root;
+
+		return left == null ? right : left;
+	}
+
 	static class LcaData {
 		boolean n1found;
 		boolean n2found;
@@ -16,34 +33,6 @@ public class LCA {
 			this.n2found = n2found;
 			this.lca = lca;
 		}
-	}
-
-	public static BinaryTreeNode<Integer> findLCA(BinaryTreeNode<Integer> tree, BinaryTreeNode<Integer> node1,
-			BinaryTreeNode<Integer> node2) {
-
-		if (tree == null || tree == node1 || tree == node2)
-			return tree;
-
-		BinaryTreeNode<Integer> left = findLCA(tree.left, node1, node2);
-		BinaryTreeNode<Integer> right = findLCA(tree.right, node1, node2);
-		if (left != null && right != null)
-			return tree;
-		return left != null ? left : right;
-	}
-
-	public BinaryTreeNode<Integer> lowestCommonAncestorBST(BinaryTreeNode<Integer> root, BinaryTreeNode<Integer> p,
-			BinaryTreeNode<Integer> q) {
-		BinaryTreeNode<Integer> m = root;
-
-		if (m.data > p.data && m.data < q.data) {
-			return m;
-		} else if (m.data > p.data && m.data > q.data) {
-			return lowestCommonAncestorBST(root.left, p, q);
-		} else if (m.data < p.data && m.data < q.data) {
-			return lowestCommonAncestorBST(root.right, p, q);
-		}
-
-		return root;
 	}
 
 	public static BinaryTreeNode<Integer> findLCALong(BinaryTreeNode<Integer> tree, BinaryTreeNode<Integer> node1,
@@ -89,15 +78,12 @@ public class LCA {
 		int depthOfN1 = getDepthInTree(node1);
 		int depthOfN2 = getDepthInTree(node2);
 
-		if (depthOfN1 != depthOfN2) 
-		{
+		if (depthOfN1 != depthOfN2) {
 			int diff = Math.abs(depthOfN1 - depthOfN2);
 			while (diff != 0) {
-				if(depthOfN1 > depthOfN2)
-				{
+				if (depthOfN1 > depthOfN2) {
 					node1 = node1.getParent();
-				}else
-				{
+				} else {
 					node2 = node2.getParent();
 				}
 				diff--;
@@ -108,14 +94,13 @@ public class LCA {
 			node1 = node1.getParent();
 			node2 = node2.getParent();
 		}
-		
+
 		return node1;
 	}
 
 	public static int getDepthInTree(BinaryTreeNode<Integer> node1) {
 		int depth = 0;
-		while(node1!=null)
-		{
+		while (node1 != null) {
 			node1 = node1.parent;
 			depth++;
 		}
