@@ -15,7 +15,7 @@ public class InverseBinaryTreeTest {
 		BinaryTreeNode<Integer> root = BinaryTreeUtils.buildTree(vals);
 		System.out.println(root.toString());
 		@SuppressWarnings("unused")
-		List<BinaryTreeNode<Integer>> result = InverseBinaryTree.inverseTree(root);
+		List<BinaryTreeNode<Integer>> result = InvertBinaryTree.inverseTree(root);
 		// Manually inspected!
 		assertTrue(true);
 	}

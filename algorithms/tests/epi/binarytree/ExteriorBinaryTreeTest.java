@@ -20,7 +20,7 @@ public class ExteriorBinaryTreeTest {
 		  }
 	@Test
 	public void test() {
-		 BinaryTreeNode<Integer> tree = new BinaryTreeNode<>(3, null, null);
+		 	BinaryTreeNode<Integer> tree = new BinaryTreeNode<>(3, null, null);
 		    List<BinaryTreeNode<Integer>> L = ExteriorBinaryTree.exteriorBinaryTree(tree);
 		    List<Integer> result = createOutputList(L);
 		    List<Integer> goldenResult = Arrays.asList(3);

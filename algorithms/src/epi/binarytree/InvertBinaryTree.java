@@ -4,8 +4,33 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class InverseBinaryTree {
+public class InvertBinaryTree {
 
+	/**
+	 * Verified with LeetCode
+	 * 
+	 * @param root
+	 * @return
+	 */
+	public TreeNode invertTree(TreeNode root) {
+		if (root == null)
+			return null;
+
+		invertTree(root.left);
+		invertTree(root.right);
+
+		TreeNode temp = root.right;
+		root.right = root.left;
+		root.left = temp;
+
+		return root;
+	}
+	
+	/**
+	 * With bugs errors
+	 * @param root
+	 * @return
+	 */
 	public static List<BinaryTreeNode<Integer>> inverseTree(BinaryTreeNode<Integer> root) {
 		if (root == null)
 			return Collections.emptyList();
