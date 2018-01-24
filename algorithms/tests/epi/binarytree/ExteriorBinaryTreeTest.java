@@ -8,6 +8,8 @@ import java.util.List;
 
 import org.junit.Test;
 
+import epi.binarytree.node.BinaryTreeNode;
+
 public class ExteriorBinaryTreeTest {
 
 	private static List<Integer> createOutputList(

@@ -7,6 +7,8 @@ import java.util.List;
 
 import org.junit.Test;
 
+import epi.binarytree.node.BinaryTreeNode;
+
 public class BinaryTreeTraversalsTest {
 
 	@Test

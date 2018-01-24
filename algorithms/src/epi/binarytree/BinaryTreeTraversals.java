@@ -6,6 +6,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
+import epi.binarytree.node.BinaryTreeNode;
+
 public class BinaryTreeTraversals {
 
 	public static List<BinaryTreeNode<Integer>> getPreOrderTraversal(BinaryTreeNode<Integer> root) {

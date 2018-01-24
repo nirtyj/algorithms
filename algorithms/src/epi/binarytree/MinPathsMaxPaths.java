@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import epi.binarytree.node.BinaryTreeNode;
+
 public class MinPathsMaxPaths {
 
 	private static int minPathsMin = Integer.MAX_VALUE;

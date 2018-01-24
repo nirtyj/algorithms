@@ -3,7 +3,7 @@ package epi.recursion;
 import java.util.ArrayList;
 import java.util.List;
 
-import epi.binarytree.BinaryTreeNode;
+import epi.binarytree.node.BinaryTreeNode;
 
 public class GenerateBinaryTrees {
 

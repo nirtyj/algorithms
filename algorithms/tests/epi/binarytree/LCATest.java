@@ -6,6 +6,8 @@ import java.util.List;
 
 import org.junit.Test;
 
+import epi.binarytree.node.BinaryTreeNode;
+
 public class LCATest {
 
 	@Test
@@ -17,19 +19,19 @@ public class LCATest {
 		tree.getRight().setLeft(new BinaryTreeNode<>(4, null, null,null));
 		tree.getRight().setRight(new BinaryTreeNode<>(6, null, null,null));
 		// should output 3
-		BinaryTreeNode<Integer> x = LCA.findLCA(tree, tree.getLeft(), tree.getRight());
+		BinaryTreeNode<Integer> x = LCA.findLCALong(tree, tree.getLeft(), tree.getRight());
 		assertTrue(x.getData().equals(3));
 		// should output 5
-		x =  LCA.findLCA(tree, tree.getRight().getLeft(), tree.getRight().getRight());
+		x =  LCA.findLCALong(tree, tree.getRight().getLeft(), tree.getRight().getRight());
 		assertTrue(x.getData().equals(5));
 		// should output 5
-		x =  LCA.findLCA(tree, tree.getRight(), tree.getRight().getRight());
+		x =  LCA.findLCALong(tree, tree.getRight(), tree.getRight().getRight());
 		assertTrue(x.getData().equals(5));
 		// should output 3
-		x =  LCA.findLCA(tree, tree.getLeft().getLeft(), tree.getRight().getRight());
+		x =  LCA.findLCALong(tree, tree.getLeft().getLeft(), tree.getRight().getRight());
 		assertTrue(x.getData().equals(3));
 		// should output 3
-		x =  LCA.findLCA(tree, tree.getLeft().getLeft(), tree);
+		x =  LCA.findLCALong(tree, tree.getLeft().getLeft(), tree);
 		assertTrue(x.getData().equals(3));
 	}
 	
@@ -37,21 +39,21 @@ public class LCATest {
 	public void testLowestCommonAncestor1() {		
 		Integer[] vals = {0,1,2,3,4,null,6,7,8,null,null,null,null,13,14,15,16};
 		List<BinaryTreeNode<Integer>> list = BinaryTreeUtils.getTreeAsList(vals);
-		assertTrue(list.get(0) ==  LCA.findLCA(list.get(0), list.get(0), list.get(16)));		
+		assertTrue(list.get(0) ==  LCA.findLCALong(list.get(0), list.get(0), list.get(16)));		
 	}
 	
 	@Test
 	public void testLowestCommonAncestor2() {		
 		Integer[] vals = {0,1,2,3,4,null,6,7,8,null,null,null,null,13,14,15,16};
 		List<BinaryTreeNode<Integer>> list = BinaryTreeUtils.getTreeAsList(vals);
-		assertTrue(list.get(7) ==  LCA.findLCA(list.get(0), list.get(15), list.get(16)));		
+		assertTrue(list.get(7) ==  LCA.findLCALong(list.get(0), list.get(15), list.get(16)));		
 	}
 	
 	@Test
 	public void testLowestCommonAncestor3() {		
 		Integer[] vals = {0,1,2,3,4,null,6,7,8,null,null,null,null,13,14,15,16};
 		List<BinaryTreeNode<Integer>> list = BinaryTreeUtils.getTreeAsList(vals);
-		assertTrue(list.get(1) ==  LCA.findLCA(list.get(0), list.get(4), list.get(16)));		
+		assertTrue(list.get(1) ==  LCA.findLCALong(list.get(0), list.get(4), list.get(16)));		
 	}
 	
 	@Test

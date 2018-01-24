@@ -3,6 +3,8 @@ package epi.binarytree;
 import java.util.ArrayList;
 import java.util.List;
 
+import epi.binarytree.node.BinaryTreeNode;
+
 public class BinaryTreeUtils {
 
 	public static <T extends Comparable<?>> List<BinaryTreeNode<T>> getTreeAsList(T[] values) {

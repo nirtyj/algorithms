@@ -3,6 +3,9 @@ package epi.binarytree;
 import java.util.LinkedList;
 import java.util.Queue;
 
+import epi.binarytree.node.BinaryTreeNode;
+import epi.binarytree.node.TreeLinkNode;
+
 public class ConnectNextRight {
 
 	/**

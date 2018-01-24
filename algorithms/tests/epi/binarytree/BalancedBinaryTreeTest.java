@@ -5,6 +5,8 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
+import epi.binarytree.node.BinaryTreeNode;
+
 public class BalancedBinaryTreeTest {
 
 	@Test

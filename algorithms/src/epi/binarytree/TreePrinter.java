@@ -4,6 +4,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.regex.Pattern;
 
+import epi.binarytree.node.BinaryTreeNode;
+
 public class TreePrinter<T extends Comparable<?>> {
 	
 		private static final Pattern END_OF_LINE_WHITESPACE = Pattern.compile("\\s+$");

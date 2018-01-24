@@ -1,5 +1,7 @@
 package epi.binarytree;
 
+import epi.binarytree.node.BinaryTreeNode;
+
 public class MaxHeightInTree {
 
 	public static int getMaxHeight(BinaryTreeNode<Integer> tree)

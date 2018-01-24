@@ -3,6 +3,8 @@ package epi.binarytree;
 import java.util.ArrayList;
 import java.util.List;
 
+import epi.binarytree.node.BinaryTreeNode;
+
 public class BinaryTreeLeaves {
 
 	public static List<BinaryTreeNode<Integer>> createListOfLeaves(BinaryTreeNode<Integer> tree) {

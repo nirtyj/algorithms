@@ -1,5 +1,8 @@
 package epi.binarytree;
 
+import epi.binarytree.node.BinaryTreeNode;
+import epi.binarytree.node.TreeNode;
+
 public class LongestConsequtivePaths {
 
 	/**

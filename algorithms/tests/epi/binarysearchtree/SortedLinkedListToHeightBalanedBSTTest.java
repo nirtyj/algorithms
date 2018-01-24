@@ -6,9 +6,9 @@ import java.util.Arrays;
 
 import org.junit.Test;
 
-import epi.binarytree.BinaryTreeNode;
 import epi.binarytree.BinaryTreeTraversals;
 import epi.binarytree.BinaryTreeUtils;
+import epi.binarytree.node.BinaryTreeNode;
 import epi.linkedlist.LinkedListNode;
 
 public class SortedLinkedListToHeightBalanedBSTTest {

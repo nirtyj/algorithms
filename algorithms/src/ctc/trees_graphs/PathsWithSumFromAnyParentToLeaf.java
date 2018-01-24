@@ -1,6 +1,6 @@
 package ctc.trees_graphs;
 
-import epi.binarytree.BinaryTreeNode;
+import epi.binarytree.node.BinaryTreeNode;
 
 public class PathsWithSumFromAnyParentToLeaf {
 

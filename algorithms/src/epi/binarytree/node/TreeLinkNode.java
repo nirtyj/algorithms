@@ -1,4 +1,4 @@
-package epi.binarytree;
+package epi.binarytree.node;
 
 public class TreeLinkNode {
 	public TreeLinkNode left;

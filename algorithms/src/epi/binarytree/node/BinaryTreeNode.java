@@ -1,4 +1,6 @@
-package epi.binarytree;
+package epi.binarytree.node;
+
+import epi.binarytree.TreePrinter;
 
 public class BinaryTreeNode<T extends Comparable<?>> {
 	

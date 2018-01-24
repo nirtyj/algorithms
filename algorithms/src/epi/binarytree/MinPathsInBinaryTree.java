@@ -1,5 +1,7 @@
 package epi.binarytree;
 
+import epi.binarytree.node.BinaryTreeNode;
+
 public class MinPathsInBinaryTree {
 
 	static int minVal = Integer.MAX_VALUE;

@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import epi.binarytree.node.BinaryTreeNode;
+import epi.binarytree.node.TreeNode;
+
 public class ExteriorBinaryTree {
 
 	/**

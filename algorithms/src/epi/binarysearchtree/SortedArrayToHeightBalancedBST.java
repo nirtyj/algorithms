@@ -1,6 +1,6 @@
 package epi.binarysearchtree;
 
-import epi.binarytree.BinaryTreeNode;
+import epi.binarytree.node.BinaryTreeNode;
 
 public class SortedArrayToHeightBalancedBST {
 

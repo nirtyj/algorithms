@@ -3,7 +3,7 @@ package epi.hashtables;
 import java.util.HashSet;
 import java.util.Set;
 
-import epi.binarytree.BinaryTreeNode;
+import epi.binarytree.node.BinaryTreeNode;
 
 public class LCAWithHash {
 
