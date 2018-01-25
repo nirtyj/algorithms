@@ -3,12 +3,18 @@ package ctc.trees_graphs;
 import epi.binarytree.node.BinaryTreeNode;
 
 /**
- * Test 2s
+ * Test if a tree is a subtree of another
  * @author njaganathan
  *
  */
 public class CheckSubTree {
 
+	/**
+	 * Leetcode verified
+	 * @param t1
+	 * @param t2
+	 * @return
+	 */
 	public static boolean isSubTree(BinaryTreeNode<Integer> t1, BinaryTreeNode<Integer> t2) {
 		if (t1 == null)
 			return false;

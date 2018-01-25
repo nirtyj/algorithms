@@ -1,9 +1,33 @@
 package epi.binarysearchtree;
 
 import epi.binarytree.node.BinaryTreeNode;
+import epi.binarytree.node.TreeNode;
 
 public class BST {
 
+	/**
+	 * Leetcode verified
+	 * @param root
+	 * @return
+	 */
+	public boolean isValidBST(TreeNode root) {
+		return isBstHelper(root, Double.NEGATIVE_INFINITY, Double.POSITIVE_INFINITY);
+	}
+
+	private boolean isBstHelper(TreeNode root, double min, double max) {
+		if (root == null)
+			return true;
+		if (root.val > min && root.val < max)
+			return isBstHelper(root.left, min, root.val) && isBstHelper(root.right, root.val, max);
+		else
+			return false;
+	}
+
+	/**
+	 * Fails for the case of a tree with only root node with value - Integer.MAX_VALUE
+	 * @param node
+	 * @return
+	 */
 	public static boolean isBst(BinaryTreeNode<Integer> node) {
 		if (node == null)
 			return true;

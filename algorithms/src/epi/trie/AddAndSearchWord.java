@@ -1,44 +1,16 @@
-package epi.binarytree;
+package epi.trie;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Map.Entry;
 
 /**
  * Leet code tested and verified
  * @author njaganat
  *
  */
-public class Trie {
+public class AddAndSearchWord {
 
 	TrieNode root = new TrieNode();
-
-	class TrieNode {
-		char c;
-		HashMap<Character, TrieNode> children = new HashMap<Character, TrieNode>();
-		boolean isEndWord = false;
-
-		TrieNode(char c) {
-			this.c = c;
-		}
-
-		public TrieNode() {
-
-		}
-
-		public String toString() {
-			StringBuilder b = new StringBuilder();
-			b.append(c + (isEndWord ? "." : ""));
-			b.append("\n");
-			for (Entry<Character, TrieNode> entry : children.entrySet()) {
-				b.append(entry.getValue().toString());
-			}
-			b.append("\n");
-			return b.toString();
-
-		}
-
-	}
 
 	public void addWord(String word) {
 		HashMap<Character, TrieNode> map = root.children;
@@ -73,6 +45,7 @@ public class Trie {
 			}
 			return dfsSearch(children.get(c).children, word, start + 1);
 		} 
+		// . represents - match any character
 		else if (c == '.') 
 		{
 			boolean result = false;

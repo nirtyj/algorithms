@@ -4,11 +4,13 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import epi.trie.AddAndSearchWord;
+
 public class TrieTest {
 
 	@Test
 	public void test() {
-		Trie t = new Trie();
+		AddAndSearchWord t = new AddAndSearchWord();
 		t.addWord("hell");
 		t.addWord("hello");
 		t.addWord("hel");
