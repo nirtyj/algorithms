@@ -4,6 +4,8 @@ public class TinyURL {
 
 	// http://blog.gainlo.co/index.php/2016/03/08/system-design-interview-question-create-tinyurl-system/
 	// https://leetcode.com/problems/design-tinyurl/discuss/100258/
+	
+	// URL encode and decode - https://leetcode.com/problems/encode-and-decode-tinyurl/solution/
 	/**
 	 * A random string is not a hash. The fundamental property of hashes is that
 	 * they are functions from a domain (say strings) to a smaller domain (say
