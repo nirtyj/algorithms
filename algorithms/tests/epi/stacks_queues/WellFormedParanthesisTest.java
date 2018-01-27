@@ -8,13 +8,13 @@ public class WellFormedParanthesisTest {
 
 	@Test
 	public void test() {
-		assertTrue(WellFormedParanthesis.isWellFormed("()"));
-		assertTrue(WellFormedParanthesis.isWellFormed("()[]{}"));
-		assertTrue(WellFormedParanthesis.isWellFormed("[()[]]{}"));
-		assertTrue(WellFormedParanthesis.isWellFormed("(()[]{()[]{}{}})"));
-		assertTrue(!WellFormedParanthesis.isWellFormed("([)]"));
-		assertTrue(!WellFormedParanthesis.isWellFormed("["));
-		assertTrue(!WellFormedParanthesis.isWellFormed("(()[]{()[]{})({}})"));
+		assertTrue(WellFormedParanthesis.isValid("()"));
+		assertTrue(WellFormedParanthesis.isValid("()[]{}"));
+		assertTrue(WellFormedParanthesis.isValid("[()[]]{}"));
+		assertTrue(WellFormedParanthesis.isValid("(()[]{()[]{}{}})"));
+		assertTrue(!WellFormedParanthesis.isValid("([)]"));
+		assertTrue(!WellFormedParanthesis.isValid("["));
+		assertTrue(!WellFormedParanthesis.isValid("(()[]{()[]{})({}})"));
 	}
 
 }

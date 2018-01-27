@@ -1,5 +1,7 @@
 package epi.linkedlist;
 
+import epi.linkedlist.node.ListNode;
+
 public class ReverseLinkedList {
 
 	public static LinkedListNode reverseList(LinkedListNode node) {
@@ -42,4 +44,25 @@ public class ReverseLinkedList {
 		}
 		return prev;
 	}
+	
+	/**
+	 * Leetcode verified
+	 */
+	public ListNode reverseList(ListNode head) {
+        if(head == null)
+            return null;
+        
+        ListNode prev = null;
+        ListNode curr = head;
+        ListNode next = head.next;
+        while(next != null)
+        {
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+            next = next.next;
+        }
+        curr.next = prev;
+        return curr;
+    }
 }

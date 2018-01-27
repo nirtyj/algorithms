@@ -8,7 +8,7 @@ import java.util.Stack;
  */
 public class WellFormedParanthesis {
 
-	public boolean isValid(String s) {
+	public static boolean isValid(String s) {
 		Stack<Character> stack = new Stack<Character>();
 		for (int i = 0; i < s.length(); i++) {
 			char c = s.charAt(i);
@@ -26,14 +26,14 @@ public class WellFormedParanthesis {
 		return stack.isEmpty();
 	}
 
-	private boolean isStarting(char in) {
+	private static boolean isStarting(char in) {
 		if (in == '(' || in == '{' || in == '[')
 			return true;
 		else
 			return false;
 	}
 
-	private boolean isMatching(char c1, char c2) {
+	private static boolean isMatching(char c1, char c2) {
 		if ((c1 == '(' && c2 == ')') || (c1 == '[' && c2 == ']') || (c1 == '{' && c2 == '}')) {
 			return true;
 		}
