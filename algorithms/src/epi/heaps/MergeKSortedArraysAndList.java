@@ -5,7 +5,42 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.PriorityQueue;
 
-public class MergeKSortedArrays {
+import epi.linkedlist.node.ListNode;
+
+public class MergeKSortedArraysAndList {
+
+	Comparator<ListNode> comp = new Comparator<ListNode>() {
+		@Override
+		public int compare(ListNode node1, ListNode node2) {
+			return Integer.compare(node1.val, node2.val);
+		}
+	};
+
+	/**
+	 * Leetcode verified
+	 */
+	public ListNode mergeKLists(ListNode[] lists) {
+		if (lists == null || lists.length == 0)
+			return null;
+		else if (lists.length == 1)
+			return lists[0];
+		PriorityQueue<ListNode> heap = new PriorityQueue<ListNode>(lists.length, comp);
+		for (int i = 0; i < lists.length; i++) {
+			if (lists[i] != null)
+				heap.add(lists[i]);
+		}
+		ListNode resultHead = new ListNode(0);
+		ListNode result = resultHead;
+		while (!heap.isEmpty()) {
+			ListNode node = heap.poll();
+			result.next = node;
+			if (node.next != null)
+				heap.add(node.next);
+			result = result.next;
+		}
+		result.next = null;
+		return resultHead.next;
+	}
 
 	public static class ArrayNode {
 		int value;
@@ -44,4 +79,5 @@ public class MergeKSortedArrays {
 		}
 		return result;
 	}
+
 }

@@ -1,6 +1,6 @@
 package epi.strings;
 
-public class LookAndSay {
+public class LookAndSayORCountAndSay {
 
 	public static String lookAndSay(int i) {
 
