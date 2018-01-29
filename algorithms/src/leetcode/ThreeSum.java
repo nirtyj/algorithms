@@ -4,6 +4,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ *  Leetcode verified
+ * @author njaganathan
+ *
+ */
 public class ThreeSum {
 	public static List<List<Integer>> threeSum(int[] nums) {
 		return threeSumHelper(nums, 0);

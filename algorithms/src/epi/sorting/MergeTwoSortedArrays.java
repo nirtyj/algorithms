@@ -21,6 +21,13 @@ public class MergeTwoSortedArrays {
 		Collections.sort(largeArr);
 	}
 
+	/**
+	 * Leetcode verified
+	 * @param arr1
+	 * @param m
+	 * @param arr2
+	 * @param n
+	 */
 	public void mergeSortedArrays2(List<Integer> arr1, int m, List<Integer> arr2, int n) {
 
 		int i = m - 1;

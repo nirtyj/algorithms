@@ -42,4 +42,7 @@ Let C be the new set of children of ELECTION;
 If z is the smallest node in C, then execute leader procedure;
 Otherwise, watch for changes on "ELECTION/guid-n_j", where j is the largest sequence number such that j < i and n_j is a znode in C;
       
+https://github.com/shashank88/system_design
+https://github.com/andreis/interview
+https://dev.to/fahimulhaq/top-10-system-design-interview-questions-for-software-engineers
 

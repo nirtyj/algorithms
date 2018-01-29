@@ -69,4 +69,11 @@ public class Oracle {
 		}
 		return 1;
 	}
+	
+	// on campus expectations
+	// 1. LRU cache
+	// 2. Binary tree mirror
+	// 3. closest value to a given value in a BST
+	// 4. duplicate number in an array of size N
+	// 5. BST, Scheduling
 }
