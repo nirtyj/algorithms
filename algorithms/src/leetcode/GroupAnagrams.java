@@ -6,6 +6,23 @@ import java.util.HashMap;
 import java.util.List;
 
 public class GroupAnagrams {
+	/*
+	Given an array of strings, group anagrams together.
+	
+	For example, given: ["eat", "tea", "tan", "ate", "nat", "bat"], 
+	Return:
+	
+	[
+	  ["ate", "eat","tea"],
+	  ["nat","tan"],
+	  ["bat"]
+	]
+	*/
+	/**
+	 * Leetcode verified
+	 * @param strs
+	 * @return
+	 */
 	public static List<List<String>> groupAnagrams(String[] strs) {
 		List<List<String>> result = new ArrayList<List<String>>();
 		HashMap<String, ArrayList<String>> map = new HashMap<String, ArrayList<String>>();

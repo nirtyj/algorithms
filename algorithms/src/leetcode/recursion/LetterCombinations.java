@@ -8,6 +8,11 @@ public class LetterCombinations {
 	private static final String[] M = new String[] { "0", "1", "ABC", "DEF", "GHI", "JKL", "MNO", "PQRS", "TUV",
 			"WXYZ" };
 
+	/**
+	 * Leetcode verified
+	 * @param phoneNumber
+	 * @return
+	 */
 	public List<String> letterCombinations(String phoneNumber) {
 		List<String> words = new ArrayList<>();
 		for (int i = 0; i < phoneNumber.length(); i++)
