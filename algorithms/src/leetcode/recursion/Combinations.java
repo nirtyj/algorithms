@@ -6,6 +6,7 @@ import java.util.List;
 public class Combinations {
 
 	/**
+	 * Leetcode verified
 	 * combinations upto n numbers; size of k
 	 * @param n
 	 * @param k

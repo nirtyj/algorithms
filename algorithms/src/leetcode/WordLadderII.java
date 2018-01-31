@@ -78,9 +78,11 @@ public class WordLadderII {
 				continue;
 			}
 
+			// to loop through all the nodes present in the queue
 			if (top.noOfSteps + 1 > minSteps)
 				continue;
 			
+			// we dont need to go further. we can break out.
 			if (top.noOfSteps + 2 > minSteps)
 				break;
 			
@@ -92,11 +94,22 @@ public class WordLadderII {
 				HashSet<Character> chars = characterMap.get(i);
 				// or iterate from the available chars - a to z
 				for (char c : chars) {
+					
+					// swap the characters to form a new word at each position
 					char temp = arr[i];
 					arr[i] = c;
+					
 					String newWord = new String(arr);
-					if (!newWord.equals(top.word) && wordDict.contains(newWord) && !top.wordsVisited.contains(newWord)
-							&& !wordsSeen.contains(newWord)) {
+					if (
+							// is not the same word
+							!newWord.equals(top.word) 
+							// if the word is valid
+							&& wordDict.contains(newWord) 
+							// if its not visited previously for this path
+							&& !top.wordsVisited.contains(newWord)
+							// if this node is not processed before
+							&& !wordsSeen.contains(newWord)) 
+					{
 						WordNode node = new WordNode(newWord, top.noOfSteps + 1, top);
 						node.wordsVisited.addAll(top.wordsVisited);
 						node.wordsVisited.add(top.word);

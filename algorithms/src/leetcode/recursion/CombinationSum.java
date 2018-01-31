@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * Leetcode verified
+ * @author njaganathan
+ */
 public class CombinationSum {
 
 	public static List<List<Integer>> combinationSum(List<Integer> candidates, int target) {

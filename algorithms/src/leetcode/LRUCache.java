@@ -2,6 +2,11 @@ package leetcode;
 
 import java.util.HashMap;
 
+/**
+ * Leetcode verified
+ * @author njaganathan
+ *
+ */
 public class LRUCache {
 
 	class Node {
