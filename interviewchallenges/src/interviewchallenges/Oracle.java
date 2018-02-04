@@ -76,4 +76,42 @@ public class Oracle {
 	// 3. closest value to a given value in a BST
 	// 4. duplicate number in an array of size N
 	// 5. BST, Scheduling
+	
+	/**
+	 * On Campus
+	 * 
+	 * 1 round.
+	 *    Large file with texts. Count chars, words, sentences.
+	 *    	ignore empty lines, spaces, and tabs.
+	 *    	code tokenizer
+	 *  
+	 *  2. round.
+	 *  	  Design Dropbox system
+	 *  		Patch with ID
+	 *  		distributed storage.
+	 *  		distributed protocol
+	 *  		testing.
+	 *  		Billing
+	 *  
+	 *  3. round
+	 *  		Manager interview
+	 *  		Behavioral
+	 *  
+	 *  4. round
+	 *  		Large image with some fun but less memory space
+	 *  			split up the image
+	 *  			How do you handle stiching up the files after output
+	 *  		code if a string has invalid paranthesis
+	 *  			design with args to take in about paranthesis
+	 *  
+	 *  5. round
+	 *  		Explain what is Json
+	 *  		How to represent diff between objects.
+	 *  			Json has no set types
+	 *  			represent with 3 fields - additions, deletions, modifications
+	 *  			each represented with dots - > company.employee.name = foor
+	 *  		use different de-limiter
+	 *  
+	 */
+	
 }
