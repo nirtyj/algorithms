@@ -30,12 +30,12 @@ import org.json.simple.parser.ParseException;
  */
 class HalloweenPathFinder {
 
-	Map<String, House> houses = new HashMap<String, House>();
+	private Map<String, House> houses = new HashMap<String, House>();
 	
-	Long maxSweets = Long.MIN_VALUE;
-	Long minDistance = Long.MAX_VALUE;
-	ArrayList<Step> finalResult = new ArrayList<Step>();
-	HashSet<String> visitedHouses = new HashSet<String>();
+	private Long maxSweets = Long.MIN_VALUE;
+	private Long minDistance = Long.MAX_VALUE;
+	private ArrayList<Step> finalResult = new ArrayList<Step>();
+	private HashSet<String> visitedHouses = new HashSet<String>();
 
     /**
      * Creates a new instance of the problem solver. Please don't change the parameter list.
@@ -61,8 +61,8 @@ class HalloweenPathFinder {
 				leftHouse.connectHouse(rightHouse, distance);
 				rightHouse.connectHouse(leftHouse, distance);
 			}
-		} catch (ParseException e) {
-			e.printStackTrace();
+		} catch (Exception e) {
+			throw new HalloweenException(e.getLocalizedMessage());
 		}
 		printHouses();
 	}
@@ -86,7 +86,6 @@ class HalloweenPathFinder {
 		} else {
 			maxSweets = Long.MIN_VALUE;
 			minDistance = Long.MAX_VALUE;
-			finalResult.clear();
 			visitedHouses.clear();
 
 			House h = houses.get(originId);
@@ -96,7 +95,7 @@ class HalloweenPathFinder {
 			List<Step> tempResult = new ArrayList<Step>();
 			tempResult.add(s);
 
-			finalResult.addAll(new ArrayList<>(tempResult));
+			finalResult = new ArrayList<>(tempResult);
 			findPerfectRouteHelper(originId, h, 0, maxDistance, h.getNumberOfSweets(), tempResult);
 			return finalResult;
 		}
