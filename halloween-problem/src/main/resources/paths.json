@@ -1,0 +1,14 @@
+[
+  {"leftId": "a", "rightId": "b", "distance": 30},
+  {"leftId": "b", "rightId": "d", "distance": 10},
+  {"leftId": "d", "rightId": "h", "distance": 35},
+  {"leftId": "d", "rightId": "c", "distance": 20},
+  {"leftId": "a", "rightId": "c", "distance": 5},
+  {"leftId": "a", "rightId": "e", "distance": 50},
+  {"leftId": "c", "rightId": "g", "distance": 75},
+  {"leftId": "e", "rightId": "f", "distance": 22},
+  {"leftId": "f", "rightId": "g", "distance": 15},
+  {"leftId": "h", "rightId": "g", "distance": 38},
+  {"leftId": "e", "rightId": "i", "distance": 14},
+  {"leftId": "g", "rightId": "i", "distance": 25}
+]
