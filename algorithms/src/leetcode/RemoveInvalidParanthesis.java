@@ -1,0 +1,63 @@
+package leetcode;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+/**
+ * Leetcode verified
+ * @author njaganathan
+ *
+ */
+public class RemoveInvalidParanthesis {
+
+	Set<String> result = new HashSet<String>();
+	int max = 0;
+
+	public List<String> removeInvalidParentheses(String s) {
+		if (s == null)
+			return Collections.emptyList();
+		dfsHelper(s, "", 0, 0);
+		List<String> res = new ArrayList<>(result);
+		if (res.isEmpty()) {
+			res.add("");
+		}
+		return res;
+	}
+
+	private void dfsHelper(String left, String right, int leftCounter, int maxCurrent) {
+		// ending condition
+		if (left.isEmpty()) {
+			// count left == 0 means.. it is a valid parathesis condition
+			if (!right.isEmpty() && leftCounter == 0 && maxCurrent >= max && !result.contains(right)) {
+				max = maxCurrent;
+				result.add(right);
+			}
+			return;
+		}
+
+		char c = left.charAt(0);
+
+		// opening
+		if (c == '(') {
+			// keep ( subtree
+			dfsHelper(left.substring(1), right + "(", leftCounter + 1, maxCurrent + 1);
+			// drop ( subtree
+			dfsHelper(left.substring(1), right, leftCounter, maxCurrent);
+		}
+		// closing
+		else if (c == ')') {
+			// if there is any left braces in stack, decrement one, subtree
+			if (leftCounter > 0) {
+				dfsHelper(left.substring(1), right + ")", leftCounter - 1, maxCurrent);
+			}
+			// subtree with keeping it
+			dfsHelper(left.substring(1), right, leftCounter, maxCurrent);
+		} else {
+			// other character -> add it to right
+			dfsHelper(left.substring(1), right + String.valueOf(left.charAt(0)), leftCounter, maxCurrent);
+		}
+	}
+}

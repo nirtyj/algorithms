@@ -12,21 +12,6 @@ public class MergeIntervals {
 		Given [1,3],[2,6],[8,10],[15,18],
 		return [1,6],[8,10],[15,18]
 	*/
-	public static class Interval {
-		public Interval(int start, int end) {
-			this.start = start;
-			this.end = end;
-		}
-
-		protected int start;
-		protected int end;
-
-		@Override
-		public String toString() {
-			return "[" + start + ", " + end + "]";
-		}
-
-	}
 
 	/**
 	 * Leetcode verified
@@ -51,7 +36,7 @@ public class MergeIntervals {
 		});
 
 		Interval pre = intervals.get(0);
-		for (int i = 0; i < intervals.size(); i++) {
+		for (int i = 1; i < intervals.size(); i++) {
 			Interval curr = intervals.get(i);
 			if (curr.start > pre.end) {
 				result.add(pre);
