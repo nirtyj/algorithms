@@ -12,6 +12,7 @@ public class SquareRootTest {
 		assertEquals(17, SquareRoot.findSquareRoot(300));
 		assertEquals(4, SquareRoot.findSquareRoot(17));
 		assertEquals(4, SquareRoot.findSquareRoot(19));
+		assertEquals(46339, SquareRoot.findSquareRoot(2147395599));
 	}
 
 }
