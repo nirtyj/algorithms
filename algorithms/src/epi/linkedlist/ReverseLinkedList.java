@@ -48,7 +48,7 @@ public class ReverseLinkedList {
 	/**
 	 * Leetcode verified
 	 */
-	public ListNode reverseList(ListNode head) {
+	public static ListNode reverseList(ListNode head) {
         if(head == null)
             return null;
         

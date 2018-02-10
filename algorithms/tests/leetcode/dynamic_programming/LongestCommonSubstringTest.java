@@ -12,7 +12,7 @@ public class LongestCommonSubstringTest {
 		assertEquals("tutorial", LongestCommonSubstring.getLongestCommonSubstringNaive("tutorialhorizon", "dynamictutorialProgramming"));
 		assertEquals("Site:Geeks",LongestCommonSubstring.getLongestCommonSubstringNaive("OldSite:GeeksforGeeks.org", "NewSite:GeeksQuiz.com"));
 		assertEquals("kds",LongestCommonSubstring.getLongestCommonSubstringNaive("alsdfkjfjkdsal", "fdjskalajfkdsla"));
-		assertEquals(" peter go",LongestCommonSubstring.getLongestCommonSubstringNaive("Please, peter go swimming!", "I’m peter goliswi"));
+		assertEquals(" peter go",LongestCommonSubstring.getLongestCommonSubstringNaive("Please, peter go swimming!", "I'm peter goliswi"));
 	}
 
 	@Test
@@ -21,7 +21,7 @@ public class LongestCommonSubstringTest {
 		assertEquals("tutorial", LongestCommonSubstring.getLongestCommonSubstring("tutorialhorizon", "dynamictutorialProgramming"));
 		assertEquals("Site:Geeks",LongestCommonSubstring.getLongestCommonSubstring("OldSite:GeeksforGeeks.org", "NewSite:GeeksQuiz.com"));
 		assertEquals("kds",LongestCommonSubstring.getLongestCommonSubstring("alsdfkjfjkdsal", "fdjskalajfkdsla"));
-		assertEquals(" peter go",LongestCommonSubstring.getLongestCommonSubstring("Please, peter go swimming!", "I’m peter goliswi"));
+		assertEquals(" peter go",LongestCommonSubstring.getLongestCommonSubstring("Please, peter go swimming!", "I'm peter goliswi"));
 	}
 
 }
