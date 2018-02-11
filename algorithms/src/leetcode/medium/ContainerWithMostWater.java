@@ -15,7 +15,7 @@ public class ContainerWithMostWater {
 	 * @param height
 	 * @return
 	 */
-	public int maxArea(int[] height) {
+	public static int maxArea(int[] height) {
 		int left = 0, right = height.length - 1;
 		int maxArea = 0;
 		while (left < right) {
