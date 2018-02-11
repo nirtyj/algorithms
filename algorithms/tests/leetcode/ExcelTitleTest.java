@@ -4,6 +4,8 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import leetcode.easy.ExcelTitle;
+
 public class ExcelTitleTest {
 
 	@Test
