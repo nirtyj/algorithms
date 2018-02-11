@@ -1,9 +1,13 @@
-package leetcode.recursion;
+package leetcode.medium;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class LetterCombinations {
+/**
+Given a digit string, return all possible letter combinations that the number could represent.
+A mapping of digit to letters (just like on the telephone buttons) is given below.
+*/
+public class LetterCombinationsPhoneNumber {
 
 	private static final String[] M = new String[] { "0", "1", "ABC", "DEF", "GHI", "JKL", "MNO", "PQRS", "TUV",
 			"WXYZ" };

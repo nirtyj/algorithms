@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import leetcode.dynamic_programming.LongestPalindromicSubstring;
+import leetcode.medium.LongestPalindromicSubstring;
 
 public class LongestPalindromicSubstringTest {
 
