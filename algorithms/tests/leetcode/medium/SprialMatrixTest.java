@@ -1,8 +1,8 @@
-package leetcode.matrix;
+package leetcode.medium;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import org.junit.Test;
 
@@ -22,7 +22,7 @@ public class SprialMatrixTest {
 	@Test
 	public void test() {
 		int[][] maze = getMatrix();
-		ArrayList<Integer> result = SprialMatrix.spiralOrder(maze);
+		List<Integer> result = SprialMatrix.spiralOrder(maze);
 		for (Integer i = 1; i <= 25; i++)
 			assertEquals(i, result.get(i - 1));
 
@@ -40,7 +40,7 @@ public class SprialMatrixTest {
 	@Test
 	public void test2() {
 		int[][] maze = getMatrix2();
-		ArrayList<Integer> result = SprialMatrix.spiralOrder(maze);
+		List<Integer> result = SprialMatrix.spiralOrder(maze);
 		for (Integer i = 1; i <= 15; i++)
 			assertEquals(i, result.get(i - 1));
 
@@ -56,7 +56,7 @@ public class SprialMatrixTest {
 	@Test
 	public void test3() {
 		int[][] maze = getMatrix3();
-		ArrayList<Integer> result = SprialMatrix.spiralOrder(maze);
+		List<Integer> result = SprialMatrix.spiralOrder(maze);
 		for (Integer i = 1; i <= 5; i++)
 			assertEquals(i, result.get(i - 1));
 
@@ -76,9 +76,24 @@ public class SprialMatrixTest {
 	@Test
 	public void test4() {
 		int[][] maze = getMatrix4();
-		ArrayList<Integer> result = SprialMatrix.spiralOrder(maze);
+		List<Integer> result = SprialMatrix.spiralOrder(maze);
 		for (Integer i = 1; i <= 5; i++)
 			assertEquals((Integer)(i*2), result.get(i - 1));
+
+	}
+	
+	public static int[][] getMatrix5() {
+		int[][] matrix = {
+						 {2, 4}
+						 };
+		return matrix;
+	}
+	
+	@Test
+	public void test5() {
+		int[][] maze = getMatrix5();
+		List<Integer> result = SprialMatrix.spiralOrder(maze);
+		System.out.println();
 
 	}
 }
