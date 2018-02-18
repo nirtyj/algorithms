@@ -50,8 +50,13 @@ public class FlattenNestedListIterator {
 
 		@Override
 		public Integer next() {
-			if (next != null)
-				return next;
+			if(next == null)
+				next = findNext();
+			if (next != null) {
+				Integer temp = next;
+				next = null;
+				return temp;
+			}
 			throw new NoSuchElementException();
 		}
 
@@ -71,7 +76,8 @@ public class FlattenNestedListIterator {
 
 		@Override
 		public boolean hasNext() {
-			next = findNext();
+			if(next == null)
+				next = findNext();
 			return next != null ? true : false;
 		}
 	}
