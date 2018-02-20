@@ -20,6 +20,14 @@ Given n and k, return the kth permutation sequence.
 Note: Given n will be between 1 and 9 inclusive.
 */
 public class PermutationSequence {
+	
+	/**
+	 * Leetcode verified
+	 * https://leetcode.com/problems/permutation-sequence/discuss/22507/%22Explain-like-I'm-five%22-Java-Solution-in-O(n)
+	 * @param n
+	 * @param k
+	 * @return
+	 */
 	public String getPermutation(int n, int k) {
 		
 	    List<Integer> numbers = new ArrayList<>();
