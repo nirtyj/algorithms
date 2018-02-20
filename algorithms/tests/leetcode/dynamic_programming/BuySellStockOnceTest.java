@@ -4,7 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import leetcode.easy.BestTimeToBuyAndSellStock;
+import leetcode.buysellstocks.BestTimeToBuyAndSellStock;
 
 public class BuySellStockOnceTest {
 

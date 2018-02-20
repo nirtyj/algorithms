@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import leetcode.easy.BestTimeToBuyAndSellStockII;
+import leetcode.buysellstocks.BestTimeToBuyAndSellStockII;
 
 public class BuySellMaxNtimesTest {
 
