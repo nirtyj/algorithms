@@ -7,7 +7,7 @@ import java.util.List;
 
 import org.junit.Test;
 
-import leetcode.recursion.CombinationSum3;
+import leetcode.subsets_combinations.CombinationSum3;
 
 public class CombinationSum3Test {
 

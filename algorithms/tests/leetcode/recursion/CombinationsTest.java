@@ -7,7 +7,7 @@ import java.util.List;
 
 import org.junit.Test;
 
-import leetcode.recursion.Combinations;
+import leetcode.subsets_combinations.Combinations;
 
 public class CombinationsTest {
 
