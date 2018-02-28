@@ -11,12 +11,12 @@ public interface Buffer {
 	* Note this may be either a blocking
 	* or non-blocking operation.
 	*/
-	public abstract void insert(Object item);
+	public abstract void insert(Data item);
 
 	/**
 	* remove an item from the Buffer.
 	* Note this may be either a blocking
 	* or non-blocking operation.
 	*/
-	public abstract Object remove();
+	public abstract Data remove();
 }

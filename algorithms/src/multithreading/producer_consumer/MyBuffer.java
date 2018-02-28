@@ -1,11 +1,9 @@
 package multithreading.producer_consumer;
 
-import java.util.concurrent.Semaphore;
-
 public class MyBuffer implements Buffer {
 
 	private final int bufferSize;
-	Object[] buffer;
+	Data[] buffer;
 	private int count; //number of items currently in the buffer
 	private int in; // points to the next free position in the buffer
 	private int out; // points to the first filled position in the buffer
@@ -23,12 +21,12 @@ public class MyBuffer implements Buffer {
 		this.count = 0;
 		this.in = 0;
 		this.out = 0;
-		this.buffer = new Object[this.bufferSize];
+		this.buffer = new Data[this.bufferSize];
 		availableSpace = new MySemaphore(this.bufferSize);
 	}
 
 	@Override
-	public void insert(Object item) {
+	public void insert(Data item) {
 
 		try {
 			// wait untill there is available space - that is buffer size
@@ -42,7 +40,7 @@ public class MyBuffer implements Buffer {
 			if (id > 100 && id % 100 == 0)
 				System.out.println(" Time for " + id + " is " + (System.nanoTime() - start) * 1.0e-9);
 
-			Data data = (Data) item;
+			Data data = item;
 			data.data = data.data + " : " + id++;
 			System.out.println("<-" + data.data);
 			++count;
@@ -68,8 +66,8 @@ public class MyBuffer implements Buffer {
 	}
 
 	@Override
-	public Object remove() {
-		Object item = null;
+	public Data remove() {
+		Data item = null;
 
 		// wait until there is some space
 		try {
