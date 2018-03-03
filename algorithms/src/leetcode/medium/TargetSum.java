@@ -64,7 +64,8 @@ public class TargetSum {
 	}
 
 	/**
-	 * DP
+	 * DP - Same as knapsack
+	 * https://discuss.leetcode.com/assets/uploads/files/1485048726667-screen-shot-2017-01-21-at-8.31.48-pm.jpg
 	 * @param nums
 	 * @param s
 	 * @return
