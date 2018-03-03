@@ -22,26 +22,26 @@ public class LongestIncreasingSubsequence {
 	 * @return
 	 */
 	public static int lengthOfLISDp(int[] nums) {
-		int[] memory = new int[nums.length];
-
-		// by default their increasing subsequence is 1
-		Arrays.fill(memory, 1);
-
-		for (int i = 1; i < nums.length; i++) {
-			for (int j = 0; j < i; j++) {
-				// if its increasing then chose current max or 1 + previous max
-				if (nums[i] >= nums[j]) {
-					memory[i] = Math.max(memory[i], 1 + memory[j]);
-				}
-			}
-		}
-
-		int result = 0;
-		for (int i = 0; i < memory.length; i++) {
-			if (memory[i] > result)
-				result = memory[i];
-		}
-		return result;
+		if(nums == null || nums.length == 0)
+            return 0;
+        else if(nums.length==1)
+            return 1;
+        
+        int result = 1;
+        int[] maxlength = new int[nums.length];
+        Arrays.fill(maxlength, 1);
+        for(int i=1;i<nums.length;i++)
+        {
+            for(int j=0;j<i;j++)
+            {
+                if(nums[j] < nums[i]){
+                    maxlength[i] = Math.max(maxlength[i], (maxlength[j] + 1));
+                    result = Math.max(maxlength[i], result);
+                }
+                    
+            }
+        }
+        return result;
 	}
 	
 	/**
