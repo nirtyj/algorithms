@@ -32,7 +32,7 @@ The length of accounts[i][j] will be in the range [1, 30]
 */
 public class AccountsMerge {
 	
-	class DSU {
+	static class DSU {
 		int[] parent;
 
 		public DSU() {
@@ -57,7 +57,7 @@ public class AccountsMerge {
 	 * @param accounts
 	 * @return
 	 */
-	public List<List<String>> accountsMerge(List<List<String>> accounts) {
+	public static List<List<String>> accountsMerge(List<List<String>> accounts) {
         DSU dsu = new DSU();
         Map<String, String> emailToName = new HashMap<>();
         Map<String, Integer> emailToID = new HashMap<>();
