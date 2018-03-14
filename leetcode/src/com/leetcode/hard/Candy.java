@@ -24,7 +24,7 @@ public class Candy {
 		int[] candies = new int[ratings.length];
 		candies[0] = 1;
 	 
-		//from let to right
+		//from left to right
 		for (int i = 1; i < ratings.length; i++) {
 			if (ratings[i] > ratings[i - 1]) {
 				candies[i] = candies[i - 1] + 1;
