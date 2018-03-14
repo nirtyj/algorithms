@@ -1,4 +1,4 @@
-package leetcode;
+package com.leetcode.hard;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -7,15 +7,26 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * Leetcode verified
- * @author njaganathan
- *
- */
+Remove the minimum number of invalid parentheses in order to make the input string valid. Return all possible results.
+
+Note: The input string may contain letters other than the parentheses ( and ).
+
+Examples:
+"()())()" -> ["()()()", "(())()"]
+"(a)())()" -> ["(a)()()", "(a())()"]
+")(" -> [""]
+
+*/
 public class RemoveInvalidParanthesis {
 
 	Set<String> result = new HashSet<String>();
 	int max = 0;
-
+	
+	/**
+	 * Leetcode verified
+	 * @param s
+	 * @return
+	 */
 	public List<String> removeInvalidParentheses(String s) {
 		if (s == null)
 			return Collections.emptyList();

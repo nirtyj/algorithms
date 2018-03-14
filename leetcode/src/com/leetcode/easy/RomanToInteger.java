@@ -1,13 +1,12 @@
-package leetcode;
+package com.leetcode.easy;
 
 import java.util.HashMap;
 
 /**
- * Leetcode verified
- * 
- * @author njaganathan
- *
- */
+Given a roman numeral, convert it to an integer.
+
+Input is guaranteed to be within the range from 1 to 3999.
+*/
 public class RomanToInteger {
 
 	private static HashMap<Character, Integer> map = new HashMap<Character, Integer>();
@@ -21,6 +20,11 @@ public class RomanToInteger {
 		map.put('M', 1000);
 	}
 
+	/**
+	 * Leetcode verified
+	 * @param s
+	 * @return
+	 */
 	public static int romanToInt(String s) {
 		int sum = 0;
 		int prev = 0;
