@@ -1,4 +1,4 @@
-package leetcode;
+package com.leetcode.common;
 
 public class Interval {
 	public Interval(int start, int end) {
@@ -6,8 +6,8 @@ public class Interval {
 		this.end = end;
 	}
 
-	protected int start;
-	protected int end;
+	public int start;
+	public int end;
 
 	@Override
 	public String toString() {

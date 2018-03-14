@@ -1,23 +1,24 @@
-package leetcode;
+package com.leetcode.medium;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
+/**
+Given an array of strings, group anagrams together.
+
+For example, given: ["eat", "tea", "tan", "ate", "nat", "bat"], 
+Return:
+
+[
+  ["ate", "eat","tea"],
+  ["nat","tan"],
+  ["bat"]
+]
+*/
 public class GroupAnagrams {
-	/*
-	Given an array of strings, group anagrams together.
-	
-	For example, given: ["eat", "tea", "tan", "ate", "nat", "bat"], 
-	Return:
-	
-	[
-	  ["ate", "eat","tea"],
-	  ["nat","tan"],
-	  ["bat"]
-	]
-	*/
+
 	/**
 	 * Leetcode verified
 	 * @param strs

@@ -1,8 +1,10 @@
-package leetcode;
+package com.leetcode.medium;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
+
+import com.leetcode.common.Interval;
 
 public class MeetingRoomsII {
 
