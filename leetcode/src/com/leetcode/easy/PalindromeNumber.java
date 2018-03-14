@@ -1,35 +1,9 @@
-package leetcode;
+package com.leetcode.easy;
 
+/**
+Determine whether an integer is a palindrome. Do this without extra space.
+*/
 public class PalindromeNumber {
-
-	/**
-	 * Uses division and modulus to calculate if its palindrome
-	 * 
-	 * @param num
-	 * @return
-	 */
-	public static boolean isPalindrome(int num) {
-		if (num < 0)
-			return false;
-		else if (num == 0)
-			return true;
-
-		// MSB mask
-		int div = 1;
-		while (num / div > 10) {
-			div = div * 10;
-		}
-
-		while (num != 0) {
-			int msb = num / div;
-			int lsb = num % 10;
-			if (lsb != msb)
-				return false;
-			num = (num % div) / 10;
-			div = div / 100;
-		}
-		return true;
-	}
 
 	/**
 	 * Uses division and modulus to calculate if its palindrome

@@ -1,11 +1,12 @@
-package leetcode;
-
+package com.leetcode.medium;
 /**
- * Leetcode verified
- * @author njaganathan
- *
- */
+Given two strings S and T, determine if they are both one edit distance apart.
+*/
 public class OneEditDistance {
+
+	/**
+	 * Leetcode verified
+	 */
 	public boolean isOneEditDistance(String s, String t) {
 		// if lengths differ more than 1 - false
 		if (Math.abs(s.length() - t.length()) > 1)
