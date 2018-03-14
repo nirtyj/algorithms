@@ -1,4 +1,4 @@
-package leetcode;
+package com.leetcode.medium;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -8,13 +8,31 @@ import java.util.List;
 import java.util.Map;
 import java.util.Queue;
 
-import epi.binarytree.node.TreeNode;
+import com.leetcode.common.TreeNode;
 
 /**
- * Leetcode verified
- * @author njaganathan
- *
- */
+Given a binary tree, return the vertical order traversal of its nodes' values. (ie, from top to bottom, column by column).
+
+If two nodes are in the same row and column, the order should be from left to right.
+
+Examples:
+
+Given binary tree [3,9,20,null,null,15,7],
+   3
+  /\
+ /  \
+ 9  20
+    /\
+   /  \
+  15   7
+return its vertical order traversal as:
+[
+  [9],
+  [3,15],
+  [20],
+  [7]
+]
+*/
 public class BinaryTreeVerticalOrderTraversal {
 
 	int minKey = 0;
