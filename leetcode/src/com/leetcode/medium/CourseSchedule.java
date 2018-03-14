@@ -1,11 +1,11 @@
-package leetcode;
+package com.leetcode.medium;
 
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Queue;
 
-/*
+/**
 There are a total of n courses you have to take, labeled from 0 to n - 1.
 
 Some courses may have prerequisites, for example to take course 0 you have to first take course 1, which is expressed as a pair: [0,1]
@@ -24,7 +24,6 @@ public class CourseSchedule {
 
 	/**
 	 * BFS- leetcode verified
-	 * 
 	 * @param numCourses
 	 * @param prerequisites
 	 * @return
