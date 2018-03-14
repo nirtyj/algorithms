@@ -1,41 +1,13 @@
-package leetcode;
+package com.leetcode.medium;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
- * Linear Time Majority Vote Algorithm
- * 
- * @author njaganathan
- */
-public class MajorityElement {
-
-	public static int majorityElement(int[] nums) {
-
-		int result = nums[0];
-		int count = 0;
-
-		for (int n : nums) {
-			if (count == 0) {
-				result = n;
-				count++;
-			} else if (result == n) {
-				count++;
-			} else {
-				count--;
-			}
-		}
-		return result;
-	}
-
-	public int majorityElement2(int[] num) {
-		if (num.length == 1) {
-			return num[0];
-		}
-		Arrays.sort(num);
-		return num[num.length / 2];
-	}
+Given an integer array of size n, find all elements that appear more than n/3  times. 
+The algorithm should run in linear time and in O(1) space.
+*/
+public class MajorityElementII {
 
 	/**
 	 * Majority element is more than 1/3 of the size of the array. 2 possible
@@ -44,7 +16,7 @@ public class MajorityElement {
 	 * @param nums
 	 * @return
 	 */
-	public static List<Integer> majorityElementn3(int[] nums) {
+	public static List<Integer> majorityElement(int[] nums) {
 		List<Integer> result = new ArrayList<Integer>();
 
 		Integer n1 = null, n2 = null;
