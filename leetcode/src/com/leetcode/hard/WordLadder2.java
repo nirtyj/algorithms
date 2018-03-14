@@ -1,4 +1,4 @@
-package leetcode;
+package com.leetcode.hard;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -11,13 +11,18 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * Breadth first search. optimal - Not optimal enough -- 30/39 cases passed .
- * time limit exceeded
- * 
- * @author njaganathan
- *
- */
-public class WordLadderII {
+Given two words (beginWord and endWord), and a dictionary's word list, find all shortest transformation sequence(s) from beginWord to endWord, such that:
+
+Only one letter can be changed at a time
+Each transformed word must exist in the word list. Note that beginWord is not a transformed word.
+For example,
+
+Given:
+beginWord = "hit"
+endWord = "cog"
+wordList = ["hot","dot","dog","lot","log","cog"]
+*/
+public class WordLadder2 {
 
 	private static class WordNode {
 		String word;
@@ -32,7 +37,11 @@ public class WordLadderII {
 
 		LinkedHashSet<String> wordsVisited = new LinkedHashSet<String>();
 	}
-
+	
+	/**
+	 * Breadth first search. optimal - Not optimal enough -- 30/39 cases passed .
+	 * time limit exceeded
+	 */
 	public static List<List<String>> findLadders(String beginWord, String endWord, List<String> wordList) {
 
 		Set<String> wordDict = new HashSet<>(wordList);
@@ -134,5 +143,78 @@ public class WordLadderII {
 		System.out.println();
 
 	}
+	
+	
+	/**
+	 * DFS - Time limit exceeded
+	 */
+	private static int minSteps = Integer.MAX_VALUE;
+	public static List<List<String>> findLaddersDFS(String beginWord, String endWord, List<String> wordList) {
+		Set<String> wordDict = new HashSet<>(wordList);
+		minSteps = Integer.MAX_VALUE;
 
+		if (beginWord.equals(endWord))
+			return Collections.emptyList();
+
+		wordList.add(beginWord);
+		wordList.add(endWord);
+		Map<Integer, HashSet<Character>> characterMap = new HashMap<>();
+		for (String word : wordList) {
+			for (int i = 0; i < word.length(); i++) {
+				HashSet<Character> chars = characterMap.get(i);
+				if (chars == null) {
+					chars = new HashSet<Character>();
+					characterMap.put(i, chars);
+				}
+				chars.add(word.charAt(i));
+			}
+		}
+
+		LinkedList<String> list = new LinkedList<String>();
+		list.add(beginWord);
+
+		List<List<String>> result = new ArrayList<>();
+		ladderInner(list, endWord, wordDict, characterMap, result);
+		return result;
+	}
+
+	public static void ladderInner(LinkedList<String> list, String endWord, Set<String> wordDict,
+			Map<Integer, HashSet<Character>> characterMap, List<List<String>> result) {
+		String last = list.getLast();
+		if (list.size() > minSteps) {
+			return;
+		}
+		if (last.equals(endWord)) {
+			if (list.size() <= minSteps) {
+				if (list.size() < minSteps) {
+					result.clear();
+				}
+				minSteps = list.size();
+				result.add(new ArrayList<>(list));
+			}
+			return;
+		}
+
+		char[] arr = last.toCharArray();
+		for (int i = 0; i < arr.length; i++) {
+			HashSet<Character> chars = characterMap.get(i);
+			for (char c : chars) {
+				char temp = arr[i];
+
+				arr[i] = c;
+				String newWord = new String(arr);
+				if (!newWord.equals(last) && wordDict.contains(newWord)) {
+					list.add(newWord);
+					wordDict.remove(newWord);
+
+					ladderInner(list, endWord, wordDict, characterMap, result);
+
+					list.removeLast();
+					wordDict.add(newWord);
+				}
+
+				arr[i] = temp;
+			}
+		}
+	}
 }
