@@ -1,19 +1,20 @@
-package leetcode;
+package com.leetcode;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import java.util.List;
 
 import org.junit.Test;
 
-import utils.TestUtils;
+import com.leetcode.hard.WordLadderII;
+import com.leetcode.utils.LeetcodeUtils;
 
 public class WordLadderIITest {
 
 	@Test
 	public void test() {
 		String[] dictArr = { "hot", "dog", "dot" };
-		List<String> dict = TestUtils.arrayToList(dictArr);
+		List<String> dict = LeetcodeUtils.arrayToList(dictArr);
 		assertEquals(3, WordLadderII.findLadders("hot", "dog", dict).get(0).size());
 	}
 
@@ -26,14 +27,14 @@ public class WordLadderIITest {
 				"os", "uh", "wm", "an", "me", "mo", "na", "la", "st", "er", "sc", "ne", "mn", "mi", "am", "ex", "pt",
 				"io", "be", "fm", "ta", "tb", "ni", "mr", "pa", "he", "lr", "sq", "ye" };
 
-		List<String> dict = TestUtils.arrayToList(dictArr);
+		List<String> dict = LeetcodeUtils.arrayToList(dictArr);
 		assertEquals(5, WordLadderII.findLadders("qa", "sq", dict).get(0).size());
 	}
 
 	@Test
 	public void test3() {
 		String[] dictArr = { "hot", "dot", "dog", "lot", "log", "cog" };
-		List<String> dict = TestUtils.arrayToList(dictArr);
+		List<String> dict = LeetcodeUtils.arrayToList(dictArr);
 		assertEquals(2, WordLadderII.findLadders("hit", "cog", dict).size());
 	}
 }

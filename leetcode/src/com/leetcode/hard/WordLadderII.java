@@ -22,7 +22,7 @@ beginWord = "hit"
 endWord = "cog"
 wordList = ["hot","dot","dog","lot","log","cog"]
 */
-public class WordLadder2 {
+public class WordLadderII {
 
 	private static class WordNode {
 		String word;

@@ -1,8 +1,10 @@
-package leetcode;
+package com.leetcode;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
+
+import com.leetcode.easy.PalindromeNumber;
 
 public class PalindromeNumberTest {
 

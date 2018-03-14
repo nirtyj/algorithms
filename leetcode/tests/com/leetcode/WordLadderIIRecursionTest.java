@@ -1,20 +1,21 @@
-package leetcode;
+package com.leetcode;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import java.util.List;
 
 import org.junit.Test;
 
-import utils.TestUtils;
+import com.leetcode.hard.WordLadderII;
+import com.leetcode.utils.LeetcodeUtils;
 
 public class WordLadderIIRecursionTest {
 
 	@Test
 	public void test() {
 		String[] dictArr = { "hot", "dog", "dot" };
-		List<String> dict = TestUtils.arrayToList(dictArr);
-		assertEquals(1, WordLadderRecursion.findLadders("hot", "dog", dict).size());
+		List<String> dict = LeetcodeUtils.arrayToList(dictArr);
+		assertEquals(1, WordLadderII.findLadders("hot", "dog", dict).size());
 	}
 
 	@Test
@@ -26,7 +27,7 @@ public class WordLadderIIRecursionTest {
 				"os", "uh", "wm", "an", "me", "mo", "na", "la", "st", "er", "sc", "ne", "mn", "mi", "am", "ex", "pt",
 				"io", "be", "fm", "ta", "tb", "ni", "mr", "pa", "he", "lr", "sq", "ye" };
 
-		List<String> dict = TestUtils.arrayToList(dictArr);
-		assertEquals(51, WordLadderRecursion.findLadders("qa", "sq", dict).size());
+		List<String> dict = LeetcodeUtils.arrayToList(dictArr);
+		assertEquals(51, WordLadderII.findLadders("qa", "sq", dict).size());
 	}
 }

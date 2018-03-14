@@ -1,4 +1,4 @@
-package leetcode;
+package com.leetcode.hard;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -6,7 +6,18 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 
-public class WordBreak2 {
+/**
+Given a non-empty string s and a dictionary wordDict containing a list of non-empty words, add spaces in s to construct a sentence where each word is a valid dictionary word. You may assume the dictionary does not contain duplicate words.
+
+Return all such possible sentences.
+
+For example, given
+s = "catsanddog",
+dict = ["cat", "cats", "and", "sand", "dog"].
+
+A solution is ["cats and dog", "cat sand dog"].
+*/
+public class WordBreakII {
 
 	/**
 	 * Leetcode verified

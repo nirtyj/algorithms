@@ -1,8 +1,11 @@
-package leetcode;
+package com.leetcode;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
+
+import com.leetcode.common.Interval;
+import com.leetcode.easy.MeetingRooms;
 
 public class MeetingRoomsTest {
 

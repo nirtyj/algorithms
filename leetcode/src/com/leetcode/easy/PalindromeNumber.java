@@ -11,7 +11,7 @@ public class PalindromeNumber {
 	 * @param num
 	 * @return
 	 */
-	public boolean isPalindromeMath(int num) {
+	public static boolean isPalindrome(int num) {
 		if (num < 0)
 			return false;
 		else if (num == 0)

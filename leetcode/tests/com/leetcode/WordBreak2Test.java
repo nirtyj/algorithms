@@ -1,11 +1,13 @@
-package leetcode;
+package com.leetcode;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Test;
+
+import com.leetcode.hard.WordBreakII;
 
 public class WordBreak2Test {
 
@@ -14,7 +16,7 @@ public class WordBreak2Test {
 		List<String> dict = new ArrayList<String>();
 		dict.add("leet");
 		dict.add("code");
-		assertNotNull(WordBreak2.wordBreak("leetcode", dict));
+		assertNotNull(WordBreakII.wordBreak("leetcode", dict));
 	}
 	
 
@@ -26,14 +28,14 @@ public class WordBreak2Test {
 		dict.add("and");
 		dict.add("sand");
 		dict.add("dog");
-		assertNotNull(WordBreak2.wordBreak("catsanddog", dict));
+		assertNotNull(WordBreakII.wordBreak("catsanddog", dict));
 	}
 	
 	@Test
 	public void test3() {
 		List<String> dict = new ArrayList<String>();
 		dict.add("b");
-		assertNotNull(WordBreak2.wordBreak("a", dict));
+		assertNotNull(WordBreakII.wordBreak("a", dict));
 	}
 }
 

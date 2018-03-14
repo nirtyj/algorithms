@@ -1,10 +1,13 @@
-package leetcode;
+package com.leetcode;
 
 import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;
 
 import org.junit.Test;
+
+import com.leetcode.common.Interval;
+import com.leetcode.medium.MergeIntervals;
 
 public class MergeIntervalsTest {
 

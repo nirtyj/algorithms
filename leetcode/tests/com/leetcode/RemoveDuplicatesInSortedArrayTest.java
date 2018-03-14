@@ -1,8 +1,8 @@
-package leetcode;
-
-import static org.junit.Assert.*;
+package com.leetcode;
 
 import org.junit.Test;
+
+import com.leetcode.easy.RemoveDuplicatesInSortedArray;
 
 public class RemoveDuplicatesInSortedArrayTest {
 

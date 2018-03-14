@@ -1,10 +1,12 @@
-package leetcode;
+package com.leetcode;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import java.util.Arrays;
 
 import org.junit.Test;
+
+import com.leetcode.easy.MoveZeros;
 
 public class MoveZerosTest {
 

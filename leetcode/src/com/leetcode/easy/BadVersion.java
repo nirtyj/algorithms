@@ -11,7 +11,7 @@ Implement a function to find the first bad version. You should minimize the numb
 public class BadVersion {
 	int val;
 
-	BadVersion(int badVersion) {
+	public BadVersion(int badVersion) {
 		val = badVersion;
 	}
 
