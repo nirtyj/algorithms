@@ -1,4 +1,4 @@
-package careercup.facebook;
+package com.circularbuffer;
 
 import java.util.NoSuchElementException;
 

@@ -1,4 +1,4 @@
-package careercup.facebook;
+package com.circularbuffer;
 
 /**
  * Implement circular buffer with read & write functions
