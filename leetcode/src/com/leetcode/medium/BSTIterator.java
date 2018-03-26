@@ -1,18 +1,22 @@
-package epi.binarysearchtree;
+package com.leetcode.medium;
 
 import java.util.Stack;
 
-import epi.binarytree.node.TreeNode;
+import com.leetcode.common.TreeNode;
 
 /**
- * Leetcode verfied
- * @author njaganathan
- */
-public class BSTIterator {
+Implement an iterator over a binary search tree (BST). Your iterator will be initialized with the root node of a BST.
 
+Calling next() will return the next smallest number in the BST.
+
+Note: next() and hasNext() should run in average O(1) time and uses O(h) memory, where h is the height of the tree.
+*/
+public class BSTIterator {
+	/**
+	 * Leetcode verified
+	 */
 	Stack<TreeNode> stack = null;
 
-	// push all the left
 	public BSTIterator(TreeNode root) {
 		stack = new Stack<TreeNode>();
 		if (root != null) {
@@ -28,7 +32,6 @@ public class BSTIterator {
 		return !stack.isEmpty();
 	}
 
-	// for a node you pop, see if you have right node, and push all the left of right node
 	/** @return the next smallest number */
 	public int next() {
 		TreeNode node = stack.pop();
