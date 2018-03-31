@@ -9,7 +9,7 @@ the contiguous subarray [4,-1,2,1] has the largest sum = 6.
 public class MaximumSubarraySum {
 	
 	/**
-	 * Leetcode verified
+	 * Leetcode verified - Kadane's Algorithm
 	 * @param nums
 	 * @return
 	 */
