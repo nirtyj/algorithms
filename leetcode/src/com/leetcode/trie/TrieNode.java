@@ -1,4 +1,4 @@
-package epi.trie;
+package com.leetcode.trie;
 
 import java.util.HashMap;
 import java.util.Map;

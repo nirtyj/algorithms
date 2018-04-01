@@ -1,17 +1,35 @@
-package epi.trie;
+package com.leetcode.trie;
 
 import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Leet code tested and verified
- * @author njaganat
- *
- */
+Design a data structure that supports the following two operations:
+
+void addWord(word)
+bool search(word)
+search(word) can search a literal word or a regular expression string containing only letters a-z or .. A . means it can represent any one letter.
+
+For example:
+
+addWord("bad")
+addWord("dad")
+addWord("mad")
+search("pad") -> false
+search("bad") -> true
+search(".ad") -> true
+search("b..") -> true
+Note:
+You may assume that all words are consist of lowercase letters a-z
+*/
 public class AddAndSearchWord {
 
 	TrieNode root = new TrieNode();
-
+	
+	/**
+	 * Leetcode verified
+	 * @param word
+	 */
 	public void addWord(String word) {
 		HashMap<Character, TrieNode> map = root.children;
 		for (int i = 0; i < word.length(); i++) {

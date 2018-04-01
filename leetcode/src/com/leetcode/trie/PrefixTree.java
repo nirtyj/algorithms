@@ -1,16 +1,15 @@
-package epi.trie;
+package com.leetcode.trie;
 
 import java.util.HashMap;
 
 /**
- * Leetcode verified
- * 
- * @author njaganathan
- */
+Implement a trie with insert, search, and startsWith methods.
+*/
 public class PrefixTree {
 	TrieNode root;
 
-	/** Initialize your data structure here. */
+	/** Initialize your data structure here.
+	 * Leetcode verified */
 	public PrefixTree() {
 		root = new TrieNode();
 	}
