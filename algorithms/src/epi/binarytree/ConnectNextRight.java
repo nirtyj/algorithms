@@ -4,42 +4,8 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 import epi.binarytree.node.BinaryTreeNode;
-import epi.binarytree.node.TreeLinkNode;
 
 public class ConnectNextRight {
-
-	/**
-	 * Verified by leetcode
-	 * 
-	 * @param root
-	 */
-	public void connect(TreeLinkNode root) {
-		if (root == null)
-			return;
-		Queue<TreeLinkNode> queue = new LinkedList<TreeLinkNode>();
-		root.next = null;
-		queue.add(root);
-		recurseHelperTreeLink(queue);
-	}
-
-	private static void recurseHelperTreeLink(Queue<TreeLinkNode> queue) {
-		Queue<TreeLinkNode> subqueue = new LinkedList<TreeLinkNode>();
-		TreeLinkNode prev = null;
-		while (!queue.isEmpty()) {
-			TreeLinkNode curr = queue.poll();
-			if (prev != null) {
-				prev.next = curr;
-			}
-			prev = curr;
-			if (curr.left != null)
-				subqueue.add(curr.left);
-			if (curr.right != null)
-				subqueue.add(curr.right);
-		}
-
-		if (!subqueue.isEmpty())
-			recurseHelperTreeLink(subqueue);
-	}
 
 	public static void constructRightSibling(BinaryTreeNode<Integer> root) {
 		if (root == null)

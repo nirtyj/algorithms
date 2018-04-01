@@ -34,7 +34,7 @@ public class ReverseSubLinkedList {
 		finishNode.next = null;
 
 		//reverse the sublist
-		LinkedListNode reversed = ReverseLinkedList.reverseListIterative(startNode);
+		LinkedListNode reversed = ReverseLinkedList.reverseList(startNode);
 
 		// attach the old end to new reversed
 		listEnd.next = reversed;

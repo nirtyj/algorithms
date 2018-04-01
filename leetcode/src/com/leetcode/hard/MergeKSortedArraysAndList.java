@@ -1,12 +1,15 @@
-package epi.heaps;
+package com.leetcode.hard;
 
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.PriorityQueue;
 
-import epi.linkedlist.node.ListNode;
+import com.leetcode.common.ListNode;
 
+/**
+Merge k sorted linked lists and return it as one sorted list. Analyze and describe its complexity.
+*/
 public class MergeKSortedArraysAndList {
 
 	Comparator<ListNode> comp = new Comparator<ListNode>() {

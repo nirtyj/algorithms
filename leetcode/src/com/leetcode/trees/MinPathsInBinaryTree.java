@@ -1,7 +1,12 @@
-package epi.binarytree;
+package com.leetcode.trees;
 
-import epi.binarytree.node.BinaryTreeNode;
+import com.leetcode.common.TreeNode;
 
+/**
+Given a binary tree, find its minimum depth.
+
+The minimum depth is the number of nodes along the shortest path from the root node down to the nearest leaf node.
+*/
 public class MinPathsInBinaryTree {
 
 	static int minVal = Integer.MAX_VALUE;
@@ -11,14 +16,14 @@ public class MinPathsInBinaryTree {
 	 * @param root
 	 * @return
 	 */
-	public static int minDepth(BinaryTreeNode<Integer> root) {
+	public static int minDepth(TreeNode root) {
 		if (root == null)
 			return 0;
 		helper(root, 1);
 		return minVal;
 	}
 
-	public static void helper(BinaryTreeNode<Integer> root, int depth) {
+	public static void helper(TreeNode root, int depth) {
 		if (root.left == null && root.right == null) {
 			minVal = Math.min(minVal, depth);
 			return;

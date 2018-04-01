@@ -8,12 +8,6 @@ import java.util.Set;
 
 public class PowerSet {
 
-	/**
-	 * Leetcode verified
-	 * 
-	 * @param nums
-	 * @return
-	 */
 	public List<List<Integer>> subsets(int[] nums) {
 		List<List<Integer>> ps = new ArrayList<>();
 		ps.add(new ArrayList<Integer>()); // add the empty set
