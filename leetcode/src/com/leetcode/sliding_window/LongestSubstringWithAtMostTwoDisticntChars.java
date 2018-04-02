@@ -1,7 +1,6 @@
 package com.leetcode.sliding_window;
 
 import java.util.HashMap;
-import java.util.Map;
 
 /**
 Given a string, find the length of the longest substring T that contains at most 2 distinct characters.
@@ -17,24 +16,29 @@ public class LongestSubstringWithAtMostTwoDisticntChars {
 	 * @return
 	 */
 	public int lengthOfLongestSubstringTwoDistinct(String s) {
-		Map<Character, Integer> map = new HashMap<>();
-		int start = 0, end = 0, counter = 0, len = 0;
+		HashMap<Character, Integer> map = new HashMap<>();
+		int begin = 0;
+		int end = 0;
+		int maxLength = 0;
+		int counter = 0;
 		while (end < s.length()) {
 			char c = s.charAt(end);
 			map.put(c, map.getOrDefault(c, 0) + 1);
 			if (map.get(c) == 1)
-				counter++;// new char
+				counter++;
 			end++;
+
 			while (counter > 2) {
-				char cTemp = s.charAt(start);
-				map.put(cTemp, map.get(cTemp) - 1);
-				if (map.get(cTemp) == 0) {
+				char beginC = s.charAt(begin);
+				map.put(beginC, map.get(beginC) - 1);
+				if (map.get(beginC) == 0) {
 					counter--;
 				}
-				start++;
+				begin++;
 			}
-			len = Math.max(len, end - start);
+			// update max
+			maxLength = Math.max(end - begin, maxLength);
 		}
-		return len;
+		return maxLength;
 	}
 }

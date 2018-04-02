@@ -58,10 +58,10 @@ public class FindAllAnagramsInAString {
 			end++;
 
 			while (counter == 0) {
-				char tempc = s.charAt(begin);
-				if (map.containsKey(tempc)) {
-					map.put(tempc, map.get(tempc) + 1);
-					if (map.get(tempc) > 0) {
+				char beginC = s.charAt(begin);
+				if (map.containsKey(beginC)) {
+					map.put(beginC, map.get(beginC) + 1);
+					if (map.get(beginC) > 0) {
 						counter++;
 					}
 				}
@@ -74,5 +74,4 @@ public class FindAllAnagramsInAString {
 		}
 		return result;
 	}
-
 }

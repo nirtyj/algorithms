@@ -27,43 +27,52 @@ public class MinimumWindowSubstring {
 	public String minWindow(String s, String t) {
 		if (t.length() > s.length())
 			return "";
-		Map<Character, Integer> map = new HashMap<>();
-		for (char c : t.toCharArray()) {
-			map.put(c, map.getOrDefault(c, 0) + 1);
+		
+		HashMap<Character, Integer> map = new HashMap<>();
+		for (int i = 0; i < t.length(); i++) {
+			int count = map.getOrDefault(t.charAt(i), 0);
+			map.put(t.charAt(i), ++count);
 		}
+
 		int counter = map.size();
-
-		int begin = 0, end = 0;
+		int begin = 0;
+		int end = 0;
+		int minLength = Integer.MAX_VALUE;
 		int head = 0;
-		int len = Integer.MAX_VALUE;
-
 		while (end < s.length()) {
+
 			char c = s.charAt(end);
 			if (map.containsKey(c)) {
-				map.put(c, map.get(c) - 1);
-				if (map.get(c) == 0)
+				int hitCounter = map.get(c);
+				hitCounter--;
+				map.put(c, hitCounter);
+				if (map.get(c) == 0) {
 					counter--;
+				}
 			}
 			end++;
-
 			while (counter == 0) {
-				char tempc = s.charAt(begin);
-				if (map.containsKey(tempc)) {
-					map.put(tempc, map.get(tempc) + 1);
-					if (map.get(tempc) > 0) {
+				char beginC = s.charAt(begin);
+				if (map.containsKey(beginC)) {
+					int hitCounter = map.get(beginC);
+					hitCounter++;
+					map.put(beginC, hitCounter);
+					if (map.get(beginC) > 0) {
 						counter++;
 					}
 				}
-				if (end - begin < len) {
-					len = end - begin;
+
+				if (end - begin < minLength) {
+					minLength = end - begin;
 					head = begin;
 				}
 				begin++;
 			}
-
 		}
-		if (len == Integer.MAX_VALUE)
+
+		if (minLength == Integer.MAX_VALUE)
 			return "";
-		return s.substring(head, head + len);
+		return s.substring(head, head + minLength);
+
 	}
 }

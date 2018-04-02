@@ -23,58 +23,35 @@ public class LongestSubstringWithoutRepeatingCharacters {
 	 * @param s
 	 * @return
 	 */
-	public static int lengthOfLongestSubstringMine(String s) {
-		if (s == null || s.length() == 0)
-			return 0;
-		if (s.length() == 1)
-			return 1;
-
-		int i = 0;
-		int maxLength = 1;
-		HashMap<Character, Integer> chars = new HashMap<>();
-		chars.put(s.charAt(i), 0);
-		for (int j = 1; j < s.length(); j++) {
-			// if there is already a character seen, move i to that position + 1
-			// also make sure, you dont go back on the i. hence the max of current i vs the
-			// next i
-			// next i should always be higher than the current
-			if (chars.containsKey(s.charAt(j))) {
-				i = Math.max(i, chars.get(s.charAt(j)) + 1);
-			}
-
-			// put the current char
-			chars.put(s.charAt(j), j);
-
-			// find the max length
-			maxLength = Math.max(maxLength, j - i + 1);
-		}
-		return maxLength;
-	}
-
-	public static int lengthOfLongestSubstring(String s) {
-		Map<Character, Integer> map = new HashMap<>();
-		int begin = 0, end = 0, counter = 0, d = 0;
-
+	public int lengthOfLongestSubstring(String s) {
+		HashMap<Character, Integer> map = new HashMap<>();
+		int begin = 0;
+		int end = 0;
+		int maxLength = 0;
+		int counter = 0;
 		while (end < s.length()) {
-			// > 0 means repeating character
-			// if(map[s.charAt(end++)]-- > 0) counter++;
 			char c = s.charAt(end);
 			map.put(c, map.getOrDefault(c, 0) + 1);
+			// one char which is unique. size is 1
 			if (map.get(c) > 1)
 				counter++;
 			end++;
 
 			while (counter > 0) {
-				// if (map[s.charAt(begin++)]-- > 1) counter--;
-				char charTemp = s.charAt(begin);
-				if (map.get(charTemp) > 1)
-					counter--;
-				map.put(charTemp, map.get(charTemp) - 1);
+				char beginC = s.charAt(begin);
+				if (map.containsKey(beginC)) {
+					// decrement counter as long as its greater than 1
+					if (map.get(beginC) > 1) {
+						counter--;
+					}
+					map.put(beginC, map.get(beginC) - 1);
+				}
 				begin++;
 			}
-			d = Math.max(d, end - begin);
+			// update max
+			maxLength = Math.max(end - begin, maxLength);
 		}
-		return d;
-	}
 
+		return maxLength;
+	}
 }
