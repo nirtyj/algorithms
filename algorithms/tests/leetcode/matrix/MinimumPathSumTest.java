@@ -4,6 +4,8 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import com.leetcode.matrix.MinimumPathSum;
+
 public class MinimumPathSumTest {
 
 	public static int[][] getMatrix() {

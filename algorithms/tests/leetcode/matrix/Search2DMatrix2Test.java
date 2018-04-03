@@ -4,6 +4,8 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import com.leetcode.matrix.Search2DMatrix2;
+
 public class Search2DMatrix2Test {
 
 	public static int[][] getMatrix2() {

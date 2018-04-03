@@ -4,7 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import leetcode.matrix.MatrixPrintUtils;
+import utils.MatrixPrintUtils;
 
 public class PaintBooleanMatrixTest {
 

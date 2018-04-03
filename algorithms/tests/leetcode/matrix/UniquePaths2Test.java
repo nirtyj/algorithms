@@ -4,6 +4,8 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
+import com.leetcode.matrix.UniquePaths2;
+
 public class UniquePaths2Test {
 
 	public static int[][] getMatrix2() {

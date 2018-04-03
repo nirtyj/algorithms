@@ -10,8 +10,9 @@ public class LongestSubstringWithoutRepeatingCharsTest {
 
 	@Test
 	public void test() {
+		LongestSubstringWithoutRepeatingCharacters s = new LongestSubstringWithoutRepeatingCharacters();
 		String st = "abcabcbb";
-		assertEquals(3, LongestSubstringWithoutRepeatingCharacters.lengthOfLongestSubstring(st));
+		assertEquals(3, s.lengthOfLongestSubstring(st));
 	}
 
 }

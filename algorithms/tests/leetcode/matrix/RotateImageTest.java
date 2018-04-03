@@ -4,6 +4,8 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import com.leetcode.matrix.RotateImage;
+
 public class RotateImageTest {
 
 	

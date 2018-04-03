@@ -1,4 +1,4 @@
-package leetcode.matrix;
+package com.leetcode.matrix;
 
 public class MatrixMultiplication {
 	/**

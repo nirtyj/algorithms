@@ -4,6 +4,8 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
+import com.leetcode.matrix.NumberOfIslands;
+
 public class NumberOfIslandsTest {
 
 	public static int[][] getMatrix() {

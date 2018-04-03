@@ -1,9 +1,20 @@
-package leetcode.matrix;
+package com.leetcode.matrix;
 
+/**
+Given a m x n grid filled with non-negative numbers, find a path from top left to bottom right which minimizes the sum of all numbers along its path.
+
+Note: You can only move either down or right at any point in time.
+
+Example 1:
+[[1,3,1],
+ [1,5,1],
+ [4,2,1]]
+Given the above grid map, return 7. Because the path 1→3→1→1→1 minimizes the sum.
+*/
 public class MinimumPathSum {
 
 	/**
-	 * You can only move either down or right at any point in time.
+	 * Leetcode verified
 	 * @param grid
 	 * @return
 	 */
@@ -21,7 +32,7 @@ public class MinimumPathSum {
 			for (int j = 0; j < n; j++) {
 				// check for i-1, j-1 out of matrix range.
 				if((i-1)>=0 && (j-1)>=0)
-				{
+				{   // majority cases, min of from top to bottom or left to right with sum
 					dp[i][j] = grid[i][j] + Math.min(dp[i-1][j], dp[i][j-1]);
 				}
 				else if( (i-1)>=0 && (j -1)<0)
