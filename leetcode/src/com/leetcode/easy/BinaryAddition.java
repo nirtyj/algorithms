@@ -32,11 +32,7 @@ public class BinaryAddition {
 			}
 			sum += carry;
 			// if its more than two - may be because of carry
-			if (sum >= 2) {
-				carry = 1;
-			} else {
-				carry = 0;
-			}
+			carry = sum / 2;
 			// mod two as its always 0 or 1
 			sb.insert(0, (char) ((sum % 2) + '0'));
 			// reduce the index - goes to MSB
