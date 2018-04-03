@@ -1,7 +1,18 @@
-package leetcode.dynamic_programming;
+package com.leetcode.medium;
 
+/**
+Find the contiguous subarray within an array (containing at least one number) which has the largest product.
+
+For example, given the array [2,3,-2,4],
+the contiguous subarray [2,3] has the largest product = 6.
+*/
 public class MaxProductSubarray {
 
+	/**
+	 * Leetcode verified
+	 * @param nums
+	 * @return
+	 */
 	public static int maxProduct(int[] nums) {
 
 		if (nums == null || nums.length == 0)
@@ -31,10 +42,6 @@ public class MaxProductSubarray {
 			 */
 			min = Math.min(nums[i], Math.min(prev_max * nums[i], prev_min * nums[i]));
 			result = Math.max(result, max);
-			
-			System.out.println("val - " + nums[i]);
-			System.out.println("max - " + max);
-			System.out.println("min - " + min);
 		}
 
 		return result;

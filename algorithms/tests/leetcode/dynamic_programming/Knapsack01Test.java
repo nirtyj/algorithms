@@ -4,6 +4,8 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
+import dynamic_programming.Knapsack01;
+
 public class Knapsack01Test {
 
 	@Test

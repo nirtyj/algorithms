@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import leetcode.dynamic_programming.DistinctSubsequence;
+import com.leetcode.hard.DistinctSubsequence;
 
 public class DistinctSubsequenceTest {
 

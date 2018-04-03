@@ -4,6 +4,8 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import dynamic_programming.CoinChangeAllCombinations;
+
 public class CoinChangeAllCombinationsTest {
 
 	@Test

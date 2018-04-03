@@ -4,6 +4,8 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import dynamic_programming.JumpGame3;
+
 public class JumpGame3Test {
 
 	@Test

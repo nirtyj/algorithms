@@ -1,4 +1,4 @@
-package leetcode.dynamic_programming;
+package dynamic_programming;
 
 public class JumpGame3 {
 
