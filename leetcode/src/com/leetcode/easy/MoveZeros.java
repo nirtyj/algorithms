@@ -29,9 +29,7 @@ public class MoveZeros {
 			}
 			if (nextIndex >= nums.length)
 				break;
-			nums[currIndex] = nums[nextIndex];
-			currIndex++;
-			nextIndex++;
+			nums[currIndex++] = nums[nextIndex++];
 		}
 
 		for (int i = nums.length - 1; count > 0; i--) {

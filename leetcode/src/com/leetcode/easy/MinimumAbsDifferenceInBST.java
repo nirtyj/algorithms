@@ -24,12 +24,39 @@ The minimum absolute difference is 1, which is the difference between 2 and 1 (o
 */
 public class MinimumAbsDifferenceInBST {
 
+	int min = Integer.MAX_VALUE;
 	/**
 	 * Leetcode verified
 	 * @param root
 	 * @return
 	 */
 	public int getMinimumDifference(TreeNode root) {
+		min = Integer.MAX_VALUE;
+		recurseHelper(root.left, null, root);
+		recurseHelper(root.right, root, null);
+		return min;
+	}
+
+	private void recurseHelper(TreeNode current, TreeNode leftBound, TreeNode rightBound) {
+		if (current == null)
+			return;
+
+		if (leftBound != null)
+			min = Math.min(min, Math.abs(current.val - leftBound.val));
+
+		if (rightBound != null)
+			min = Math.min(min, Math.abs(current.val - rightBound.val));
+
+		recurseHelper(current.left, leftBound, current);
+		recurseHelper(current.right, current, rightBound);
+	}
+
+	/**
+	 * Leetcode verified
+	 * @param root
+	 * @return
+	 */
+	public int getMinimumDifferenceMoreSpace(TreeNode root) {
 		ArrayList<Integer> list = new ArrayList<Integer>();
 		recurseHelper(root, list);
 		int result = Integer.MAX_VALUE;

@@ -21,21 +21,14 @@ public class MergeSortedArray {
 		int writeIndex = m + n - 1;
 
 		while (i >= 0 && j >= 0) {
-			if (arr1[i] >= arr2[j]) {
-				arr1[writeIndex] = arr1[i];
-				writeIndex--;
-				i--;
-			} else {
-				arr1[writeIndex] = arr2[j];
-				writeIndex--;
-				j--;
-			}
+			if (arr1[i] >= arr2[j])
+				arr1[writeIndex--] = arr1[i--];
+			else
+				arr1[writeIndex--] = arr2[j]--;
 		}
 
 		while (j >= 0) {
-			arr1[writeIndex] = arr2[j];
-			writeIndex--;
-			j--;
+			arr1[writeIndex--] = arr2[j--];
 		}
 	}
 }

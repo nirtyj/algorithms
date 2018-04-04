@@ -1,6 +1,5 @@
 package com.leetcode.easy;
 
-import java.util.Comparator;
 import java.util.PriorityQueue;
 import java.util.Stack;
 
@@ -24,28 +23,26 @@ minStack.getMin();   --> Returns -2.
 */
 public class MinStack {
 
-	PriorityQueue<Integer> q;
+	int minValue = Integer.MAX_VALUE;
 	Stack<Integer> stack;
 
-	/** Leetcode verified */
+	/** initialize your data structure here. */
 	public MinStack() {
-		q = new PriorityQueue<Integer>(new Comparator<Integer>() {
-			@Override
-			public int compare(Integer o1, Integer o2) {
-				return Integer.compare(o1, o2);
-			}
-		});
 		stack = new Stack<Integer>();
 	}
 
 	public void push(int x) {
-		q.add(x);
+		if (x <= minValue) {
+			stack.push(minValue);
+			minValue = x;
+		}
 		stack.push(x);
 	}
 
 	public void pop() {
 		Integer val = stack.pop();
-		q.remove(val);
+		if (val == minValue)
+			minValue = stack.pop();
 	}
 
 	/**
@@ -58,6 +55,34 @@ public class MinStack {
 	}
 
 	public int getMin() {
+		return minValue;
+	}
+
+	/**
+	 * With queue. more space
+	 */
+	PriorityQueue<Integer> q;
+
+	public void push1(int x) {
+		q.add(x);
+		stack.push(x);
+	}
+
+	public void pop1() {
+		Integer val = stack.pop();
+		q.remove(val);
+	}
+
+	/**
+	 * O(1) - constant time
+	 * 
+	 * @return
+	 */
+	public int top1() {
+		return stack.peek();
+	}
+
+	public int getMin1() {
 		return q.peek();
 	}
 }
