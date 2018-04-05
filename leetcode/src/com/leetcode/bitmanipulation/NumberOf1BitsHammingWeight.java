@@ -1,4 +1,4 @@
-package com.leetcode.easy;
+package com.leetcode.bitmanipulation;
 
 /**
 Write a function that takes an unsigned integer and returns the number of ’1' bits it has 
