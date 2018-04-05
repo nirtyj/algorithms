@@ -3,31 +3,54 @@ package com.leetcode.easy;
 import com.leetcode.common.ListNode;
 
 /**
-Reverse a singly linked list.
-*/
+ * Reverse a singly linked list.
+ */
 public class ReverseLinkedList {
 
 	/**
 	 * Leetcode verified
 	 */
+	public ListNode reverseListRecursiveBest(ListNode head) {
+		if (head == null || head.next == null)
+			return head;
+		ListNode lasthead = reverseList(head.next);
+		head.next.next = head;
+		head.next = null;
+		return lasthead;
+	}
+
+	public ListNode reverseListIterativeBest(ListNode head) {
+		if (head == null || head.next == null)
+			return head;
+		ListNode prev = null;
+		ListNode node = head;
+		while (node.next != null) {
+			ListNode next = node.next;
+			node.next = prev;
+			prev = node;
+			node = next;
+		}
+		node.next = prev;
+		return node;
+	}
+
 	public static ListNode reverseList1(ListNode head) {
-        if(head == null)
-            return null;
-        
-        ListNode prev = null;
-        ListNode curr = head;
-        ListNode next = head.next;
-        while(next != null)
-        {
-            curr.next = prev;
-            prev = curr;
-            curr = next;
-            next = next.next;
-        }
-        curr.next = prev;
-        return curr;
-    }
-	
+		if (head == null)
+			return null;
+
+		ListNode prev = null;
+		ListNode curr = head;
+		ListNode next = head.next;
+		while (next != null) {
+			curr.next = prev;
+			prev = curr;
+			curr = next;
+			next = next.next;
+		}
+		curr.next = prev;
+		return curr;
+	}
+
 	public static ListNode reverseList(ListNode node) {
 		if (node.next == null)
 			return node;
