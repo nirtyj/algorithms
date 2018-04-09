@@ -4,7 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import com.leetcode.medium.ContainerWithMostWater;
+import com.leetcode.two_pointers.ContainerWithMostWater;
 
 public class ContainingMostWaterTest {
 

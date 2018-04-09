@@ -52,7 +52,8 @@ public class AddBoldTag {
                 continue;
             }
             int j = i;
-            while (j < s.length() && bold[j]) j++;
+            while (j < s.length() && bold[j]) 
+            	j++;
             result.append("<b>" + s.substring(i, j) + "</b>");
             i = j - 1;
         }

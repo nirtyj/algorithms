@@ -1,4 +1,4 @@
-package com.leetcode.medium;
+package com.leetcode.disjointsets;
 
 import java.util.ArrayList;
 import java.util.Collections;

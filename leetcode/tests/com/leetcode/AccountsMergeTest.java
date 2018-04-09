@@ -6,7 +6,7 @@ import java.util.List;
 
 import org.junit.Test;
 
-import com.leetcode.medium.AccountsMerge;
+import com.leetcode.disjointsets.AccountsMerge;
 
 public class AccountsMergeTest {
 
