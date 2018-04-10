@@ -2,7 +2,7 @@ package com.leetcode;
 
 import org.junit.Test;
 
-import com.leetcode.medium.CountBits;
+import com.leetcode.bitmanipulation.CountBits;
 
 public class CountBitsTest {
 

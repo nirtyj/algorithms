@@ -1,4 +1,4 @@
-package com.leetcode.medium;
+package com.leetcode.matrix;
 
 /**
 Given a grid where each entry is only 0 or 1, find the number of corner rectangles.
@@ -48,17 +48,17 @@ public class CountCornerRectangles {
 	 * @return
 	 */
 	public int countCornerRectangles(int[][] grid) {
-        int ans = 0;
+        int rectangles = 0;
         for (int i = 0; i < grid.length - 1; i++) { // fix row1
             for (int j = i + 1; j < grid.length; j++) { // fix row2
-                int counter = 0;
+                int sides = 0;
                 for (int k = 0; k < grid[0].length; k++) {
-                    if (grid[i][k] == 1 && grid[j][k] == 1) counter++; // count how many corners are there
+                    if (grid[i][k] == 1 && grid[j][k] == 1) sides++; // count how many corners are there
                 }
-                if (counter > 0) 
-                		ans =  ans + (counter * (counter - 1) / 2); // no of rectangles is combination of corners. 3 corners is 3 rectangles
+                if (sides > 0) 
+                		rectangles =  rectangles + (sides * (sides - 1) / 2); // no of rectangles is combination of corners. 3 sides is 3 rectangles n * n-1 / 2
             }
         }
-        return ans;
+        return rectangles;
     }
 }

@@ -1,4 +1,4 @@
-package com.leetcode.medium;
+package com.leetcode.bitmanipulation;
 /**
 Given a non negative integer number num. For every numbers i in the range 0 ≤ i ≤ num calculate the number of 1's in their binary representation and return them as an array.
 
@@ -36,9 +36,9 @@ public class CountBits {
 		int[] f = new int[num + 1];
 		for (int i = 1; i <= num; i++) {
 			// previous shifted value + odd or even
-			f[i] = f[i / 2] + i % 2;
+			// f[i] = f[i / 2] + i % 2;
 			// or... both are valid
-			f[i] = f[i >> 1] + (i & 1);
+			 f[i] = f[i >> 1] + (i % 2); // i & 1
 		}
 		return f;
 	}
