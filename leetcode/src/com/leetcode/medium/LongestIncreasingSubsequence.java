@@ -16,7 +16,7 @@ Follow up: Could you improve it to O(n log n) time complexity?
 public class LongestIncreasingSubsequence {
 
 	/**
-	 * Leetcode verified
+	 * Leetcode verified - O(n^2)
 	 * 
 	 * @param nums
 	 * @return

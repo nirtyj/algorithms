@@ -1,4 +1,4 @@
-package com.leetcode.medium;
+package com.leetcode.subsets_combinations;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,7 +45,11 @@ public class LetterCombinationsPhoneNumber {
 		}
 	}
 	
-
+	/**
+	 * Leetcode verified
+	 * @param phoneNumber
+	 * @return
+	 */
 	public List<String> phoneMnemonicRecurse(String phoneNumber) {
 		List<String> words = new ArrayList<>();
 		char[] chars = new char[phoneNumber.length()];
@@ -56,8 +60,9 @@ public class LetterCombinationsPhoneNumber {
 	private void recurseHelper(String word, int index, char[] chars, List<String> words) {
 
 		if (index == word.length()) {
-			words.add(new String(chars));
-			return;
+			String str = new String(chars);
+			if (!str.isEmpty())
+				words.add(str);
 		}
 
 		int val = Integer.parseInt(word.substring(index, index + 1));
