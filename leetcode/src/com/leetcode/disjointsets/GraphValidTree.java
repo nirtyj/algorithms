@@ -1,4 +1,4 @@
-package com.leetcode.medium;
+package com.leetcode.disjointsets;
 
 import java.util.Arrays;
 
@@ -18,7 +18,8 @@ public class GraphValidTree {
 	public boolean validTree(int n, int[][] edges) {
 		// initialize n isolated islands
 		int[] nums = new int[n];
-		Arrays.fill(nums, -1);
+        for(int i=0; i<n;i++)
+		  nums[i] = i;
 
 		// perform union find
 		for (int i = 0; i < edges.length; i++) {
@@ -48,7 +49,7 @@ public class GraphValidTree {
 	 * @return
 	 */
 	int find(int nums[], int i) {
-		if (nums[i] == -1)
+		if (nums[i] == i)
 			return i;
 		return find(nums, nums[i]);
 	}

@@ -1,4 +1,4 @@
-package com.leetcode.medium;
+package com.leetcode.matrix;
 
 /**
 According to the Wikipedia's article: "The Game of Life, also known simply as Life, is a cellular automaton devised by the British mathematician John Horton Conway in 1970."

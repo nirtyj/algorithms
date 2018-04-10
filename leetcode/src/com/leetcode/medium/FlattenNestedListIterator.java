@@ -41,7 +41,7 @@ public class FlattenNestedListIterator {
 	 */
 	public class NestedIterator implements Iterator<Integer> {
 		List<NestedInteger> list;
-		int curr = 0;
+		int index = 0;
 		private Integer next = null;
 
 		public NestedIterator(List<NestedInteger> nestedList) {
@@ -61,15 +61,15 @@ public class FlattenNestedListIterator {
 		}
 
 		private Integer findNext() {
-			if (list == null || list.isEmpty() || curr >= list.size())
+			if (list == null || list.isEmpty() || index >= list.size())
 				return null;
-			NestedInteger val = list.get(curr);
+			NestedInteger val = list.get(index);
 			if (val.isInteger()) {
-				curr++;
+				index++;
 				return val.getInteger();
 			} else {
-				list.remove(curr);
-				list.addAll(curr, val.getList());
+				list.remove(index);
+				list.addAll(index, val.getList());
 				return findNext();
 			}
 		}
