@@ -33,9 +33,7 @@ public class TopKFrequentElements {
 	        // Prioirty Queue of Map entries - GENIUS!!
 	        PriorityQueue<Map.Entry<Integer, Integer>> maxHeap = 
 	                         new PriorityQueue<>((a,b)->(b.getValue()-a.getValue()));
-	        for(Map.Entry<Integer,Integer> entry: map.entrySet()){
-	            maxHeap.add(entry);
-	        }
+	        maxHeap.addAll(map.entrySet());
 	        
 	        List<Integer> res = new ArrayList<>();
 	        while(res.size()<k){

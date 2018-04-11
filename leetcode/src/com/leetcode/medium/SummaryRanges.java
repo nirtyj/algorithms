@@ -29,20 +29,20 @@ public class SummaryRanges {
 		int prev = nums[0];
 		for (int i = 1; i < nums.length; i++) {
 			if (nums[i] - prev != 1) {
-				if (prev == start) {
-					result.add(Integer.toString(start));
-				} else {
-					result.add(Integer.toString(start) + "->" + Integer.toString(prev));
-				}
+				addRange(result, start, prev);
 				start = nums[i];
 			}
 			prev = nums[i];
 		}
+		addRange(result, start, prev);
+		return result;
+	}
+
+	private static void addRange(List<String> result, int start, int prev) {
 		if (prev == start) {
 			result.add(Integer.toString(start));
 		} else {
 			result.add(Integer.toString(start) + "->" + Integer.toString(prev));
 		}
-		return result;
 	}
 }

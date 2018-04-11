@@ -6,7 +6,7 @@ import java.util.List;
 
 import org.junit.Test;
 
-import com.leetcode.medium.SprialMatrix;
+import com.leetcode.matrix.SprialMatrix;
 
 public class SprialMatrixTest {
 	

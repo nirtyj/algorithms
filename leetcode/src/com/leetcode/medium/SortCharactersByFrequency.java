@@ -1,10 +1,12 @@
 package com.leetcode.medium;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.PriorityQueue;
 
 /**
@@ -84,6 +86,29 @@ public class SortCharactersByFrequency {
 		return sb.toString();
 	}
 
+	/**
+	 * clean code but slow
+	 * @param s
+	 * @return
+	 */
+	public static String frequencySort2(String s) {
+		HashMap<Character, Integer> map = new HashMap<>();
+		PriorityQueue<Map.Entry<Character, Integer>> freqs = new PriorityQueue<>((a,b) -> (b.getValue() - a.getValue()));
+		for (int i = 0; i < s.length(); i++) {
+			char n = s.charAt(i);
+			map.put(n, map.getOrDefault(n,0)+1);
+		}
+		freqs.addAll(map.entrySet());
+		StringBuilder sb = new StringBuilder();
+		while (!freqs.isEmpty()) {
+			Map.Entry<Character, Integer> intcar = freqs.poll();
+			for (int i = 1; i <= intcar.getValue(); i++)
+				sb.append(intcar.getKey());
+		}
+		return sb.toString();
+	}
+
+	
 	/**
 	 * O(n) solution
 	 * 
