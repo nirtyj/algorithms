@@ -1,6 +1,4 @@
-package com.leetcode.medium;
-
-import java.util.Arrays;
+package com.leetcode.disjointsets;
 
 /**
 Given n nodes labeled from 0 to n - 1 and a list of undirected edges (each edge is a pair of nodes), write a function to find the number of connected components in an undirected graph.
@@ -30,27 +28,28 @@ public class NumberOfConnectedComponentsInUndirectedGraph {
 	 */
 	public int countComponents(int n, int[][] edges) {
 		int[] dsu = new int[n];
-		Arrays.fill(dsu, -1);
+		for (int i = 0; i < n; i++)
+			dsu[i] = i;
+
 		for (int i = 0; i < edges.length; i++) {
 			// find set
 			int x = find(edges[i][0], dsu);
 			int y = find(edges[i][1], dsu);
-			// union but don't make a loopback if both x and y are the same. 
-			// if x and y are the same, it means they are already connected
-			if(x == y)
+			if (x == y)
 				continue;
+			// union
 			dsu[x] = y;
 		}
 		int result = 0;
 		for (int i = 0; i < n; i++) {
-			if (dsu[i] == -1)
+			if (dsu[i] == i)
 				result++;
 		}
 		return result;
 	}
 
 	private int find(int x, int[] dsu) {
-		if (dsu[x] == -1)
+		if (dsu[x] == x)
 			return x;
 		else
 			return find(dsu[x], dsu);
