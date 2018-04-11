@@ -1,4 +1,4 @@
-package com.leetcode.medium;
+package com.leetcode.disjointsets;
 
 import java.util.Arrays;
 
@@ -38,25 +38,25 @@ public class RedundantConnections {
 	 */
 	public int[] findRedundantConnection(int[][] edges) {
 		int[] dsu = new int[edges.length + 1];
-		Arrays.fill(dsu, -1);
-		int [] lastRedundant = null;
+		for(int i=0;i<edges.length+1; i++)
+            dsu[i] = i;
+         
 		for (int i = 0; i < edges.length; i++) {
 			// find set
 			int x = find(edges[i][0], dsu);
 			int y = find(edges[i][1], dsu);
 			// union but don't make a loopback if both x and y are the same. 
-			// if x and y are the same, it means they are already connected - you are making a loop here.
+			// if x and y are the same, it means they are already connected
 			if(x == y) {
-				lastRedundant = edges[i];
-				continue;
+                return edges[i];
 			}
 			dsu[x] = y;
 		}
-		return lastRedundant;
+		return null;
 	}
 
 	private int find(int x, int[] dsu) {
-		if (dsu[x] == -1)
+		if (dsu[x] == x)
 			return x;
 		else
 			return find(dsu[x], dsu);
