@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 /**
 Given two 1d vectors, implement an iterator to return their elements alternately.
@@ -26,6 +27,27 @@ It should return [1,4,8,2,5,9,3,6,7]
 */
 public class ZigzagIterator {
 
+	/**
+	 * Easy solution - Genious!!
+	 */
+	Queue<Iterator<Integer>> list;
+    public void ZigzagIteratorBest(List<Integer> v1, List<Integer> v2) {
+        list = new LinkedList<Iterator<Integer>>();
+        if(!v1.isEmpty()) list.add(v1.iterator());
+        if(!v2.isEmpty()) list.add(v2.iterator());
+    }
+
+    public int nextVal() {
+        Iterator<Integer> poll = list.remove();
+        int result = poll.next();
+        if(poll.hasNext()) list.add(poll);
+        return result;
+    }
+
+    public boolean hasNextVal() {
+        return !list.isEmpty();
+    }
+    
 	int nextListIndex = 0;
 	List<NodeIndex> lists = new ArrayList<>();
 	
@@ -73,25 +95,5 @@ public class ZigzagIterator {
 	public boolean hasNext() {
 		return !lists.isEmpty();
 	}
-	
-	/**
-	 * Easy solution - Genious!!
-	 */
-	LinkedList<Iterator> list;
-    public void ZigzagIteratorBest(List<Integer> v1, List<Integer> v2) {
-        list = new LinkedList<Iterator>();
-        if(!v1.isEmpty()) list.add(v1.iterator());
-        if(!v2.isEmpty()) list.add(v2.iterator());
-    }
 
-    public int nextVal() {
-        Iterator poll = list.remove();
-        int result = (Integer)poll.next();
-        if(poll.hasNext()) list.add(poll);
-        return result;
-    }
-
-    public boolean hasNextVal() {
-        return !list.isEmpty();
-    }
 }

@@ -22,7 +22,107 @@ As one shortest transformation is "hit" -> "hot" -> "dot" -> "dog" -> "cog",
 return its length 5.
 */
 public class WordLadder {
+	
+	/**
+	 * Two - ended bfs search - Leetcode verified
+	 * @param beginWord
+	 * @param endWord
+	 * @param wordList
+	 * @return
+	 */
+	public int ladderLength2EndBfs(String beginWord, String endWord, List<String> wordList) {
+        if (!wordList.contains(endWord)) {
+            return 0;
+        }
+        Set<String> dict = new HashSet<>(wordList);
+        Set<String> beginSet = new HashSet<>();
+        Set<String> endSet = new HashSet<>();
+        beginSet.add(beginWord);
+        endSet.add(endWord);
 
+        Map<Integer, HashSet<Character>> characterMap = new HashMap<>();
+		for (String word : wordList) {
+			for (int i = 0; i < word.length(); i++) {
+				HashSet<Character> chars = characterMap.get(i);
+				if (chars == null) {
+					chars = new HashSet<Character>();
+					characterMap.put(i, chars);
+				}
+				chars.add(word.charAt(i));
+			}
+		}
+    
+        int step = 1;
+        Set<String> visited = new HashSet<>();
+        while (!beginSet.isEmpty() && !endSet.isEmpty()) {
+            if (beginSet.size() > endSet.size()) {
+                Set<String> set = beginSet;
+                beginSet = endSet;
+                endSet = set;
+            }
+            Set<String> temp = new HashSet<>();
+            for (String word : beginSet) {
+                char[] chs = word.toCharArray();
+                for (int i = 0; i < chs.length; i++) {
+                    
+                    HashSet<Character> chars = characterMap.get(i); // or just go from a - z
+				    for (char c : chars) {
+                        char old = chs[i];
+                        chs[i] = c;
+                        String target = String.valueOf(chs);
+                        if (endSet.contains(target)) {
+                            return step + 1;
+                        }
+                        if (!visited.contains(target) && dict.contains(target)) {
+                            temp.add(target);
+                            visited.add(target);
+                        }
+                        chs[i] = old;
+                    }
+                }
+            }
+            beginSet = temp;
+            step++;
+        }
+        return 0;
+    }
+	
+	/**
+	 * One ended bfs - Leetcode not verified
+	 */
+	public int ladderLengthDfs(String beginWord, String endWord, List<String> wordList) {
+		Set<String> reached = new HashSet<String>();
+		Set<String> wordDict = new HashSet<String>();
+		reached.add(beginWord);
+		wordDict.addAll(wordList);
+		Set<String> visited = new HashSet<>();
+		int distance = 1;
+		while (!reached.isEmpty()) {
+			Set<String> toAdd = new HashSet<String>();
+			for (String each : reached) {
+				if (each.equals(endWord))
+					return distance;
+
+				for (int i = 0; i < each.length(); i++) {
+					char[] chars = each.toCharArray();
+					for (char ch = 'a'; ch <= 'z'; ch++) {
+						chars[i] = ch;
+						String word = new String(chars);
+						if (wordDict.contains(word) && !visited.contains(word)) {
+							toAdd.add(word);
+							visited.add(word);
+						}
+					}
+				}
+			}
+			distance++;
+			if (toAdd.size() == 0)
+				return 0;
+			reached = toAdd;
+		}
+		return 0;
+	}
+	
 	/**
 	 * Leetcode verified
 	 * @author njaganathan

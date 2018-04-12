@@ -7,7 +7,7 @@ import java.util.List;
 
 import org.junit.Test;
 
-import com.leetcode.medium.WordBreak;
+import com.leetcode.dp.WordBreak;
 
 public class WordBreakTest {
 

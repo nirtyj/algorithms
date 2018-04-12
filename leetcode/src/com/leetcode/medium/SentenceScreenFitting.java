@@ -52,23 +52,18 @@ public class SentenceScreenFitting {
 	 * @return
 	 */
 	public static int wordsTyping(String[] sentence, int rows, int cols) {
-		String s = String.join("-", sentence) + "-";
-		int start = 0, l = s.length();
-		for (int i = 0; i < rows; i++) {
-			start = start + cols;
-			// if it ends properly at the end of the word, just increment one for next start
-			if (s.charAt(start % l) == '-') {
-				start++;
-			} else {
-				// if it doesnt end up the end of the word, go back untill you find the 
+	      String s = String.join(" ", sentence) + " ";
+	      int len = s.length();
+	      int index = 0;
+	      for (int i = 0; i < rows; i++) {
+	          index += cols;
+	            // if it doesnt end up the end of the word, go back untill you find the 
 				// start of the word and continue
-				while (start > 0 && s.charAt((start - 1) % l) != '-') {
-					start--;
-				}
-			}
-		}
-
-		return start / s.length();
+	          while (index > 0 && s.charAt(index % len) != ' ')
+	              index--;
+	          index++;
+	      }
+	      return index / len;
 	}
 
 	/**

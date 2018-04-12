@@ -4,7 +4,7 @@ import static org.junit.Assert.assertFalse;
 
 import org.junit.Test;
 
-import com.leetcode.medium.ContinuousSubarraySum;
+import com.leetcode.subarrays.ContinuousSubarraySum;
 
 public class ContinuousSubarraySumTest {
 

@@ -4,7 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import com.leetcode.medium.MaxSizeSubArraySumEqualsK;
+import com.leetcode.subarrays.MaxSizeSubArraySumEqualsK;
 
 public class MaxSizeSubArraySumEqualsKTest {
 

@@ -4,7 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import com.leetcode.medium.SubarraySumEqualsK;
+import com.leetcode.subarrays.SubarraySumEqualsK;
 
 public class SubarraySumEqualsKTest {
 

@@ -4,7 +4,7 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-import com.leetcode.medium.SentenceSimilarityII;
+import com.leetcode.disjointsets.SentenceSimilarityII;
 
 public class SentenceSimilarityIITest {
 
