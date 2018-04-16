@@ -1,0 +1,85 @@
+binary tree, find the longest path length in the tree.  
+Knight tour problem to find the shortest path to reach a given destination
+ returns false if attempting to add a new meeting that overlaps with an already existing meeting. Meetings are defined by a start time and end time
+ Iterative in-order traversal 
+ 2D array with 0 and 1, find islands.  
+ SortedIterator - consists of List of Lists with sorted int values in each list. You have to give next sorted value when call next().
+
+have to implement methods
+  * constructor
+  * next()
+  * hasNext()
+
+  [
+    [1, 4, 5, 8, 9],
+    [3, 4, 4, 6],
+    [0, 2, 8]
+  ]
+
+  next() -> 0, 1, 2, 3, 4, 4, 4...
+  The dot product between two sparse arrays. A better solution than O(n). You can pre-process the input.  
+  Given a set of numbers, verify that a contingent sum exists that is equal to the input number.  
+  longest consecutive sorted sequence
+  binary to integer  
+  infinite chessboard knight pawns destination 
+  Moving average  
+  merge K sorted arrays which apperas on kXk matrix
+  add two integers in binary format  
+  
+  
+  Given an array of n elements return true if 3 of the sum of 3 elements is equal to a constant c 
+
+Example array a[6,2,3,4] constant c = 9 
+
+if a[1] + [2] + [3] == c return true 
+
+The size of the array is n 
+
+If any set of 3 elements is equal to the constant c, then return false
+
+  Given a string with alpha-numeric characters and parentheses, 
+  return a string with balanced parentheses by removing the fewest characters possible. You cannot add anything to the string.
+
+Given a collection of two dimensional points and a number k, return the k closest points to (0,0) by Euclidean distance.
+
+Given a string as input, return the list of all the patterns possible:
+
+
+'1' : ['A', 'B', 'C'], 
+'2' : ['D', 'E'],
+'12' : ['X']
+'3' : ['P', 'Q']
+Example if input is '123', then output should be [ADP, ADQ, AEP, AEQ, BDP, BDQ, BEP, BEQ, CDP, CDQ, CEP, CEQ, XP, XQ]
+
+Move[inplace] the non zero elements at the one end(end of array) and return the numbers of non zero elements in output array 
+
+Solution : https://www.geeksforgeeks.org/move-zeroes-end-array/
+
+Question 2: Given a number 'k', return the corresponding row, given the pattern: 
+k => output 
+0 => [] 
+1 => ["0", "1", "8"] 
+2 => ["00", "11", "69", "96", "88"] 
+3 => ["000", "111", "101", "888", ...] // and so on ...
+
+Question 1: Given an input of an array of string, verify if, turned 180 degrees, it is the "same". 
+For instance: 
+[1, 6, 0, 9, 1] => return true 
+[1, 7, 1] => return false
+
+March 2018 Phone Interview FB 
+Calculate a moving average that considers the last N values. 
+Circular Queue (Interviewer didn't agree with the linked list queue that I suggested at first. Said the pointers took space)
+
+Design Instagram like app end to end
+
+
+scheduling problem, and the order is fixed. And calculate the minimum time cost to finish those tasks.
+
+Level order traversal of a binary tree.  
+Print binary tree column by column  
+Three Sum Problem
+
+a function to find the longest path in a binary tree, other similar problems.  
+two strings that represent a binary numbers, return as a string the sum of them. 
+  
