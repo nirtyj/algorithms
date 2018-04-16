@@ -57,7 +57,10 @@ public class Subsets {
 		ps.add(new ArrayList<Integer>()); // add the empty set
 
 		// for every item in the original list
-
+        // {}
+		// {}, {1}
+		// {}, {2}, {1}, {1, 2}
+		// {}, {3], {2}, {2, 3}, {1}, {1, 3}, {1, 2, 3} 
 		for (int i = 0; i < nums.length; i++) {
 			Integer item = nums[i];
 			List<List<Integer>> newPs = new ArrayList<List<Integer>>();
