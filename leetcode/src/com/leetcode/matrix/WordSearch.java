@@ -31,19 +31,17 @@ public class WordSearch {
 		int m = board.length;
 		int n = board[0].length;
 
-		boolean result = false;
 		for (int i = 0; i < m; i++) {
 			for (int j = 0; j < n; j++) {
 				if (dfs(board, word, i, j, 0)) {
-					result = true;
+					return true;
 				}
 			}
 		}
-
-		return result;
+		return false;
 	}
 
-	public boolean dfs(char[][] board, String word, int i, int j, int k) {
+	public boolean dfs(char[][] board, String word, int i, int j, int index) {
 		int m = board.length;
 		int n = board[0].length;
 
@@ -51,13 +49,13 @@ public class WordSearch {
 			return false;
 		}
 
-		if (board[i][j] == word.charAt(k)) {
+		if (board[i][j] == word.charAt(index)) {
 			char temp = board[i][j];
 			board[i][j] = '#';
-			if (k == word.length() - 1) {
+			if (index == word.length() - 1) {
 				return true;
-			} else if (dfs(board, word, i - 1, j, k + 1) || dfs(board, word, i + 1, j, k + 1)
-					|| dfs(board, word, i, j - 1, k + 1) || dfs(board, word, i, j + 1, k + 1)) {
+			} else if (dfs(board, word, i - 1, j, index + 1) || dfs(board, word, i + 1, j, index + 1)
+					|| dfs(board, word, i, j - 1, index + 1) || dfs(board, word, i, j + 1, index + 1)) {
 				return true;
 			}
 			board[i][j] = temp;

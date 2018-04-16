@@ -35,7 +35,7 @@ public class Search2DMatrix {
 		int end = m * n - 1;
 
 		while (start <= end) {
-			int mid = (start + end) / 2;
+			int mid = start + (end - start)/2;
 			int midX = mid / n;
 			int midY = mid % n;
 
