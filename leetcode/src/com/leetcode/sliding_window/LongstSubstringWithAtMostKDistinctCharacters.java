@@ -1,7 +1,6 @@
 package com.leetcode.sliding_window;
 
 import java.util.HashMap;
-import java.util.Map;
 
 /**
 Given a string, find the length of the longest substring T that contains at most k distinct characters.
@@ -25,11 +24,10 @@ public class LongstSubstringWithAtMostKDistinctCharacters {
 		int maxLength = 0;
 		int counter = 0;
 		while (end < s.length()) {
-			char c = s.charAt(end);
+			char c = s.charAt(end++);
 			map.put(c, map.getOrDefault(c, 0) + 1);
 			if (map.get(c) == 1)
 				counter++;
-			end++;
 
 			while (counter > k) {
 				char beginC = s.charAt(begin);

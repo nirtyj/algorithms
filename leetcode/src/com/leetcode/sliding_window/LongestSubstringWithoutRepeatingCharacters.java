@@ -1,7 +1,6 @@
 package com.leetcode.sliding_window;
 
 import java.util.HashMap;
-import java.util.Map;
 
 /**
 Given a string, find the length of the longest substring without repeating characters.
@@ -30,12 +29,11 @@ public class LongestSubstringWithoutRepeatingCharacters {
 		int maxLength = 0;
 		int counter = 0;
 		while (end < s.length()) {
-			char c = s.charAt(end);
+			char c = s.charAt(end++);
 			map.put(c, map.getOrDefault(c, 0) + 1);
 			// one char which is unique. size is 1
 			if (map.get(c) > 1)
 				counter++;
-			end++;
 
 			while (counter > 0) {
 				char beginC = s.charAt(begin);

@@ -21,6 +21,7 @@ public class LongestSubstringWithAtMostTwoDisticntChars {
 		int end = 0;
 		int maxLength = 0;
 		int counter = 0;
+		int k = 2;
 		while (end < s.length()) {
 			char c = s.charAt(end);
 			map.put(c, map.getOrDefault(c, 0) + 1);
@@ -28,7 +29,7 @@ public class LongestSubstringWithAtMostTwoDisticntChars {
 				counter++;
 			end++;
 
-			while (counter > 2) {
+			while (counter > k) {
 				char beginC = s.charAt(begin);
 				map.put(beginC, map.get(beginC) - 1);
 				if (map.get(beginC) == 0) {
