@@ -2,7 +2,7 @@ package com.leetcode;
 
 import org.junit.Test;
 
-import com.leetcode.misc.ThreeSum;
+import com.leetcode.medium.ThreeSum;
 
 public class ThreeSumTest {
 
