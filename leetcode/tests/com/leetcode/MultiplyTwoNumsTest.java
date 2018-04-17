@@ -4,7 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import com.leetcode.medium.MultiplyTwoNums;
+import com.leetcode.add_mult_pow.MultiplyTwoNums;
 
 public class MultiplyTwoNumsTest {
 

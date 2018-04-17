@@ -1,4 +1,4 @@
-package com.leetcode.medium;
+package com.leetcode.add_mult_pow;
 
 /**
 Implement pow(x, n).

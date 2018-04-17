@@ -1,25 +1,22 @@
-package com.leetcode.easy;
+package com.leetcode.linkedlist;
 
 import com.leetcode.common.ListNode;
 
 /**
-Given a linked list, return the node where the cycle begins. If there is no cycle, return null.
-
-Note: Do not modify the linked list.
-
+Given a linked list, determine if it has a cycle in it.
 Follow up:
 Can you solve it without using extra space?
 */
-public class LinkedListCycleII {
+public class LinkedListCycle {
 
 	/**
 	 * Leetcode verified
 	 * @param head
 	 * @return
 	 */
-	public ListNode detectCycle(ListNode head) {
+	public boolean hasCycle(ListNode head) {
 		if (head == null)
-			return head;
+			return false;
 		ListNode slow = head;
 		ListNode fast = head;
 		boolean hasCycle = false;
@@ -32,14 +29,6 @@ public class LinkedListCycleII {
 			}
 		}
 
-		if (!hasCycle)
-			return null;
-
-		slow = head;
-		while (slow != fast) {
-			slow = slow.next;
-			fast = fast.next;
-		}
-		return slow;
+		return hasCycle;
 	}
 }

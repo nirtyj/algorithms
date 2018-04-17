@@ -1,4 +1,4 @@
-package com.leetcode.easy;
+package com.leetcode.add_mult_pow;
 
 /**
 Given two binary strings, return their sum (also a binary string).

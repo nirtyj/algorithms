@@ -60,11 +60,11 @@ public class RemoveInvalidParanthesis {
 		}
 		// closing
 		else if (c == ')') {
-			// if there is any left braces in stack, decrement one, subtree
+			// if there is any left braces in stack, decrement one, subtree keeping it only if the leftCounter is > 0
 			if (leftCounter > 0) {
 				dfsHelper(left.substring(1), right + ")", leftCounter - 1, maxCurrent);
 			}
-			// subtree with keeping it
+			// subtree with not keeping it
 			dfsHelper(left.substring(1), right, leftCounter, maxCurrent);
 		} else {
 			// other character -> add it to right

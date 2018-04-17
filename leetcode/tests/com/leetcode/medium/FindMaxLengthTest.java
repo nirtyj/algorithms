@@ -4,6 +4,8 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import com.leetcode.subarrays.ContiguousBinaryArray;
+
 public class FindMaxLengthTest {
 
 	@Test

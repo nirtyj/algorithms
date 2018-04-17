@@ -1,4 +1,4 @@
-package com.leetcode.easy;
+package com.leetcode.binarysearch;
 
 /**
 We are playing the Guess Game. The game is as follows:

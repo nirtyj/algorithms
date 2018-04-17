@@ -24,7 +24,7 @@ public class MergeSortedArray {
 			if (arr1[i] >= arr2[j])
 				arr1[writeIndex--] = arr1[i--];
 			else
-				arr1[writeIndex--] = arr2[j]--;
+				arr1[writeIndex--] = arr2[j--];
 		}
 
 		while (j >= 0) {

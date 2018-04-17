@@ -1,4 +1,4 @@
-package com.leetcode.easy;
+package com.leetcode.add_mult_pow;
 
 /**
 Given a non-negative integer represented as a non-empty array of digits, plus one to the integer.

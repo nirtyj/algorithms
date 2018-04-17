@@ -1,4 +1,4 @@
-package com.leetcode.easy;
+package com.leetcode.trees;
 
 import com.leetcode.common.TreeNode;
 

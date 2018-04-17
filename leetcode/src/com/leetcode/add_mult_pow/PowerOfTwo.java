@@ -1,4 +1,4 @@
-package com.leetcode.easy;
+package com.leetcode.add_mult_pow;
 
 /**
  * Given an integer, write a function to determine if it is a power of two.

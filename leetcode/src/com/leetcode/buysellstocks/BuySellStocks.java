@@ -12,14 +12,13 @@ public class BuySellStocks {
 	public int maxProfitI(int[] prices) {
 		if (prices == null || prices.length < 2)
 			return 0;
-		
-		int zeroTransactionHold0 = 0;
-		int oneTransactionHold0 = 0;
-		int oneTransactionHold1 = Integer.MIN_VALUE;
+		// day 0 - no stocks
+		int oneTransactionHold0 = 0; // no stocks hold 0 - rest - so 0
+		int oneTransactionHold1 = Integer.MIN_VALUE; // no stocks hold 1 - impossible - so -infinity
 
 		for (int price : prices) {
 			oneTransactionHold0 = Math.max(oneTransactionHold0, oneTransactionHold1 + price); //sell
-			oneTransactionHold1 = Math.max(oneTransactionHold1, zeroTransactionHold0 - price); // buy
+			oneTransactionHold1 = Math.max(oneTransactionHold1,  - price); // buy
 		}
 
 		return oneTransactionHold0;
@@ -33,8 +32,7 @@ public class BuySellStocks {
 	public int maxProfitIII(int[] prices) {
 		if (prices == null || prices.length < 2)
 			return 0;
-		
-		int zeroTransactionHold0 = 0;
+
 		int oneTransactionHold0 = 0;
 		int oneTransactionHold1 = Integer.MIN_VALUE;
 		int twoTransactionHold0 = 0;
@@ -44,7 +42,7 @@ public class BuySellStocks {
 			twoTransactionHold0 = Math.max(twoTransactionHold0, twoTransactionHold1 + price); // sell
 			twoTransactionHold1 = Math.max(twoTransactionHold1, oneTransactionHold0 - price); // buy
 			oneTransactionHold0 = Math.max(oneTransactionHold0, oneTransactionHold1 + price); // sell
-			oneTransactionHold1 = Math.max(oneTransactionHold1, zeroTransactionHold0 - price); // buy
+			oneTransactionHold1 = Math.max(oneTransactionHold1,  - price); // buy
 		}
 
 		return twoTransactionHold0;

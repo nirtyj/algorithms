@@ -1,4 +1,4 @@
-package com.leetcode.easy;
+package com.leetcode.add_mult_pow;
 
 import com.leetcode.common.ListNode;
 
