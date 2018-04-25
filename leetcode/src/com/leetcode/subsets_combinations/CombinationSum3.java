@@ -35,12 +35,12 @@ public class CombinationSum3 {
 	private static void combinationSumHelper(int target, int targetSize, int currentSum, int currIndex,
 			ArrayList<Integer> arrayList, List<List<Integer>> result) {
 
-		if (currentSum == target && targetSize == arrayList.size()) {
+		if (currentSum > target || arrayList.size() > targetSize) {
+			return;
+		} else if (currentSum == target && targetSize == arrayList.size()) {
 			result.add(new ArrayList<Integer>(arrayList));
 			return;
-		} else if (currentSum > target || arrayList.size() > targetSize) {
-			return;
-		}
+		} 
 
 		for (int i = currIndex; i <= 9; i++) {
 			if(currentSum + i > target) 
