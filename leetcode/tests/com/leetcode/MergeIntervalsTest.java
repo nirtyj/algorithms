@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import org.junit.Test;
 
 import com.leetcode.common.Interval;
-import com.leetcode.medium.MergeIntervals;
+import com.leetcode.intervals.MergeIntervals;
 
 public class MergeIntervalsTest {
 

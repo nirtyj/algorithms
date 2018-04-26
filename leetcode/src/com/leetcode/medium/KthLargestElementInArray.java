@@ -12,7 +12,7 @@ You may assume k is always valid, 1 ≤ k ≤ array's length.
 public class KthLargestElementInArray {
 
 	/**
-	 * Leetcode verified
+	 * Leetcode verified - nlog (k)
 	 * @param nums
 	 * @param k
 	 * @return
@@ -29,4 +29,34 @@ public class KthLargestElementInArray {
 	    }
 	    return q.peek();
 	}
+	
+	public int findKthLargestPivot(int[] nums, int k) {
+        if(nums==null || k>nums.length)
+            return -1;
+        return partitionHelper(nums, k, 0, nums.length-1);
+    }
+    private int partitionHelper(int[] nums, int k, int start, int end) {
+        int mid = nums[(start+end)/2];
+        int left = start, right = end;
+        while(left<=right) {
+            while(left<=right && nums[left]>mid) {
+                left++;
+            }
+            while(left<=right && nums[right]<mid) {
+                right--;
+            }
+            if(left<=right) {
+                int temp = nums[left];
+                nums[left++] = nums[right];
+                nums[right--] = temp;
+            }
+        }
+
+        if(right - start +1 >= k)
+            return partitionHelper(nums, k, start, right);
+        if(left - start < k)
+            return partitionHelper(nums, k-(left-start), left, end);
+        return nums[right+1];
+        
+    }
 }

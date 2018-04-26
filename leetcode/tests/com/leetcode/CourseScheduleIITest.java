@@ -4,7 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import com.leetcode.medium.CourseScheduleII;
+import com.leetcode.graph.CourseScheduleII;
 
 public class CourseScheduleIITest {
 

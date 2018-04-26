@@ -1,4 +1,4 @@
-package com.leetcode.medium;
+package com.leetcode.taskschedule;
 
 import java.util.ArrayList;
 import java.util.HashMap;

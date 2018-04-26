@@ -1,4 +1,4 @@
-package com.leetcode.medium;
+package com.leetcode.intervals;
 
 import java.util.ArrayList;
 import java.util.Arrays;
