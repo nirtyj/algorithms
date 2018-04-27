@@ -34,7 +34,6 @@ public class GameOfLife {
 					else
 						result[i][j] = 0;
 				} else if (board[i][j] == 0) {
-					findNeighbors(i, j, board);
 					if (n == 3)
 						result[i][j] = 1;
 				}
