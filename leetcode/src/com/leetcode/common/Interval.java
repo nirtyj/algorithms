@@ -6,6 +6,9 @@ public class Interval {
 		this.end = end;
 	}
 
+	public Interval() {
+	}
+
 	public int start;
 	public int end;
 
