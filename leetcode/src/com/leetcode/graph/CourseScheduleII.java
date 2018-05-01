@@ -30,7 +30,7 @@ You may assume that there are no duplicate edges in the input prerequisites.
 public class CourseScheduleII {
 
 	/**
-	 * Uses DFS or topological Sort
+	 * Uses topological Sort
 	 * @param numCourses
 	 * @param prerequisites
 	 * @return

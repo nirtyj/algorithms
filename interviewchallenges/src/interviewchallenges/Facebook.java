@@ -66,18 +66,17 @@ class BinaryTreeIterator implements Iterator<Node> {
 
 	BinaryTreeIterator(Node root) {
 		this.root = root;
-		stack.push(root);
+		while (root.left != null) {
+			stack.push(root);
+			root = root.left;
+		}
 	}
 
 	public boolean hasNext() {
 		return false;
 	}
 
-	public Node next() {
-		while (root.left != null) {
-			stack.push(root);
-			root = root.left;
-		}
+	public Node next() {		
 		// finished the iteration
 		if (stack.isEmpty())
 			return null; // throw exception
