@@ -112,4 +112,53 @@ public class AmazonII {
 	 *  2D Matrix, Roman number conversions, System design and merging k sorted lists.
 	 *  LRU cache, overlapping rectangles  , Longest palindrome  
 	 */
+	
+	/**
+	 * Onsite interview
+	 * 
+	 * Round 1: Bar raiser
+	 * Find recommended books.
+	 * Class user
+	 * {
+	 *   List<User> friends;
+	 *   List<Book> booksthatuserRecommendstoothers;
+	 * }
+	 * 
+	 * Class book
+	 * {
+	 *   string name;
+	 * }
+	 * 
+	 * List<Book> getBooksToRecommend (User u, int levelsDeepforMutualFriends)
+	 * {
+	 *   1. get mutual friends level by level.
+	 *   2. get recommended books 
+	 *   3. remove books that he already has read
+	 *   4. ignore if the user is root user or seen user
+	 * }
+	 * 
+	 * Round 2: System Design.
+	 * Design a service, where you can delegate CPU intensive jobs and collect results back. 
+	 * A node requests for a job and get the data. returns the results.
+	 * 
+	 * Round 3: Serialize and de-serialize binary tree
+	 * 
+	 * Round 4: given a log of files, calculate the three page sequences of visits.
+	 * 
+	 * Log file:
+	 * time, customername, Pagevisit
+	 * 
+	 * List<String> getMostFrequentThreePageSequence(File file)
+	 * {
+	 *   1. parse the file to customer object
+	 *   2. iterate through customer and calcualte the 3 page combinations. sliding window.
+	 *   3. use a frequency map and increment.
+	 *   4. go throught the frequency map and find the most frequent 3 page sequence
+	 * }
+	 * 
+	 * class Customer{
+	 * String name;
+	 * List<String> pagevisitsorder;
+	 * }
+	 */
 }
