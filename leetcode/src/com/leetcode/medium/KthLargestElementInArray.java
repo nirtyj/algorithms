@@ -1,6 +1,7 @@
 package com.leetcode.medium;
 
 import java.util.PriorityQueue;
+import java.util.Random;
 /**
 Find the kth largest element in an unsorted array. Note that it is the kth largest element in the sorted order, not the kth distinct element.
 For example,
@@ -11,6 +12,73 @@ You may assume k is always valid, 1 ≤ k ≤ array's length.
 */
 public class KthLargestElementInArray {
 
+	/**
+	 * Best - O(n) - Quick select Algorithm
+	 * @param nums
+	 * @param k
+	 * @return
+	 */
+	public int findKthLargestBest(int[] nums, int k) {
+        if(nums == null || nums.length == 0)
+            return -1;
+        int i = 0;
+        int j = nums.length - 1;
+        k = nums.length - k;
+        shuffle(nums);
+        while(i<j)
+        {
+            int pivot = randomPivot(i, j);
+            int index = partition(nums, i, j, pivot);
+            if(index == k)
+                break;
+            else if(index < k)
+                i = index + 1;
+            else
+                j = index - 1;
+        }
+        return nums[k];
+    }
+    
+    private int partition(int[] nums, int left, int right, int pivotIndex)
+    {
+        int pivotValue = nums[pivotIndex];
+        swap(nums, right, pivotIndex);
+        int storeIndex = left;
+        for(int i = left; i<right; i++)
+        {
+            if(nums[i]<pivotValue)
+            {
+                swap(nums, storeIndex, i);
+                storeIndex++;
+            }
+        }
+        swap(nums, storeIndex, right);
+        return storeIndex;
+    }
+    
+  
+    private void swap(int[] nums, int i, int j)
+    {
+        int temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
+    }
+    
+    private int randomPivot(int i, int j)
+    {
+        Random r = new Random();
+        return i + r.nextInt(j-i+1);
+    }
+
+    // fisher yates shuffling algorithm
+    private void shuffle(int a[]) {
+        final Random random = new Random();
+        for(int ind = a.length - 1; ind > 0; ind--) {
+            int r = random.nextInt(ind);
+            swap(a, ind, r);
+        }
+    }
+    
 	/**
 	 * Leetcode verified - nlog (k)
 	 * @param nums
@@ -30,33 +98,5 @@ public class KthLargestElementInArray {
 	    return q.peek();
 	}
 	
-	public int findKthLargestPivot(int[] nums, int k) {
-        if(nums==null || k>nums.length)
-            return -1;
-        return partitionHelper(nums, k, 0, nums.length-1);
-    }
-    private int partitionHelper(int[] nums, int k, int start, int end) {
-        int mid = nums[(start+end)/2];
-        int left = start, right = end;
-        while(left<=right) {
-            while(left<=right && nums[left]>mid) {
-                left++;
-            }
-            while(left<=right && nums[right]<mid) {
-                right--;
-            }
-            if(left<=right) {
-                int temp = nums[left];
-                nums[left++] = nums[right];
-                nums[right--] = temp;
-            }
-        }
-
-        if(right - start +1 >= k)
-            return partitionHelper(nums, k, start, right);
-        if(left - start < k)
-            return partitionHelper(nums, k-(left-start), left, end);
-        return nums[right+1];
-        
-    }
+	
 }
