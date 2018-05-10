@@ -1,6 +1,7 @@
 n*2 
 - Nested for loop, 
- - while
+- while
+- Three pointers, outer pointer - O(n) with (left and right right pointer) O(n)- e.g three sum,  
 
 n log n 
 
@@ -16,7 +17,7 @@ Two pointers
 	- slow and fast runners
 	- opposite ends
 two pass - one from right, one from left
-
+Shuffling
 
 log n
 Binary search
