@@ -1,0 +1,22 @@
+n*2 
+- Nested for loop, 
+ - while
+
+n log n 
+
+priority queue - n * (log n) 
+Sorting
+Sorting + binary search
+Sorting Comparable objects
+
+n
+One traversal + cache value
+Two traversal - one potential - one validation
+Two pointers
+	- slow and fast runners
+	- opposite ends
+two pass - one from right, one from left
+
+
+log n
+Binary search
