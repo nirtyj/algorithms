@@ -1,7 +1,9 @@
 package com.leetcode.hard;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 /**
 Given an unsorted array of integers, find the length of the longest consecutive elements sequence.
@@ -17,21 +19,42 @@ Explanation: The longest consecutive elements sequence is [1, 2, 3, 4]. Therefor
 public class LengthOfLongestConsecutiveSequence {
 
 	/**
+	 * Leetcode verifiedd
+	 */
+	public int longestConsecutive(int[] nums) {
+		Set<Integer> num_set = new HashSet<Integer>();
+		for (int num : nums) {
+			num_set.add(num);
+		}
+		int longestStreak = 0;
+		for (int num : num_set) {
+			if (!num_set.contains(num - 1)) {
+				int currentNum = num;
+				int currentStreak = 1;
+				while (num_set.contains(currentNum + 1)) {
+					currentNum += 1;
+					currentStreak += 1;
+				}
+				longestStreak = Math.max(longestStreak, currentStreak);
+			}
+		}
+		return longestStreak;
+	}
+	
+	/**
 	 * Leetcode verified
 	 * @param nums
 	 * @return
 	 */
-	public int longestConsecutive(int[] nums) {
+	public int longestConsecutiveUnionFind(int[] nums) {
 		if (nums == null || nums.length == 0)
 			return 0;
 		else if (nums.length == 1)
 			return 1;
-
 		Map<Integer, Integer> dsu = new HashMap<Integer, Integer>();
 		for (int i = 0; i < nums.length; i++) {
 			dsu.put(nums[i], nums[i]);
 		}
-
 		for (int i = 0; i < nums.length; i++) {
 			if (nums[i] != Integer.MIN_VALUE && dsu.containsKey(nums[i] - 1)) {
 				dsu.put(Math.max(nums[i], nums[i] - 1), Math.min(nums[i], nums[i] - 1));
@@ -57,7 +80,6 @@ public class LengthOfLongestConsecutiveSequence {
 			length.put(key, 1);
 			return 1;
 		}
-
 		int result = getLength(length, dsu, dsu.get(key));
 		result++;
 		length.put(key, result);
