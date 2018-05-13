@@ -1,4 +1,4 @@
-package interviewbit;
+package com.interviewbit.dp;
 
 import java.util.HashMap;
 import java.util.HashSet;
