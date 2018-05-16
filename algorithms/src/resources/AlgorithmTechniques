@@ -59,3 +59,9 @@ HashMap<String, Set<String>> map = new HashMap<>();
 Set<String> val1 = map.getOrDefault(w1, new HashSet<>());
 val1.add(w2);
 map.put(w1, val1);
+
+
+
+Algorithm Design Canvas
+
+
