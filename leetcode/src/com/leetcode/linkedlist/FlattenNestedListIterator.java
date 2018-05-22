@@ -1,4 +1,4 @@
-package com.leetcode.medium;
+package com.leetcode.linkedlist;
 
 import java.util.Iterator;
 import java.util.List;

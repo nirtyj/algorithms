@@ -2,7 +2,7 @@ package com.leetcode;
 
 import org.junit.Test;
 
-import com.leetcode.medium.NumberOfLongestIncreasingSubsequence;
+import com.leetcode.dp.NumberOfLongestIncreasingSubsequence;
 
 public class NumberOfLongestIncreasingSubsequenceTest {
 

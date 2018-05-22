@@ -4,7 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import com.leetcode.medium.DecodeString;
+import com.leetcode.stacks.DecodeString;
 
 public class DecodeStringTest {
 

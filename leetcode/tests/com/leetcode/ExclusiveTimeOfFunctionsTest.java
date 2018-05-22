@@ -6,7 +6,7 @@ import java.util.Arrays;
 
 import org.junit.Test;
 
-import com.leetcode.medium.ExclusiveTimeOfFunctions;
+import com.leetcode.stacks.ExclusiveTimeOfFunctions;
 
 public class ExclusiveTimeOfFunctionsTest {
 
