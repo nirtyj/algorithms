@@ -1,4 +1,4 @@
-package com.leetcode.disjointsets;
+package com.leetcode.graph.unionfind;
 
 /**
 There are N students in a class. Some of them are friends, while some are not. Their friendship is transitive in nature. 

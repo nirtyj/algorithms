@@ -1,4 +1,4 @@
-package com.leetcode.disjointsets;
+package com.leetcode.graph.unionfind;
 
 import java.util.ArrayList;
 import java.util.Collections;

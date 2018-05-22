@@ -16,6 +16,9 @@ Input:
 
 Output:
 [[5,0], [7,0], [5,2], [6,1], [4,4], [7,1]]
+
+subarray after step 1: [[7,0], [7,1]]
+subarray after step 2: [[7,0], [6,1], [7,1]]
 */
 public class ReconstructQueue {
 
@@ -25,9 +28,11 @@ public class ReconstructQueue {
 	 * @return
 	 */
 	public int[][] reconstructQueue(int[][] people) {
+		// sort by descending height. if height are same, increasing people infront.
 		Arrays.sort(people, (p1, p2) -> {
 			return p1[0] == p2[0] ? p1[1] - p2[1] : p2[0] - p1[0];
 		});
+		// insert the location from front. so 0 people in front goes front.
 		LinkedList<int[]> list = new LinkedList<>();
 		for (int i = 0; i < people.length; i++)
 			list.add(people[i][1], people[i]);

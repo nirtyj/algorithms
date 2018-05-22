@@ -1,4 +1,4 @@
-package com.leetcode.graph;
+package com.leetcode.graph.topologicalsort;
 
 import java.util.HashMap;
 import java.util.HashSet;

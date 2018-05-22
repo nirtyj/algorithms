@@ -4,7 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import com.leetcode.disjointsets.FriendCircles;
+import com.leetcode.graph.unionfind.FriendCircles;
 
 public class FriendCirclesTest {
 
