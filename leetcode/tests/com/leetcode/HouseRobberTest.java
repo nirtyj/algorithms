@@ -4,7 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import com.leetcode.easy.HouseRobber;
+import com.leetcode.dp.HouseRobber;
 
 public class HouseRobberTest {
 
