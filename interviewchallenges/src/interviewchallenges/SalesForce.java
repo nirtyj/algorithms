@@ -79,8 +79,12 @@ public class SalesForce {
 		 Multiple threads accessing
 		 Synchronized - lock on object
 		 volatile
+		 Find if a binary tree is BST or not
+		 Find median in a input stream. use a min heap and max heap
 
 		 Round 4:
 		 merge multiple arrays sorted but in asecending or descending.
+		 flush out the algorithm before coding
+		 test cases.
 	 	 */
 }
