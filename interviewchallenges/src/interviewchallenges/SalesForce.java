@@ -63,5 +63,24 @@ public class SalesForce {
 		 
 		 Misc:
 		 Find duplicate files.
+		 
+		 Onsite Interview:
+		 
+		 Round 1:
+		 Design a twitter trending system for last 5 mins, 1 hr
+		 Bytes -- bit calculation. QPS query per second
+
+		 Round 2:
+		 Insert, delete and getrandom at O(1)
+		 Tree balanced or not
+
+		 Round 3:
+		 Singleton pattern.
+		 Multiple threads accessing
+		 Synchronized - lock on object
+		 volatile
+
+		 Round 4:
+		 merge multiple arrays sorted but in asecending or descending.
 	 	 */
 }
