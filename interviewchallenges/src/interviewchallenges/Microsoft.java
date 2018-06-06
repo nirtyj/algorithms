@@ -62,4 +62,47 @@ public class Microsoft {
 	    return min;
 	}
 	  
+	/**
+	 * Onsite 4 rounds
+	 *  data structures knowledge, problem solving, past experience and learnability.
+	 *  Two system design, two coding interviews.  
+	 *  Set the next node of a Binary Tree, being the node to its left on the same height.  
+	 *  Deeply clone a singly linked list in which each node has an extra pointer that points to a random node.  
+	 *  few array/string manipulation questions 
+	 *  closest common ancestors to 2 nodes in a n-ary tree.  
+	 *  Reverse words in a sentence.
+	 *  Given root node to a binary tree, reconstruct it and return its root node  
+	 *  Given 2d matrix and a string. Write a function to check if string is contained in the 2d matrix  
+	 *  Run length encoding, write compression function given input array and output array of bytes
+	 *  
+	 *  - Design an API for searching for contact information.
+		- Choose a data structure for search function
+		- Implement search function 
+		
+		Why Microsoft
+		 arrays, linked lists, strings, etc. 
+		 string traversal, arrays + math 
+		
+		Given a list of n unsorted key-value tuples which are too large to fit in memory, return the k tuples with the greatest value where n is several orders of magnitude greater than k. This list may be dispersed across multiple machines.  
+		Given a tree of order n which is neither complete or a search tree, write a function to construct a new tree of order m in-place. Memory usage is bound to 2 times the size of the tree. The new tree must be complete, and a node A cannot be a child of another node B in the new tree if A was an ancestor of B in the old tree.  
+		Given a list of movement commands (up, down, left, right, undo previous action), write a function that returns the final (x,y) coordinate. Followup: how would you handle other kinds of commands and undoing them? What kind of design pattern is this?  
+		Given two very large timestamped sorted log files that do not fit in memory (possibly on different machines), merge them in timestamp order. Provide some test cases.  
+
+		Describe how you would design a data experimentation platform.  
+		DP and Backtracking
+		multi threading and distributed systems.
+		Given 4 coins of values 1, 5, 10, and 20, find all the combinations of coins that can add up to K.  
+		Print out all the nodes in a binary in order without recursion.  
+		Return the longest palindromic substring. 
+		Print nodes in balanced tree level by level and reversing the print order every other level.  
+		Get k largest elements in a list, extremely large list (doesn't fit in memory), write actual test cases.  
+		Find the common ancestor in a binary tree.
+		Given the head of a linked list, write a program in your language of choice to return the middle node of the list.
+		 two rectangles overlap
+		 Implement a LRU cache.  
+		 Find max continuous sum in array?
+		 next larger element in a BST.
+		 Simple design questions like messaging and elevator controller
+		 two strings are anagrams
+	 */
 }
