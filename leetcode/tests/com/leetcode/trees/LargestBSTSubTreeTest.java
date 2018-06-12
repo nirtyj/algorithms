@@ -10,7 +10,7 @@ public class LargestBSTSubTreeTest {
 
 	@Test
 	public void test() {
-		LargestBSTSubTree t = new LargestBSTSubTree();
+		LargestBSTSubTree_333 t = new LargestBSTSubTree_333();
 		TreeNode root = new TreeNode(10);
 		
 		TreeNode n5 = new TreeNode(5);
@@ -32,7 +32,7 @@ public class LargestBSTSubTreeTest {
 	
 	@Test
 	public void test2() {
-		LargestBSTSubTree t = new LargestBSTSubTree();
+		LargestBSTSubTree_333 t = new LargestBSTSubTree_333();
 		TreeNode root = new TreeNode(1);
 		
 		TreeNode n3 = new TreeNode(3);
@@ -51,7 +51,7 @@ public class LargestBSTSubTreeTest {
 	
 	@Test
 	public void test3() {
-		LargestBSTSubTree t = new LargestBSTSubTree();
+		LargestBSTSubTree_333 t = new LargestBSTSubTree_333();
 		TreeNode root = new TreeNode(4);
 		
 		TreeNode n1 = new TreeNode(1);
