@@ -1,5 +1,7 @@
 package com.leetcode.medium;
+
 /**
+186. https://leetcode.com/problems/reverse-words-in-a-string-ii/description/
 Given an input string , reverse the string word by word. 
 
 Example:
@@ -12,7 +14,7 @@ A word is defined as a sequence of non-space characters.
 The input string does not contain leading or trailing spaces.
 The words are always separated by a single space.
 */
-public class ReverseWordsInAStringII {
+public class ReverseWordsInAStringII_186 {
 
 	/**
 	 * Leetcode verified

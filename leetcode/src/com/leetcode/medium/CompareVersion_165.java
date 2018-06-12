@@ -1,6 +1,7 @@
 package com.leetcode.medium;
 
 /**
+165. https://leetcode.com/problems/compare-version-numbers/description/
 Compare two version numbers version1 and version2.
 If version1 > version2 return 1; if version1 < version2 return -1;otherwise return 0.
 
@@ -20,7 +21,7 @@ Example 3:
 Input: version1 = "7.5.2.4", version2 = "7.5.3"
 Output: -1
 */
-public class CompareVersion {
+public class CompareVersion_165 {
 	/**
 	 * Leetcode verified
 	 * @param version1

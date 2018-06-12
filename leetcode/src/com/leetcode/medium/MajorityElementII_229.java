@@ -4,10 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+229. https://leetcode.com/problems/majority-element-ii/description/
 Given an integer array of size n, find all elements that appear more than n/3  times. 
 The algorithm should run in linear time and in O(1) space.
 */
-public class MajorityElementII {
+public class MajorityElementII_229 {
 
 	/**
 	 * Majority element is more than 1/3 of the size of the array. 2 possible

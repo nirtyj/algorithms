@@ -1,6 +1,7 @@
 package com.leetcode.medium;
 
 /**
+8. https://leetcode.com/problems/string-to-integer-atoi/
 Implement atoi which converts a string to an integer.
 
 The function first discards as many whitespace characters as necessary until the first non-whitespace character is found. Then, starting from this character, takes an optional initial plus or minus sign followed by as many numerical digits as possible, and interprets them as a numerical value.
@@ -43,7 +44,7 @@ Output: -2147483648
 Explanation: The number "-91283472332" is out of the range of a 32-bit signed integer.
              Thefore INT_MIN (−231) is returned.
 */
-public class AtoI {
+public class AtoI_8 {
 
 	/**
 	 * Leetcode verified

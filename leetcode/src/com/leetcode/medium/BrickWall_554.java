@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 
 /**
+554. https://leetcode.com/problems/brick-wall/description/
 There is a brick wall in front of you. The wall is rectangular and has several rows of bricks. The bricks have the same height but different width. You want to draw a vertical line from the top to the bottom and cross the least bricks.
 
 The brick wall is represented by a list of rows. Each row is a list of integers representing the width of each brick in this row from left to right.
@@ -27,7 +28,7 @@ Note:
 The width sum of bricks in different rows are the same and won't exceed INT_MAX.
 The number of bricks in eac
 */
-public class BrickWall {
+public class BrickWall_554 {
 
 	/**
 	 * Leetcode verified

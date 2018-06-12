@@ -1,8 +1,9 @@
 package com.leetcode.medium;
 /**
+161. https://leetcode.com/problems/one-edit-distance/description/
 Given two strings S and T, determine if they are both one edit distance apart.
 */
-public class OneEditDistance {
+public class OneEditDistance_161 {
 
 	/**
 	 * Leetcode verified

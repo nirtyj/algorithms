@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 
 /**
+49. https://leetcode.com/problems/group-anagrams/description/
 Given an array of strings, group anagrams together.
 
 For example, given: ["eat", "tea", "tan", "ate", "nat", "bat"], 
@@ -17,7 +18,7 @@ Return:
   ["bat"]
 ]
 */
-public class GroupAnagrams {
+public class GroupAnagrams_49 {
 
 	/**
 	 * Leetcode verified

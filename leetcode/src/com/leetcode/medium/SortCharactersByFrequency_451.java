@@ -1,15 +1,14 @@
 package com.leetcode.medium;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.PriorityQueue;
 
 /**
+451. https://leetcode.com/problems/sort-characters-by-frequency/description/
 Given a string, sort it in decreasing order based on the frequency of characters.
 
 Example 1:
@@ -39,7 +38,7 @@ Explanation:
 "bbaA" is also a valid answer, but "Aabb" is incorrect.
 Note that 'A' and 'a' are treated as two different characters.
 */
-public class SortCharactersByFrequency {
+public class SortCharactersByFrequency_451 {
 
 	static class IntegerChar {
 		int frequency = 0;

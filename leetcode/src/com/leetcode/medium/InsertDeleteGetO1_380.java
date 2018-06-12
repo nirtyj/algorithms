@@ -3,20 +3,21 @@ package com.leetcode.medium;
 import java.util.ArrayList;
 import java.util.HashMap;
 /**
+380. https://leetcode.com/problems/insert-delete-getrandom-o1/description/
 Design a data structure that supports all following operations in average O(1) time.
 
 insert(val): Inserts an item val to the set if not already present.
 remove(val): Removes an item val from the set if present.
 getRandom: Returns a random element from current set of elements. Each element must have the same probability of being returned.
 */
-class InsertDeleteGetO1 {
+class InsertDeleteGetO1_380 {
 	
 	ArrayList<Integer> nums;
 	HashMap<Integer, Integer> valToIndex;
 	java.util.Random rand = new java.util.Random();
 
 	/** Leetcode verified */
-	public InsertDeleteGetO1() {
+	public InsertDeleteGetO1_380() {
 		nums = new ArrayList<Integer>();
 		valToIndex = new HashMap<Integer, Integer>();
 	}

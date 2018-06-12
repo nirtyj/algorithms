@@ -10,7 +10,7 @@ public class PartitionLabelsTest {
 
 	@Test
 	public void test() {
-		PartitionLabels labels = new PartitionLabels();
+		PartitionLabels_363 labels = new PartitionLabels_363();
 		List<Integer> result = labels.partitionLabels("ababcbacadefegdehijhklij");
 		assertEquals(3, result.size());
 	}

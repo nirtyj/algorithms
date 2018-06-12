@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+271. https://leetcode.com/problems/encode-and-decode-strings/description/
 Design an algorithm to encode a list of strings to a string. The encoded string is then sent over the network and is decoded back to the original list of strings.
 
 Machine 1 (sender) has the function:
@@ -32,7 +33,7 @@ The string may contain any possible characters out of 256 valid ascii characters
 Do not use class member/global/static variables to store states. Your encode and decode algorithms should be stateless.
 Do not rely on any library method such as eval or serialize methods. You should implement your own encode/decode algorithm.
 */
-public class EncodeAndDecodeStrings {
+public class EncodeAndDecodeStrings_271 {
 
 	// Encodes a list of strings to a single string.
 	public String encode(List<String> strs) {

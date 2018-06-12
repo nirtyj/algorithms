@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+388. https://leetcode.com/problems/longest-absolute-file-path/description/
 Suppose we abstract our file system by a string in the following manner:
 The string "dir\n\tsubdir1\n\tsubdir2\n\t\tfile.ext" represents:
 dir
@@ -39,7 +40,7 @@ Time complexity required: O(n) where n is the size of the input string.
 Notice that a/aa/aaa/file1.txt is not the longest file path, 
 if there is another path aaaaaaaaaaaaaaaaaaaaa/sth.png.
 */
-public class LongestAbsoluteFilePath {
+public class LongestAbsoluteFilePath_388 {
 
 	/**
 	 * Leetcode verified
@@ -53,7 +54,6 @@ public class LongestAbsoluteFilePath {
 		int maxFilePath = 0;
 		Map<Integer, Integer> indexLength = new HashMap<>();
 		for (String word : tokens) {
-
 			String wordReplaced = word.replace("\t", "");
 			int howManyTabs = word.length() - wordReplaced.length();
 			int previousTabVal = indexLength.get(howManyTabs - 1) == null ? 0 : indexLength.get(howManyTabs - 1);

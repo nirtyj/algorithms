@@ -1,9 +1,10 @@
 package com.leetcode.medium;
 
 /**
+275. https://leetcode.com/problems/h-index-ii/description/
 Follow up for H-Index: What if the citations array is sorted in ascending order? Could you optimize your algorithm?
 */
-public class HIndexII {
+public class HIndexII_275 {
 	/**
 	 * Leetcode verified - O(log n)
 	 * @param citations

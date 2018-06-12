@@ -9,6 +9,7 @@ import java.util.Map;
 import com.leetcode.common.Interval;
 
 /**
+363. https://leetcode.com/problems/partition-labels/description/
 A string S of lowercase letters is given. We want to partition this string into as many parts as possible so that each letter appears in at most one part, and return a list of integers representing the size of these parts.
 
 Example 1:
@@ -23,7 +24,7 @@ Note:
 S will have length in range [1, 500].
 S will consist of lowercase letters ('a' to 'z') only.
 */
-public class PartitionLabels {
+public class PartitionLabels_363 {
 
 	/**
 	 * Leetcode verified

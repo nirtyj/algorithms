@@ -1,6 +1,7 @@
 package com.leetcode.medium;
 
 /**
+835. https://leetcode.com/problems/image-overlap/description/
 Two images A and B are given, represented as binary, square matrices of the same size.  (A binary matrix has only 0s and 1s as values.)
 
 We translate one image however we choose (sliding it left, right, up, or down any number of units), and place it on top of the other image.  After, the overlap of this translation is the number of positions that have a 1 in both images.
@@ -20,7 +21,7 @@ Input: A = [[1,1,0],
 Output: 3
 Explanation: We slide A to right by 1 unit and down by 1 unit.
 */
-public class ImageOverlap {
+public class ImageOverlap_835 {
 
 	/**
 	 * Leetcode verified

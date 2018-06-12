@@ -3,6 +3,8 @@ package com.leetcode.medium;
 import java.util.Arrays;
 
 /**
+
+370. https://leetcode.com/problems/range-addition/description/
 Assume you have an array of length n initialized with all 0's and are given k update operations.
 
 Each operation is represented as a triplet: [startIndex, endIndex, inc] which increments each element of subarray A[startIndex ... endIndex] (startIndex and endIndex inclusive) with inc.
@@ -37,7 +39,7 @@ After applying operation [2, 4, 3]:
 After applying operation [0, 2, -2]:
 [-2, 0, 3, 5, 3 ]
 */
-public class RangeAddition {
+public class RangeAddition_370 {
 
 	/**
 	 * Leetcode verified

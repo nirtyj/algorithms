@@ -9,7 +9,7 @@ public class IncreasingTripletSequenceTest {
 	@Test
 	public void test() {
 		int[] nums = { 2, 1, 5, 0, 4, 6};
-		IncreasingTripletSequence seq = new IncreasingTripletSequence();
+		IncreasingTripletSequence_334 seq = new IncreasingTripletSequence_334();
 		assertTrue(seq.increasingTriplet(nums));
 	}
 }

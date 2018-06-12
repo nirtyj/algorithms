@@ -1,6 +1,7 @@
 package com.leetcode.medium;
 
 /**
+334. https://leetcode.com/problems/increasing-triplet-subsequence/description/
 Given an unsorted array return whether an increasing subsequence of length 3 exists or not in the array.
 
 Formally the function should:
@@ -15,7 +16,7 @@ return true.
 Given [5, 4, 3, 2, 1],
 return false.
 */
-public class IncreasingTripletSequence {
+public class IncreasingTripletSequence_334 {
 
 	/**
 	 * Leetcode verified
