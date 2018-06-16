@@ -17,6 +17,31 @@ return 2.
 public class MeetingRoomsII {
 
 	/**
+	 * Most efficient
+	 * @param intervals
+	 * @return
+	 */
+	public int minMeetingRooms2(Interval[] intervals) {
+        int[] starts = new int[intervals.length];
+        int[] ends = new int[intervals.length];
+        for(int i=0; i<intervals.length; i++) {
+            starts[i] = intervals[i].start;
+            ends[i] = intervals[i].end;
+        }
+        Arrays.sort(starts);
+        Arrays.sort(ends);
+        int rooms = 0;
+        int endsItr = 0;
+        for(int i=0; i<starts.length; i++) {
+            if(starts[i]<ends[endsItr])
+                rooms++;
+            else
+                endsItr++;
+        }
+        return rooms;
+    }
+
+	/**
 	 * Leetcode verified
 	 * @param intervals
 	 * @return
@@ -97,29 +122,4 @@ public class MeetingRoomsII {
 		}
 		return heap.size();
 	}
-	
-	/**
-	 * Most efficient
-	 * @param intervals
-	 * @return
-	 */
-	public int minMeetingRooms2(Interval[] intervals) {
-        int[] starts = new int[intervals.length];
-        int[] ends = new int[intervals.length];
-        for(int i=0; i<intervals.length; i++) {
-            starts[i] = intervals[i].start;
-            ends[i] = intervals[i].end;
-        }
-        Arrays.sort(starts);
-        Arrays.sort(ends);
-        int rooms = 0;
-        int endsItr = 0;
-        for(int i=0; i<starts.length; i++) {
-            if(starts[i]<ends[endsItr])
-                rooms++;
-            else
-                endsItr++;
-        }
-        return rooms;
-    }
 }

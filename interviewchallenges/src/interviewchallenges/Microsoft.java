@@ -105,4 +105,48 @@ public class Microsoft {
 		 Simple design questions like messaging and elevator controller
 		 two strings are anagrams
 	 */
+	
+	/**
+	 * Onsite Interview 
+	 * 
+	    Round 1
+	    Braces match use stack to implement
+		Use constant variable.
+		What about two different braces
+		Two different braces with const not possible 
+		Use stack. 
+		How to do logger for that. File logging 
+		Console logging.
+		.Logger design with database. Collector interface
+	    Implement Math.Sqrt
+		Expose this as library. Not a service. 
+		What about multiple threads using the same method. Synchronized
+		Implement key value database as service.
+		
+		
+		Round 2
+		Is bst. 
+		Count how many elements that are violation. Of the bst property.
+		Max of left and pass it to the right. Return up the max of right 
+		
+		Round 3
+		one child is boy.
+		Probability of other is a girl
+		Boy born on a Tuesday
+		Load balancer question startergies to distribute.
+		Hashcode on url. So that's caching can be effective for those application pages 
+		Client server not responding. How to back off. Exponential back off. Randomized backoff 
+		Retry.
+		Multiple clients. Then Randomized jitter with exponential.
+		Clone graph.
+		 Dfs. Bfs.
+		
+		Round 4:
+		Implement Math.Sqrt
+		Expose this as library. Not a service. 
+		What about multiple threads using the same method. Synchronized
+		Implement key value database as service.
+		
+		Edit distance
+	 */
 }
