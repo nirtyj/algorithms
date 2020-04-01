@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../dependency/InterviewBit.iml" filepath="$PROJECT_DIR$/../dependency/InterviewBit.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../algorithms/algorithms.iml" filepath="$PROJECT_DIR$/../algorithms/algorithms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../interviewchallenges/interviewchallenges.iml" filepath="$PROJECT_DIR$/../interviewchallenges/interviewchallenges.iml" />
       <module fileurl="file://$PROJECT_DIR$/leetcode.iml" filepath="$PROJECT_DIR$/leetcode.iml" />
     </modules>
   </component>
