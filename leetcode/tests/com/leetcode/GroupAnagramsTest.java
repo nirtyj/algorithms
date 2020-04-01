@@ -1,12 +1,11 @@
 package com.leetcode;
 
-import static org.junit.Assert.assertEquals;
+import com.leetcode.medium.GroupAnagrams_49;
+import org.junit.Test;
 
 import java.util.List;
 
-import org.junit.Test;
-
-import com.leetcode.medium.GroupAnagrams_49;
+import static org.junit.Assert.assertEquals;
 
 public class GroupAnagramsTest {
 
