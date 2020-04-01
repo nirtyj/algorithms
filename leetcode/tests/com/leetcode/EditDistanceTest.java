@@ -1,16 +1,15 @@
 package com.leetcode;
 
-import static org.junit.Assert.assertEquals;
-
+import com.leetcode.hard.EditDistance;
 import org.junit.Test;
 
-import com.leetcode.hard.EditDistance;
+import static org.junit.Assert.assertEquals;
 
 public class EditDistanceTest {
 
-	@Test
-	public void test() {
-		assertEquals(1, EditDistance.minDistance("", "a"));
-	}
+    @Test
+    public void test() {
+        assertEquals(1, EditDistance.minDistance("", "a"));
+    }
 
 }

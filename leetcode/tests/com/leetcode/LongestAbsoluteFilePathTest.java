@@ -1,18 +1,17 @@
 package com.leetcode;
 
-import static org.junit.Assert.assertEquals;
-
+import com.leetcode.medium.LongestAbsoluteFilePath_388;
 import org.junit.Test;
 
-import com.leetcode.medium.LongestAbsoluteFilePath_388;
+import static org.junit.Assert.assertEquals;
 
 public class LongestAbsoluteFilePathTest {
 
-	@Test
-	public void test() {
-		assertEquals(32, LongestAbsoluteFilePath_388.lengthLongestPath(
-				"dir\n\tsubdir1\n\t\tfile1.ext\n\t\tsubsubdir1\n\tsubdir2\n\t\tsubsubdir2\n\t\t\tfile2.ext"));
+    @Test
+    public void test() {
+        assertEquals(32, LongestAbsoluteFilePath_388.lengthLongestPath(
+                "dir\n\tsubdir1\n\t\tfile1.ext\n\t\tsubsubdir1\n\tsubdir2\n\t\tsubsubdir2\n\t\t\tfile2.ext"));
 
-	}
+    }
 
 }

@@ -1,16 +1,15 @@
 package com.leetcode;
 
-import static org.junit.Assert.assertEquals;
-
+import com.leetcode.add_mult_pow.MultiplyTwoNums;
 import org.junit.Test;
 
-import com.leetcode.add_mult_pow.MultiplyTwoNums;
+import static org.junit.Assert.assertEquals;
 
 public class MultiplyTwoNumsTest {
 
-	@Test
-	public void test() {
-		assertEquals("2640", MultiplyTwoNums.multiply("110", "24"));
-	}
+    @Test
+    public void test() {
+        assertEquals("2640", MultiplyTwoNums.multiply("110", "24"));
+    }
 
 }

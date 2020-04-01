@@ -1,17 +1,16 @@
 package com.leetcode;
 
-import static org.junit.Assert.assertEquals;
-
+import com.leetcode.easy.IslandPerimeter;
 import org.junit.Test;
 
-import com.leetcode.easy.IslandPerimeter;
+import static org.junit.Assert.assertEquals;
 
 public class IslandPerimeterTest {
 
-	@Test
-	public void test() {
-		int[][] grid = {{0,1,0,0},{1,1,1,0},{0,1,0,0},{1,1,0,0}};
-		assertEquals(16, IslandPerimeter.islandPerimeter(grid));
-	}
+    @Test
+    public void test() {
+        int[][] grid = {{0, 1, 0, 0}, {1, 1, 1, 0}, {0, 1, 0, 0}, {1, 1, 0, 0}};
+        assertEquals(16, IslandPerimeter.islandPerimeter(grid));
+    }
 
 }

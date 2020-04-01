@@ -1,47 +1,48 @@
 package com.leetcode.medium;
+
 /**
-161. https://leetcode.com/problems/one-edit-distance/description/
-Given two strings S and T, determine if they are both one edit distance apart.
-*/
+ * 161. https://leetcode.com/problems/one-edit-distance/description/
+ * Given two strings S and T, determine if they are both one edit distance apart.
+ */
 public class OneEditDistance_161 {
 
-	/**
-	 * Leetcode verified
-	 */
-	public boolean isOneEditDistance(String s, String t) {
-		// if lengths differ more than 1 - false
-		if (Math.abs(s.length() - t.length()) > 1)
-			return false;
-		
-		// if length is equal, its modify
-		if (s.length() == t.length())
-			return isOneModify(s, t);
-		
-		// if s is greater than t by 1, its deleted
-		if (s.length() > t.length())
-			return isOneDel(s, t);
-		
-		// if s is less than t by 1, its added
-		return isOneDel(t, s);
-	}
+    /**
+     * Leetcode verified
+     */
+    public boolean isOneEditDistance(String s, String t) {
+        // if lengths differ more than 1 - false
+        if (Math.abs(s.length() - t.length()) > 1)
+            return false;
 
-	// if you hit a mismatch, see others match except that character
-	public boolean isOneDel(String s, String t) {
-		for (int i = 0, j = 0; i < s.length() && j < t.length(); i++, j++) {
-			if (s.charAt(i) != t.charAt(j)) {
-				return s.substring(i + 1).equals(t.substring(j));
-			}
-		}
-		return true;
-	}
+        // if length is equal, its modify
+        if (s.length() == t.length())
+            return isOneModify(s, t);
 
-	// mofify, count number of unequals
-	public boolean isOneModify(String s, String t) {
-		int diff = 0;
-		for (int i = 0; i < s.length(); i++) {
-			if (s.charAt(i) != t.charAt(i))
-				diff++;
-		}
-		return diff == 1;
-	}
+        // if s is greater than t by 1, its deleted
+        if (s.length() > t.length())
+            return isOneDel(s, t);
+
+        // if s is less than t by 1, its added
+        return isOneDel(t, s);
+    }
+
+    // if you hit a mismatch, see others match except that character
+    public boolean isOneDel(String s, String t) {
+        for (int i = 0, j = 0; i < s.length() && j < t.length(); i++, j++) {
+            if (s.charAt(i) != t.charAt(j)) {
+                return s.substring(i + 1).equals(t.substring(j));
+            }
+        }
+        return true;
+    }
+
+    // mofify, count number of unequals
+    public boolean isOneModify(String s, String t) {
+        int diff = 0;
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) != t.charAt(i))
+                diff++;
+        }
+        return diff == 1;
+    }
 }

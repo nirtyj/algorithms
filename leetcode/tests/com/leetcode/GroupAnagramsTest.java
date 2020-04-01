@@ -9,11 +9,11 @@ import static org.junit.Assert.assertEquals;
 
 public class GroupAnagramsTest {
 
-	@Test
-	public void test() {
-		String[] input = {"eat","tea","tan","ate","nat","bat"};
-		List<List<String>> result =GroupAnagrams_49.groupAnagrams(input);
-		assertEquals(3, result.size());
-	}
+    @Test
+    public void test() {
+        String[] input = {"eat", "tea", "tan", "ate", "nat", "bat"};
+        List<List<String>> result = GroupAnagrams_49.groupAnagrams(input);
+        assertEquals(3, result.size());
+    }
 
 }

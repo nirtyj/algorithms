@@ -1,16 +1,15 @@
 package com.leetcode;
 
-import static org.junit.Assert.assertEquals;
-
+import com.leetcode.easy.FirstUniqueCharacterInString;
 import org.junit.Test;
 
-import com.leetcode.easy.FirstUniqueCharacterInString;
+import static org.junit.Assert.assertEquals;
 
 public class FirstUniqueCharacterInStringTest {
 
-	@Test
-	public void test() {
-		assertEquals(0, FirstUniqueCharacterInString.firstUniqChar("leetcode"));
-	}
+    @Test
+    public void test() {
+        assertEquals(0, FirstUniqueCharacterInString.firstUniqChar("leetcode"));
+    }
 
 }

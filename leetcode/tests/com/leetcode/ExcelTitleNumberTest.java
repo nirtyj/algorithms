@@ -1,16 +1,15 @@
 package com.leetcode;
 
-import static org.junit.Assert.assertEquals;
-
+import com.leetcode.easy.ExcelTitleNumber;
 import org.junit.Test;
 
-import com.leetcode.easy.ExcelTitleNumber;
+import static org.junit.Assert.assertEquals;
 
 public class ExcelTitleNumberTest {
 
-	@Test
-	public void test() {
-		assertEquals(53, ExcelTitleNumber.titleToNumber("BA"));
-	}
+    @Test
+    public void test() {
+        assertEquals(53, ExcelTitleNumber.titleToNumber("BA"));
+    }
 
 }

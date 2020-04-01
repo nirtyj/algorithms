@@ -1,83 +1,86 @@
 package com.leetcode.trees;
 
-import java.util.ArrayList;
-
 import com.leetcode.common.TreeNode;
 
+import java.util.ArrayList;
+
 /**
-530. https://leetcode.com/problems/minimum-absolute-difference-in-bst/description/
-Given a binary search tree with non-negative values, find the minimum absolute difference between values of any two nodes.
-Example:
-
-Input:
-
-   1
-    \
-     3
-    /
-   2
-
-Output:
-1
-
-Explanation:
-The minimum absolute difference is 1, which is the difference between 2 and 1 (or between 2 and 3).
-*/
+ * 530. https://leetcode.com/problems/minimum-absolute-difference-in-bst/description/
+ * Given a binary search tree with non-negative values, find the minimum absolute difference between values of any two nodes.
+ * Example:
+ * <p>
+ * Input:
+ * <p>
+ * 1
+ * \
+ * 3
+ * /
+ * 2
+ * <p>
+ * Output:
+ * 1
+ * <p>
+ * Explanation:
+ * The minimum absolute difference is 1, which is the difference between 2 and 1 (or between 2 and 3).
+ */
 public class MinimumAbsDifferenceInBST_530 {
 
-	int min = Integer.MAX_VALUE;
-	/**
-	 * Leetcode verified
-	 * @param root
-	 * @return
-	 */
-	public int getMinimumDifference(TreeNode root) {
-		min = Integer.MAX_VALUE;
-		recurseHelper(root.left, null, root);
-		recurseHelper(root.right, root, null);
-		return min;
-	}
+    int min = Integer.MAX_VALUE;
 
-	private void recurseHelper(TreeNode current, TreeNode leftBound, TreeNode rightBound) {
-		if (current == null)
-			return;
+    /**
+     * Leetcode verified
+     *
+     * @param root
+     * @return
+     */
+    public int getMinimumDifference(TreeNode root) {
+        min = Integer.MAX_VALUE;
+        recurseHelper(root.left, null, root);
+        recurseHelper(root.right, root, null);
+        return min;
+    }
 
-		if (leftBound != null)
-			min = Math.min(min, Math.abs(current.val - leftBound.val));
+    private void recurseHelper(TreeNode current, TreeNode leftBound, TreeNode rightBound) {
+        if (current == null)
+            return;
 
-		if (rightBound != null)
-			min = Math.min(min, Math.abs(current.val - rightBound.val));
+        if (leftBound != null)
+            min = Math.min(min, Math.abs(current.val - leftBound.val));
 
-		recurseHelper(current.left, leftBound, current);
-		recurseHelper(current.right, current, rightBound);
-	}
+        if (rightBound != null)
+            min = Math.min(min, Math.abs(current.val - rightBound.val));
 
-	/**
-	 * Leetcode verified
-	 * @param root
-	 * @return
-	 */
-	public int getMinimumDifferenceMoreSpace(TreeNode root) {
-		ArrayList<Integer> list = new ArrayList<Integer>();
-		recurseHelper(root, list);
-		int result = Integer.MAX_VALUE;
-		for (int i = 1; i < list.size(); i++) {
-			int diff = Math.abs(list.get(i - 1) - list.get(i));
-			result = Math.min(result, diff);
-		}
-		return result;
-	}
+        recurseHelper(current.left, leftBound, current);
+        recurseHelper(current.right, current, rightBound);
+    }
 
-	private void recurseHelper(TreeNode node, ArrayList<Integer> list) {
-		if (node == null)
-			return;
+    /**
+     * Leetcode verified
+     *
+     * @param root
+     * @return
+     */
+    public int getMinimumDifferenceMoreSpace(TreeNode root) {
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        recurseHelper(root, list);
+        int result = Integer.MAX_VALUE;
+        for (int i = 1; i < list.size(); i++) {
+            int diff = Math.abs(list.get(i - 1) - list.get(i));
+            result = Math.min(result, diff);
+        }
+        return result;
+    }
 
-		if (node.left != null)
-			recurseHelper(node.left, list);
+    private void recurseHelper(TreeNode node, ArrayList<Integer> list) {
+        if (node == null)
+            return;
 
-		list.add(node.val);
+        if (node.left != null)
+            recurseHelper(node.left, list);
 
-		if (node.right != null)
-			recurseHelper(node.right, list);
-	}
+        list.add(node.val);
+
+        if (node.right != null)
+            recurseHelper(node.right, list);
+    }
 }

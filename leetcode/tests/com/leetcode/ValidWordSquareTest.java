@@ -1,19 +1,18 @@
 package com.leetcode;
 
-import static org.junit.Assert.assertTrue;
+import com.leetcode.easy.ValidWordSquare;
+import org.junit.Test;
 
 import java.util.Arrays;
 
-import org.junit.Test;
-
-import com.leetcode.easy.ValidWordSquare;
+import static org.junit.Assert.assertTrue;
 
 public class ValidWordSquareTest {
 
-	@Test
-	public void test() {
-		String[] arr = {"abcd","bnrt","crm","dt"};
-		assertTrue(ValidWordSquare.validWordSquare(Arrays.asList(arr)));
-	}
+    @Test
+    public void test() {
+        String[] arr = {"abcd", "bnrt", "crm", "dt"};
+        assertTrue(ValidWordSquare.validWordSquare(Arrays.asList(arr)));
+    }
 
 }

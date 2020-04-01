@@ -1,16 +1,15 @@
 package com.leetcode;
 
-import static org.junit.Assert.assertEquals;
-
+import com.leetcode.easy.RepeatedStringMatch;
 import org.junit.Test;
 
-import com.leetcode.easy.RepeatedStringMatch;
+import static org.junit.Assert.assertEquals;
 
 public class RepeatedStringMatchTest {
 
-	@Test
-	public void test() {
-		assertEquals(3, RepeatedStringMatch.repeatedStringMatch("abcd", "cdabcdab"));
-	}
+    @Test
+    public void test() {
+        assertEquals(3, RepeatedStringMatch.repeatedStringMatch("abcd", "cdabcdab"));
+    }
 
 }

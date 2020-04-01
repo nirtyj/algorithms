@@ -7,88 +7,88 @@ import com.leetcode.common.ListNode;
  */
 public class ReverseLinkedList {
 
-	/**
-	 * Leetcode verified
-	 */
-	public ListNode reverseListRecursiveBest(ListNode head) {
-		if (head == null || head.next == null)
-			return head;
-		ListNode lasthead = reverseList(head.next);
-		head.next.next = head;
-		head.next = null;
-		return lasthead;
-	}
+    public static ListNode reverseList1(ListNode head) {
+        if (head == null)
+            return null;
 
-	public ListNode reverseListIterativeBest(ListNode head) {
-		if (head == null || head.next == null)
-			return head;
-		ListNode prev = null;
-		ListNode node = head;
-		while (node.next != null) {
-			ListNode next = node.next;
-			node.next = prev;
-			prev = node;
-			node = next;
-		}
-		node.next = prev;
-		return node;
-	}
+        ListNode prev = null;
+        ListNode curr = head;
+        ListNode next = head.next;
+        while (next != null) {
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+            next = next.next;
+        }
+        curr.next = prev;
+        return curr;
+    }
 
-	public static ListNode reverseList1(ListNode head) {
-		if (head == null)
-			return null;
+    public static ListNode reverseList(ListNode node) {
+        if (node.next == null)
+            return node;
 
-		ListNode prev = null;
-		ListNode curr = head;
-		ListNode next = head.next;
-		while (next != null) {
-			curr.next = prev;
-			prev = curr;
-			curr = next;
-			next = next.next;
-		}
-		curr.next = prev;
-		return curr;
-	}
+        ListNode prev = reverseList(node.next);
 
-	public static ListNode reverseList(ListNode node) {
-		if (node.next == null)
-			return node;
+        ListNode last = prev;
+        while (last.next != null)
+            last = last.next;
 
-		ListNode prev = reverseList(node.next);
+        node.next = null;
+        last.next = node;
+        return prev;
+    }
 
-		ListNode last = prev;
-		while (last.next != null)
-			last = last.next;
+    public static ListNode reverseListRecursive(ListNode head) {
+        if (head == null || head.next == null)
+            return head;
 
-		node.next = null;
-		last.next = node;
-		return prev;
-	}
+        ListNode nextNode = head.next;
 
-	public static ListNode reverseListRecursive(ListNode head) {
-		if (head == null || head.next == null)
-			return head;
+        ListNode last = reverseListRecursive(head.next);
+        head.next = null;
+        nextNode.next = head;
+        return last;
+    }
 
-		ListNode nextNode = head.next;
+    public static ListNode reverseListIterative(ListNode head) {
 
-		ListNode last = reverseListRecursive(head.next);
-		head.next = null;
-		nextNode.next = head;
-		return last;
-	}
+        ListNode prev = head;
+        ListNode curr = head.next;
+        prev.next = null;
+        while (curr != null) {
+            ListNode nxtNode = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = nxtNode;
+        }
+        return prev;
+    }
 
-	public static ListNode reverseListIterative(ListNode head) {
+    /**
+     * Leetcode verified
+     */
+    public ListNode reverseListRecursiveBest(ListNode head) {
+        if (head == null || head.next == null)
+            return head;
+        ListNode lasthead = reverseList(head.next);
+        head.next.next = head;
+        head.next = null;
+        return lasthead;
+    }
 
-		ListNode prev = head;
-		ListNode curr = head.next;
-		prev.next = null;
-		while (curr != null) {
-			ListNode nxtNode = curr.next;
-			curr.next = prev;
-			prev = curr;
-			curr = nxtNode;
-		}
-		return prev;
-	}
+    public ListNode reverseListIterativeBest(ListNode head) {
+        if (head == null || head.next == null)
+            return head;
+        ListNode prev = null;
+        ListNode node = head;
+        while (node.next != null) {
+            ListNode next = node.next;
+            node.next = prev;
+            prev = node;
+            node = next;
+        }
+        node.next = prev;
+        return node;
+    }
 }

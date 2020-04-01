@@ -1,16 +1,15 @@
 package com.leetcode;
 
-import static org.junit.Assert.assertEquals;
-
+import com.leetcode.easy.ReverseVowelsOfString;
 import org.junit.Test;
 
-import com.leetcode.easy.ReverseVowelsOfString;
+import static org.junit.Assert.assertEquals;
 
 public class ReverseVowelsOfStringTest {
 
-	@Test
-	public void test() {
-		assertEquals("leotcede", ReverseVowelsOfString.reverseVowels("leetcode"));
-	}
+    @Test
+    public void test() {
+        assertEquals("leotcede", ReverseVowelsOfString.reverseVowels("leetcode"));
+    }
 
 }

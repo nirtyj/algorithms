@@ -1,17 +1,16 @@
 package com.leetcode;
 
-import static org.junit.Assert.assertEquals;
-
+import com.leetcode.medium.PalindromicSubstrings_647;
 import org.junit.Test;
 
-import com.leetcode.medium.PalindromicSubstrings_647;
+import static org.junit.Assert.assertEquals;
 
 public class PalindromicSubstringsTest {
 
-	@Test
-	public void test() {
-		assertEquals(3, PalindromicSubstrings_647.countSubstrings2("abc"));
-		assertEquals(6, PalindromicSubstrings_647.countSubstrings2("aaa"));
-	}
+    @Test
+    public void test() {
+        assertEquals(3, PalindromicSubstrings_647.countSubstrings2("abc"));
+        assertEquals(6, PalindromicSubstrings_647.countSubstrings2("aaa"));
+    }
 
 }

@@ -5,62 +5,63 @@ package com.leetcode.easy;
  */
 public class LongestCommonPrefix {
 
-	/**
-	 * Leetcode verified
-	 * @param strs
-	 * @return
-	 */
-	public static String longestCommonPrefix(String[] strs) {
-		if (strs == null || strs.length == 0) {
-			return "";
-		}
+    /**
+     * Leetcode verified
+     *
+     * @param strs
+     * @return
+     */
+    public static String longestCommonPrefix(String[] strs) {
+        if (strs == null || strs.length == 0) {
+            return "";
+        }
 
-		String lcp = strs[0];
-		for (int i = 1; i < strs.length; i++) {
-			int j = 0;
-			String s = strs[i];
-			for (; j < s.length() && j <lcp.length(); j++) {
-				if (s.charAt(j) != lcp.charAt(j)) {
-					if (j == 0) {
-						lcp = "";
-					} else {
-						lcp = lcp.substring(0, j);
-					}
-					break;
-				}
-			}
-			if (j < lcp.length()) {
-				lcp = lcp.substring(0, j);
-			}
-		}
-		return lcp;
-	}
-	
-	public static String longestCommonPrefix2Iterations(String[] strs) {
+        String lcp = strs[0];
+        for (int i = 1; i < strs.length; i++) {
+            int j = 0;
+            String s = strs[i];
+            for (; j < s.length() && j < lcp.length(); j++) {
+                if (s.charAt(j) != lcp.charAt(j)) {
+                    if (j == 0) {
+                        lcp = "";
+                    } else {
+                        lcp = lcp.substring(0, j);
+                    }
+                    break;
+                }
+            }
+            if (j < lcp.length()) {
+                lcp = lcp.substring(0, j);
+            }
+        }
+        return lcp;
+    }
 
-		String smallest = null;
-		int minSize = Integer.MAX_VALUE;
-		for (String str : strs) {
-			if (str.length() < minSize) {
-				minSize = str.length();
-				smallest = str;
-			}
-		}
+    public static String longestCommonPrefix2Iterations(String[] strs) {
 
-		boolean mismatch = false;
-		int i;
-		for (i = 0; i < smallest.length(); i++) {
-			for (String str : strs) {
-				if (str.charAt(i) != smallest.charAt(i)) {
-					mismatch = true;
-					break;
-				}
-			}
+        String smallest = null;
+        int minSize = Integer.MAX_VALUE;
+        for (String str : strs) {
+            if (str.length() < minSize) {
+                minSize = str.length();
+                smallest = str;
+            }
+        }
 
-			if (mismatch)
-				break;
-		}
+        boolean mismatch = false;
+        int i;
+        for (i = 0; i < smallest.length(); i++) {
+            for (String str : strs) {
+                if (str.charAt(i) != smallest.charAt(i)) {
+                    mismatch = true;
+                    break;
+                }
+            }
 
-		return smallest.substring(0, i);
-	}
+            if (mismatch)
+                break;
+        }
+
+        return smallest.substring(0, i);
+    }
 }
