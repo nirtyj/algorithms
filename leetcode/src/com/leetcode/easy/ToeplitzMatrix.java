@@ -47,4 +47,45 @@ public class ToeplitzMatrix {
         }
         return true;
     }
+
+    public boolean isToeplitzMatrixII(int[][] matrix) {
+        if (matrix == null || matrix.length == 0)
+            return true;
+        if (matrix[0].length > 1) {
+            int i=0;
+            for(int j=0;j<matrix[0].length;j++){
+                int first = matrix[i][j];
+                int m = i;
+                int n = j;
+                while(isValid(matrix, m,n)) {
+                    if (first != matrix[m][n])
+                        return false;
+                    m++;
+                    n++;
+                }
+            }
+        }
+        if (matrix.length > 1) {
+            int j=0;
+            for(int i=1;i<matrix.length;i++){
+                int first = matrix[i][j];
+                int m = i;
+                int n = j;
+                while(isValid(matrix, m,n)) {
+                    if (first != matrix[m][n])
+                        return false;
+                    m++;
+                    n++;
+                }
+            }
+        }
+        return true;
+    }
+
+    boolean isValid(int[][] matrix, int i, int j) {
+        if (i <= matrix.length -1  && j<= matrix[0].length -1)
+            return true;
+        else
+            return false;
+    }
 }
