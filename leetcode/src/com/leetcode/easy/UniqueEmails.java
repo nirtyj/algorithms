@@ -33,18 +33,17 @@ import java.util.HashSet;
  */
 public class UniqueEmails {
 
-    class Solution {
-        public int numUniqueEmails(String[] emails) {
-            if (emails.length == 1)
-                return 1;
-            HashSet<String> unique = new HashSet<>();
-            for (int i=0;i<emails.length;i++) {
-                String[] tokens = emails[i].split("@");
-                String stripped = tokens[0].replace(".", "");
-                int index = stripped.indexOf('+');
-                unique.add(stripped.substring(0, (index == -1 ? stripped.length() : index))  + "@" + tokens[1]);
-            }
-            return unique.size();
+    public int numUniqueEmails(String[] emails) {
+        if (emails.length == 1)
+            return 1;
+        HashSet<String> unique = new HashSet<>();
+        for (int i = 0; i < emails.length; i++) {
+            String[] tokens = emails[i].split("@");
+            String stripped = tokens[0].replace(".", "");
+            int index = stripped.indexOf('+');
+            unique.add(stripped.substring(0, (index == -1 ? stripped.length() : index)) + "@" + tokens[1]);
         }
+        return unique.size();
     }
+
 }

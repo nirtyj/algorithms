@@ -22,7 +22,7 @@ package com.leetcode.easy;
  * This is the maximum distance possible, so the answer is 3.
  */
 public class MaxDistanceToClosestPerson {
-    class Solution {
+
         public int maxDistToClosest(int[] seats) {
             int[] maxSeatDistance = new int[seats.length];
             int max = 0;
@@ -57,5 +57,4 @@ public class MaxDistanceToClosestPerson {
             }
             return max;
         }
-    }
 }
