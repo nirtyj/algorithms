@@ -1,7 +1,9 @@
 package com.leetcode.cheapestflights;
 
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.Map;
+import java.util.Queue;
 
 /**
  * There are n cities connected by m flights. Each flight starts from city u and arrives at v with a price w.
@@ -37,7 +39,7 @@ import java.util.Map;
  * k is in the range of [0, n - 1].
  * There will not be any duplicated flights or self cycles.
  */
-public class CheapestFlightDFS { // 515 ms
+public class CheapestFlightBFS { // 11 ms
 
     static class Node {
         public int name;
@@ -48,10 +50,27 @@ public class CheapestFlightDFS { // 515 ms
         }
     }
 
+    static class NodePair implements Comparable<NodePair> {
+        public Node node;
+        public int cost;
+        public int step;
+
+        NodePair(Node node,int cost, int step) {
+            this.node = node;
+            this.cost = cost;
+            this.step = step;
+        }
+
+        @Override
+        public int compareTo(NodePair au){
+            return Integer.compare(this.cost, au.cost);
+        }
+    }
+
     public int findCheapestPrice(int n, int[][] flights, int src, int dst, int K) {
         Node srcNode = null;
         Node dstNode = null;
-        Map<Integer, Node> map = new HashMap<>();
+        Node[] map = new Node[n];
         for (int i = 0; i < n; i++) {
             Node node = new Node(i);
             if (i == src) {
@@ -59,52 +78,45 @@ public class CheapestFlightDFS { // 515 ms
             } else if (i == dst) {
                 dstNode = node;
             }
-            map.put(i, node);
+            map[i] = node;
         }
 
         for (int i = 0; i < flights.length; i++) {
             int startNum = flights[i][0];
             int endNum = flights[i][1];
             int cost = flights[i][2];
-            Node startNode = map.get(startNum);
-            Node endNode = map.get(endNum);
+            Node startNode = map[startNum];
+            Node endNode = map[endNum];
             startNode.neighbors.put(endNode, cost);
         }
-        Map<Node, Integer> seen = new HashMap<>();
-        int min = Integer.MAX_VALUE;
-        for (Map.Entry<Node, Integer> entry : srcNode.neighbors.entrySet()) {
-            Node next = entry.getKey();
-            if (entry.getValue() >= min) // prunning
-                continue;
-            int cost = seen.getOrDefault(next, findCost(next, dstNode, K, entry.getValue(), seen, min));
-            if (cost == -1)
-                continue;
-            else
-                min = Math.min(min, cost);
-        }
-        return (min == Integer.MAX_VALUE) ? -1 : min;
-    }
 
-    private int findCost(Node curr, Node dst, int k, int total, Map<Node, Integer> seen, int bestMin) {
-        if (curr.name == dst.name)
-            return total;
-        if (k == 0) {
-            return -1;
-        }
-        int min = bestMin;
-        for (Map.Entry<Node, Integer> entry : curr.neighbors.entrySet()) {
-            Node next = entry.getKey();
-            if (total + entry.getValue() >= bestMin) // prunning
-                continue;
-            int cost = seen.getOrDefault(next, findCost(next, dst, k - 1, total + entry.getValue(), seen, min));
-            if (cost == -1) {
-                continue;
-            } else {
-                min = Math.min(min, cost);
+        int bestMin = Integer.MAX_VALUE;
+        HashMap<Node, Integer> minCost = new HashMap<>();
+        Queue<NodePair> queue = new LinkedList<NodePair>();
+        queue.add(new NodePair(srcNode, 0, K));
+        while(!queue.isEmpty())
+        {
+            NodePair currPair = queue.poll();
+            Node curr = currPair.node;
+            int cost = currPair.cost;
+            int step = currPair.step;
+
+            if (curr.name == dstNode.name) {
+                bestMin = Math.min(bestMin, cost);
             }
+
+            for (Map.Entry<Node, Integer> entry : curr.neighbors.entrySet()) {
+                Node next = entry.getKey();
+                if (cost + entry.getValue() >= bestMin) // prunning
+                    continue;
+                if (step <0)
+                    continue;
+                if (minCost.getOrDefault(next, Integer.MAX_VALUE) < (cost + entry.getValue()))
+                    continue; // stop from going to the same node with higher value
+                queue.offer(new NodePair(next, cost + entry.getValue(), step -1));
+            }
+            minCost.put(curr, cost);
         }
-        int result = (min == Integer.MAX_VALUE) ? -1 : min;
-        seen.put(curr, result);
-        return result;
+        return (bestMin == Integer.MAX_VALUE) ? -1 : bestMin;
     }
 }
