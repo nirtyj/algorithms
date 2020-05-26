@@ -20,15 +20,11 @@ public class MinimumPathSum {
      * @return
      */
     public static int minPathSum(int[][] grid) {
-
         if (grid == null)
             return 0;
-
         int m = grid.length;
         int n = grid[0].length;
-
         int[][] dp = new int[m][n];
-
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
                 // check for i-1, j-1 out of matrix range.
@@ -44,6 +40,5 @@ public class MinimumPathSum {
             }
         }
         return dp[m - 1][n - 1];
-
     }
 }
