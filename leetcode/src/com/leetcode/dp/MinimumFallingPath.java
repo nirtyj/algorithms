@@ -25,7 +25,7 @@ package com.leetcode.dp;
  * 1 <= A.length == A[0].length <= 100
  * -100 <= A[i][j] <= 100
  */
-public class MinimumFailingPathSum {
+public class MinimumFallingPath {
 
     /**
      * 4 ms O(m*n) - size of grid
