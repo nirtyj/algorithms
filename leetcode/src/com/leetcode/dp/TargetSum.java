@@ -31,7 +31,7 @@ public class TargetSum {
     int count = 0;
 
     /**
-     * Leetcode accepted -
+     * Leetcode accepted - Works for numbers with 0 included.
      * Memoization - calculate only for one part of the subtree. as its repeated work
      *
      * @param nums
@@ -75,7 +75,6 @@ public class TargetSum {
      * @return
      */
     public int findTargetSumWays(int[] nums, int S) {
-
         int sum = 0;
         for (int n : nums) {
             sum += n;
