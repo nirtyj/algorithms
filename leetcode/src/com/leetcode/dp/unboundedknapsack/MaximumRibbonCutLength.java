@@ -15,7 +15,7 @@ package com.leetcode.dp.unboundedknapsack;
 public class MaximumRibbonCutLength {
 
     /**
-     * 1D bottom up 
+     * 1D bottom up
      * @param denominations
      * @param total
      * @return

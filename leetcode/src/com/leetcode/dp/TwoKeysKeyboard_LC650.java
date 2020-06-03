@@ -1,6 +1,6 @@
 package com.leetcode.dp;
 
-public class TwoKeysKeyboard {
+public class TwoKeysKeyboard_LC650 {
 
     /**
      * For generating AAAA we need 2 additional steps from AA.

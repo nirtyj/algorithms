@@ -27,7 +27,7 @@ package com.leetcode.dp;
  * strs[i] consists only of digits '0' and '1'.
  * 1 <= m, n <= 100
  */
-public class OnesAndZeros {
+public class OnesAndZeros_LC474 {
 
     /** Recursion with memoization
      * @param strs

@@ -14,7 +14,7 @@ package com.leetcode.dp.zerooneknapsack;
  * Each of the array element will not exceed 100.
  * The array size will not exceed 200.
  */
-public class SubsetSum {
+public class SubsetSum_LC416 {
     public boolean canPartition(int[] num, int sum) {
         int n = num.length;
         boolean[][] dp = new boolean[n][sum + 1];
@@ -64,7 +64,7 @@ public class SubsetSum {
     }
 
     public static void main(String[] args) {
-        SubsetSum ss = new SubsetSum();
+        SubsetSum_LC416 ss = new SubsetSum_LC416();
         int[] num = {1, 2, 3, 7};
         System.out.println(ss.canPartitionOptimized(num, 6));
         num = new int[]{1, 2, 7, 1, 5};

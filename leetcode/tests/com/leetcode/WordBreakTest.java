@@ -1,6 +1,6 @@
 package com.leetcode;
 
-import com.leetcode.dp.WordBreak;
+import com.leetcode.dp.WordBreak_LC139;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -15,7 +15,7 @@ public class WordBreakTest {
         List<String> dict = new ArrayList<String>();
         dict.add("leet");
         dict.add("code");
-        assertEquals(true, WordBreak.wordBreak("leetcode", dict));
+        assertEquals(true, WordBreak_LC139.wordBreak("leetcode", dict));
     }
 
 }

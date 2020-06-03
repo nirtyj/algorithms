@@ -26,7 +26,7 @@ package com.leetcode.dp.unboundedknapsack;
  * Input: amount = 10, coins = [10]
  * Output: 1
  */
-public class CoinChange2 {
+public class CoinChange2_LC518 {
 
     /**
      * 1D bottom up DP

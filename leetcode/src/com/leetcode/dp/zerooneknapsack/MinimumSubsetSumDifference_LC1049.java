@@ -28,7 +28,7 @@ package com.leetcode.dp.zerooneknapsack;
  * we can combine 2 and 1 to get 1 so the array converts to [1,1,1] then,
  * we can combine 1 and 1 to get 0 so the array converts to [1] then that's the optimal value.
  */
-public class MinimumSubsetSumDifference {
+public class MinimumSubsetSumDifference_LC1049 {
 
     /**
      * Bottom up DP with space optimization
@@ -108,7 +108,7 @@ public class MinimumSubsetSumDifference {
     }
 
     public static void main(String[] args) {
-        MinimumSubsetSumDifference ps = new MinimumSubsetSumDifference();
+        MinimumSubsetSumDifference_LC1049 ps = new MinimumSubsetSumDifference_LC1049();
         int[] num = { 9, 3, 2, 1};
         System.out.println(ps.getPartitionMinDifference(num));
         num = new int[]{1, 2, 7, 1, 5};

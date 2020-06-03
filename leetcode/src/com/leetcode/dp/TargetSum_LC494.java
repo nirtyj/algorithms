@@ -26,7 +26,7 @@ import java.util.Map;
  * The sum of elements in the given array will not exceed 1000.
  * Your output answer is guaranteed to be fitted in a 32-bit integer.
  */
-public class TargetSum {
+public class TargetSum_LC494 {
 
     int count = 0;
 

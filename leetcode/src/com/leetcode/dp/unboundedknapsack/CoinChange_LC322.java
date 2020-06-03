@@ -16,7 +16,7 @@ package com.leetcode.dp.unboundedknapsack;
  * Note:
  * You may assume that you have an infinite number of each kind of coin.
  */
-public class CoinChange {
+public class CoinChange_LC322 {
 
     /**
      * Leetcode verified - 1D Dynamic programming
