@@ -16,30 +16,80 @@ import java.util.Arrays;
 public class LongestIncreasingSubsequence_LC300 {
 
     /**
+     * Patience sort - O(n log n)
+     * https://leetcode.com/problems/longest-increasing-subsequence/discuss/74897/Fast-Java-Binary-Search-Solution-with-detailed-explanation
+     */
+    public int lengthOfLIS(int[] nums) {
+        if (nums.length == 0)
+            return 0;
+        int[] dp = new int[nums.length];
+        int dplen = 0;
+        for(int i=0;i<nums.length;i++){
+            int pos = Arrays.binarySearch(dp, 0, dplen, nums[i]);
+            // if the key is not found, returns a negative insertionPointVal.
+            if (pos < 0){
+                pos =  (-(pos) - 1);
+            }
+            if (pos == dplen){
+                dp[dplen] = nums[i];
+                dplen++;
+            } else {
+                dp[pos] = nums[i];
+            }
+        }
+        return dplen;
+    }
+
+    /**
      * Leetcode verified - O(n^2)
      *
      * @param nums
      * @return
      */
-    public static int lengthOfLISDp(int[] nums) {
-        if (nums == null || nums.length == 0)
+    public int lengthOfLISDP(int[] nums) {
+        if (nums.length == 0)
             return 0;
-        else if (nums.length == 1)
-            return 1;
-
-        int result = 1;
-        int[] maxlength = new int[nums.length];
-        Arrays.fill(maxlength, 1);
-        for (int i = 1; i < nums.length; i++) {
-            for (int j = 0; j < i; j++) {
-                if (nums[j] < nums[i]) {
-                    maxlength[i] = Math.max(maxlength[i], (maxlength[j] + 1));
-                    result = Math.max(maxlength[i], result);
+        int[] dp = new int[nums.length];
+        Arrays.fill(dp, 1);
+        int maxVal = 1;
+        for(int i=1;i<nums.length;i++){
+            for(int j=0;j<i;j++){
+                if (nums[i]>nums[j]){
+                    dp[i] = Math.max(dp[i], dp[j] + 1);
+                    maxVal = Math.max(dp[i], maxVal);
                 }
-
             }
         }
-        return result;
+        return maxVal;
+    }
+
+    /**
+     * Memoization for recursion
+     * @param nums
+     * @return
+     */
+    public int lengthOfLISMemoized(int[] nums) {
+        Integer[][] dp = new Integer[nums.length][nums.length+1];
+        return findLISLengthRecursive(nums, 0, -1, dp);
+    }
+
+    private int findLISLengthRecursive(int[] nums, int currentIndex, int previousIndex, Integer[][] dp) {
+        if(currentIndex == nums.length)
+            return 0;
+
+        if (dp[currentIndex][previousIndex+1] != null){
+            return dp[currentIndex][previousIndex+1];
+        }
+        // include nums[currentIndex] if it is larger than the last included number
+        int c1 = 0;
+        if(previousIndex == -1 || nums[currentIndex] > nums[previousIndex])
+            c1 = 1 + findLISLengthRecursive(nums, currentIndex+1, currentIndex, dp);
+
+        // excluding the number at currentIndex
+        int c2 = findLISLengthRecursive(nums, currentIndex+1, previousIndex, dp);
+
+        dp[currentIndex][previousIndex+1] = Math.max(c1, c2);
+        return dp[currentIndex][previousIndex+1];
     }
 
     /**
