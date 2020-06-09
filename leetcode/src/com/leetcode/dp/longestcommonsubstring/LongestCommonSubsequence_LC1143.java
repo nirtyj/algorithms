@@ -28,7 +28,7 @@ public class LongestCommonSubsequence_LC1143 {
     /**
      * Bottom up DP 1D array
      */
-    public int longestCommonSubsequence(String text1, String text2) {
+    public static int longestCommonSubsequence(String text1, String text2) {
         int[] dp = new int[text2.length() + 1];
         for(int i =1;i<=text1.length();i++){
             int prev = 0; // represents i-1,j-1
@@ -44,6 +44,40 @@ public class LongestCommonSubsequence_LC1143 {
 
         }
         return dp[text2.length()];
+    }
+
+    public String findLongestCommonSubsequenceString(String str1, String str2){
+        int[][] dp = longestCommonSubsequenceReturnDp(str1, str2);
+        StringBuilder sb = new StringBuilder();
+        int i = str1.length();
+        int j = str2.length();
+        while(i>0 && j>0){
+            if (dp[i][j] == dp[i-1][j] + 1 && dp[i][j] == dp[i][j -1] + 1 ){
+                sb.append(str1.charAt(i -1));
+                i--;
+                j--;
+            }
+            else if (dp[i][j] == dp[i-1][j]) {
+                i--;
+            } else {
+                j--;
+            }
+        }
+        return sb.reverse().toString();
+    }
+
+    public static int[][] longestCommonSubsequenceReturnDp(String text1, String text2) {
+        int[][] dp = new int[text1.length() + 1][text2.length() + 1];
+        for(int i =1;i<=text1.length();i++){
+            for (int j = 1;j<=text2.length();j++){
+                if (text1.charAt(i-1) == text2.charAt(j-1)){
+                    dp[i][j] = 1 + dp[i -1][j-1];
+                } else {
+                    dp[i][j] = Math.max(dp[i][j-1], dp[i-1][j]);
+                }
+            }
+        }
+        return dp;
     }
 
     /**
@@ -122,5 +156,11 @@ public class LongestCommonSubsequence_LC1143 {
             newcount = Math.max(newcount, recurseHelper(s1, s2, i1 + 1, i2));
         }
         return newcount;
+    }
+
+    public static void main(String[] args) {
+        LongestCommonSubsequence_LC1143 scs = new LongestCommonSubsequence_LC1143();
+        System.out.println(scs.findLongestCommonSubsequenceString("cbda","abdca"));
+        System.out.println(scs.findLongestCommonSubsequenceString("passport", "ppsspt"));
     }
 }
