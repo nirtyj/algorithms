@@ -19,7 +19,7 @@ public class LongestIncreasingSubsequence_LC300 {
      * Patience sort - O(n log n)
      * https://leetcode.com/problems/longest-increasing-subsequence/discuss/74897/Fast-Java-Binary-Search-Solution-with-detailed-explanation
      */
-    public int lengthOfLIS(int[] nums) {
+    public static int lengthOfLIS(int[] nums) {
         if (nums.length == 0)
             return 0;
         int[] dp = new int[nums.length];
