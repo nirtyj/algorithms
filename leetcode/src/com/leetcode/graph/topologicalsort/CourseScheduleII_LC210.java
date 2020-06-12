@@ -32,7 +32,7 @@ import java.util.stream.IntStream;
 public class CourseScheduleII_LC210 {
 
     /**
-     * Uses topological Sort
+     * Uses topological Sort with depth first
      *
      * @param numCourses
      * @param prerequisites

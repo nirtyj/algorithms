@@ -23,6 +23,65 @@ import java.util.Queue;
 public class CourseSchedule_LC207 {
 
     /**
+     * Leetcode verified
+     * @param numCourses
+     * @param prerequisites
+     * @return
+     */
+    public boolean canFinishTopologicalSort(int numCourses, int[][] prerequisites) {
+        if (prerequisites.length ==0){
+            return true;
+        }
+        HashMap<Integer, HashSet<Integer>> indegree = new HashMap<>();
+        for (int i = 0; i < prerequisites.length; i++) {
+            int startV = prerequisites[i][0];
+            int endV = prerequisites[i][1];
+            HashSet<Integer> edges = indegree.getOrDefault(endV, new HashSet<>());
+            edges.add(startV);
+            indegree.put(endV, edges);
+        }
+
+        // one element for each course for tracking visiting
+        int[] seen = new int[numCourses];
+
+        // for each course, find the visited
+        for (int i = 0; i < numCourses; i++) {
+            if (!topologicalSort(seen, indegree, i)) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    private boolean topologicalSort(int[] seen, HashMap<Integer, HashSet<Integer>> reverseIndex, int i) {
+
+        // -1 means loop
+        if (seen[i] == -1)
+            return false;
+
+        // already visited - so truncates the tree and returns
+        if (seen[i] == 1)
+            return true;
+
+        // currently visiting
+        seen[i] = -1;
+
+        if (reverseIndex.containsKey(i)) {
+            HashSet<Integer> vals = reverseIndex.get(i);
+            for (Integer val : vals) {
+                if (!topologicalSort(seen, reverseIndex, val))
+                    return false;
+            }
+        }
+
+        // mark as visited
+        seen[i] = 1;
+
+        return true;
+    }
+
+    /**
      * BFS- leetcode verified
      *
      * @param numCourses
