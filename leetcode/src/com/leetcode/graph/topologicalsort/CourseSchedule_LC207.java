@@ -102,7 +102,7 @@ public class CourseSchedule_LC207 {
             pCounter[prerequisites[i][0]]++;
         }
 
-        Queue<Integer> noPreReqs = new LinkedList<Integer>();
+        Queue<Integer> noPreReqs = new LinkedList<>();
 
         // go through the array to find out the course that has no pre-req
         for (int i = 0; i < numCourses; i++) {
