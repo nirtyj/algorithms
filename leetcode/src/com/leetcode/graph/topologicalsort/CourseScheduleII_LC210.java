@@ -1,10 +1,12 @@
 package com.leetcode.graph.topologicalsort;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
+import java.util.stream.IntStream;
 
 /**
  * There are a total of n courses you have to take, labeled from 0 to n - 1.
@@ -27,7 +29,7 @@ import java.util.Stack;
  * The input prerequisites is a graph represented by a list of edges, not adjacency matrices. Read more about how a graph is represented.
  * You may assume that there are no duplicate edges in the input prerequisites.
  */
-public class CourseScheduleII {
+public class CourseScheduleII_LC210 {
 
     /**
      * Uses topological Sort
@@ -38,36 +40,31 @@ public class CourseScheduleII {
      */
     public int[] findOrder(int numCourses, int[][] prerequisites) {
 
-        int[] result = new int[numCourses];
-        int len = prerequisites.length;
-        if (len == 0) {
-            int[] res = new int[numCourses];
-            for (int m = 0; m < numCourses; m++) {
-                res[m] = m;
-            }
-            return res;
+        if (prerequisites.length <= 0) {
+            return IntStream.range(0, numCourses).toArray();
         }
 
-        HashMap<Integer, HashSet<Integer>> reverseIndex = new HashMap<>();
-        // build reverse index
+        int[] result = new int[numCourses];
+
+        HashMap<Integer, HashSet<Integer>> indegree = new HashMap<>();
+        // build reverse index or indegree.
         for (int i = 0; i < prerequisites.length; i++) {
-            if (reverseIndex.containsKey(prerequisites[i][1])) {
-                reverseIndex.get(prerequisites[i][1]).add(prerequisites[i][0]);
-            } else {
-                HashSet<Integer> set = new HashSet<Integer>();
-                set.add(prerequisites[i][0]);
-                reverseIndex.put(prerequisites[i][1], set);
-            }
+            int startV = prerequisites[i][0];
+            int endV = prerequisites[i][1];
+            HashSet<Integer> edges = indegree.getOrDefault(endV, new HashSet<>());
+            edges.add(startV);
+            indegree.put(endV, edges);
         }
+
         // one element for each course for tracking visiting
-        int[] pCounter = new int[numCourses];
+        int[] seen = new int[numCourses];
 
         // stack to hold the visited nodes
-        Stack<Integer> stack = new Stack<Integer>();
+        Stack<Integer> stack = new Stack<>();
 
         // for each course, find the visited
         for (int i = 0; i < numCourses; i++) {
-            if (!topologicalSort(pCounter, reverseIndex, i, stack)) {
+            if (!topologicalSort(seen, indegree, i, stack)) {
                 return new int[0];
             }
         }
@@ -80,30 +77,30 @@ public class CourseScheduleII {
         return result;
     }
 
-    private boolean topologicalSort(int[] pCounter, HashMap<Integer, HashSet<Integer>> reverseIndex, int i,
+    private boolean topologicalSort(int[] seen, HashMap<Integer, HashSet<Integer>> reverseIndex, int i,
                                     Stack<Integer> stack) {
 
         // -1 means loop
-        if (pCounter[i] == -1)
+        if (seen[i] == -1)
             return false;
 
         // already visited - so truncates the tree and returns
-        if (pCounter[i] == 1)
+        if (seen[i] == 1)
             return true;
 
         // currently visiting
-        pCounter[i] = -1;
+        seen[i] = -1;
 
         if (reverseIndex.containsKey(i)) {
             HashSet<Integer> vals = reverseIndex.get(i);
             for (Integer val : vals) {
-                if (!topologicalSort(pCounter, reverseIndex, val, stack))
+                if (!topologicalSort(seen, reverseIndex, val, stack))
                     return false;
             }
         }
 
         // mark as visited
-        pCounter[i] = 1;
+        seen[i] = 1;
 
         stack.push(i);
         return true;
@@ -174,5 +171,9 @@ public class CourseScheduleII {
         } else {
             return new int[0];
         }
+    }
+
+    public static void main(String[] args){
+        System.out.println(Arrays.toString(IntStream.range(1, 10).toArray()));
     }
 }
