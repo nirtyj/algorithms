@@ -1,5 +1,7 @@
 package com.leetcode.graph.unionfind;
 
+import com.leetcode.common.DisjointSetUnion;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -30,7 +32,7 @@ import java.util.Set;
  * The length of accounts[i] will be in the range [1, 10].
  * The length of accounts[i][j] will be in the range [1, 30]
  */
-public class AccountsMerge {
+public class AccountsMerge_LC721 {
 
     /**
      * Leetcode accepted - Disjoint sets
@@ -39,45 +41,46 @@ public class AccountsMerge {
      * @return
      */
     public static List<List<String>> accountsMerge(List<List<String>> accounts) {
-        DSU dsu = new DSU();
-        Map<String, String> emailToName = new HashMap<>();
-        Map<String, Integer> emailToID = new HashMap<>();
+        if (accounts.size() == 0) {
+            return Collections.emptyList();
+        }
+        DisjointSetUnion u = new DisjointSetUnion(10000);
+        HashMap<String, String> emailToName = new HashMap<>();
+        HashMap<String, Integer> emailToID = new HashMap<>();
         int id = 0;
         for (List<String> account : accounts) {
-            String name = "";
-            for (String email : account) {
-                if (name == "") {
-                    name = email;
-                    continue;
-                }
-                emailToName.put(email, name);
+            String name = account.get(0);
+            for (int i = 1; i < account.size(); i++) {
+                String email = account.get(i);
                 // dont create a new id, if its been seen already
                 if (!emailToID.containsKey(email)) {
                     emailToID.put(email, id++);
                 }
+                emailToName.put(email, name);
                 // for each email in the account, union to the first email. so, all the emails in an account are mapped to one id
                 // if emails are from different account, and its seen earlier, use that id to union to this account.
-                dsu.union(emailToID.get(account.get(1)), emailToID.get(email));
+                u.union(emailToID.get(account.get(1)), emailToID.get(email));
             }
         }
 
-        Map<Integer, List<String>> ans = new HashMap<>();
-
-        // now map all the emails to the single account - reverse index
-        for (String email : emailToName.keySet()) {
-            int index = dsu.find(emailToID.get(email));
-            // no need of set as there are no duplicates in emailToId or emailToName
-            List<String> list = ans.getOrDefault(index, new ArrayList<>());
-            list.add(email);
-            ans.put(index, list);
+        // now map all the emails to the single account ID
+        Map<Integer, List<String>> idToEmails = new HashMap<>();
+        for (Map.Entry<String, String> entry : emailToName.entrySet()) {
+            Integer idd = u.find(emailToID.get(entry.getKey()));
+            List<String> emails = idToEmails.getOrDefault(idd, new ArrayList<>());
+            emails.add(entry.getKey());
+            idToEmails.put(idd, emails);
         }
 
         // calculate result
-        for (List<String> component : ans.values()) {
-            Collections.sort(component);
-            component.add(0, emailToName.get(component.get(0)));
+        List<List<String>> result = new ArrayList<>();
+        for (Map.Entry<Integer, List<String>> e : idToEmails.entrySet()) {
+            List<String> emails = e.getValue();
+            Collections.sort(emails);
+            emails.add(0, emailToName.get(emails.get(0)));
+            result.add(emails);
         }
-        return new ArrayList<>(ans.values());
+        return result;
     }
 
     /**
@@ -137,12 +140,10 @@ public class AccountsMerge {
      * @return
      */
     public static List<List<String>> accountsMergeTle(List<List<String>> accounts) {
-
         HashMap<String, Account> map = new HashMap<>();
-
         for (List<String> acct : accounts) {
             Account a = new Account(acct);
-            List<Account> existingAccts = new ArrayList<Account>();
+            List<Account> existingAccts = new ArrayList<>();
             HashMap<String, Account> tempMap = new HashMap<>();
             for (String email : a.emails) {
                 tempMap.put(email, a);
@@ -174,33 +175,9 @@ public class AccountsMerge {
         return result;
     }
 
-    static class DSU {
-        int[] parent;
-
-        public DSU() {
-            parent = new int[10001];
-            for (int i = 0; i <= 10000; ++i)
-                parent[i] = i;
-        }
-
-        public int find(int x) {
-            if (parent[x] != x)
-                parent[x] = find(parent[x]);
-            return parent[x];
-        }
-
-        public void union(int x, int y) {
-            parent[find(x)] = find(y);
-        }
-    }
-
-    private static class Account {
+     static class Account {
         String name;
-        Set<String> emails = new HashSet<String>();
-
-        public Account() {
-
-        }
+        Set<String> emails = new HashSet<>();
 
         public Account(List<String> strings) {
             this.name = strings.get(0);
@@ -208,7 +185,9 @@ public class AccountsMerge {
             this.emails.remove(this.name);
         }
 
-        public List<String> getStrings() {
+         public Account() {}
+
+         public List<String> getStrings() {
             List<String> vals = new ArrayList<>();
             vals.add(this.name);
             vals.addAll(emails);

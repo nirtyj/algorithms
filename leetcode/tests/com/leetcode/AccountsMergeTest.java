@@ -1,6 +1,6 @@
 package com.leetcode;
 
-import com.leetcode.graph.unionfind.AccountsMerge;
+import com.leetcode.graph.unionfind.AccountsMerge_LC721;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -29,7 +29,7 @@ public class AccountsMergeTest {
         input.add(list2);
         input.add(list3);
         input.add(list4);
-        List<List<String>> ouput = AccountsMerge.accountsMerge(input);
+        List<List<String>> ouput = AccountsMerge_LC721.accountsMerge(input);
         System.out.println();
     }
 
@@ -58,7 +58,7 @@ public class AccountsMergeTest {
         input.add(list3);
         input.add(list4);
         input.add(list5);
-        List<List<String>> ouput = AccountsMerge.accountsMerge(input);
+        List<List<String>> ouput = AccountsMerge_LC721.accountsMerge(input);
         System.out.println();
     }
 

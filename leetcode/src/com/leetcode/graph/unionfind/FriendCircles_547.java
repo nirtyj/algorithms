@@ -1,5 +1,7 @@
 package com.leetcode.graph.unionfind;
 
+import com.leetcode.common.DisjointSetUnion;
+
 /**
  * There are N students in a class. Some of them are friends, while some are not. Their friendship is transitive in nature.
  * For example, if A is a direct friend of B, and B is a direct friend of C, then A is an indirect friend of C.
@@ -30,49 +32,56 @@ package com.leetcode.graph.unionfind;
  * M[i][i] = 1 for all students.
  * If M[i][j] = 1, then M[j][i] = 1.
  */
-public class FriendCircles {
+public class FriendCircles_547 {
 
     /**
      * Leetcode verified
+     * @param M
+     * @return
+     */
+    public int findCircleNumDFS(int[][] M) {
+        boolean[] visited = new boolean[M.length];
+        int count = 0;
+        for(int i=0;i<M.length;i++){
+            for(int j=0;j<M[0].length;j++){
+                if (M[i][j] == 1 && visited[j] == false){
+                    visited[i] = true;
+                    dfs(j, M, visited);
+                    count++;
+                }
+            }
+        }
+        return count;
+    }
+
+    public void dfs(int i, int[][] M, boolean[] visited){
+        for(int j=0;j<M[0].length;j++){
+            if ( M[i][j] == 1 && visited[j] == false){
+                visited[j] = true;
+                dfs(j, M, visited);
+            }
+        }
+    }
+
+    /**
+     * Leetcode verified with Union-Find
      *
      * @param M
      * @return
      */
     public static int findCircleNum(int[][] M) {
-        int[] dsu = new int[M.length];
+        DisjointSetUnion u = new DisjointSetUnion(M.length);
         for (int i = 0; i < M.length; i++) {
-            dsu[i] = i;
-        }
-        for (int i = 0; i < M.length; i++) {
-            for (int j = 0; j < M.length; j++) {
-                if (i == j) {
-                    continue;
-                } else if (M[i][j] == 1) {
-                    // find set
-                    int x = find(i, dsu);
-                    int y = find(j, dsu);
-                    // union but don't make a loopback if both x and y are the same.
-                    // if x and y are the same, it means they are already connected
-                    if (x == y)
-                        continue;
-                    dsu[x] = y;
+            for (int j = 0; j < M[i].length; j++) {
+                if (i != j && M[i][j] == 1) {
+                    u.union(i, j);
                 }
-
             }
         }
-
-        int result = 0;
-        for (int i = 0; i < M.length; i++) {
-            if (dsu[i] == i)
-                result++;
+        int size = 0;
+        for(int i=0;i<M.length;i++){
+            if (u.find(i) == i) size++;
         }
-        return result;
-    }
-
-    private static int find(int x, int[] dsu) {
-        if (dsu[x] == x)
-            return x;
-        else
-            return find(dsu[x], dsu);
+        return size;
     }
 }
