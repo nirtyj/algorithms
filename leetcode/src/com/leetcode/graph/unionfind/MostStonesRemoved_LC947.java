@@ -1,4 +1,6 @@
-package com.leetcode.graph;
+package com.leetcode.graph.unionfind;
+
+import com.leetcode.common.DisjointSetUnionWithPathCompression;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -32,6 +34,25 @@ import java.util.Set;
 public class MostStonesRemoved_LC947 {
     int connectedNodes = 0;
 
+    /**
+     * Union find - fastest
+     */
+    public int removeStonesUnionFind(int[][] stones) {
+        int N = stones.length;
+        DisjointSetUnionWithPathCompression dsu = new DisjointSetUnionWithPathCompression(20000);
+        for (int[] stone : stones)
+            dsu.union(stone[0], stone[1] + 10000);
+        Set<Integer> seen = new HashSet();
+        for (int[] stone : stones)
+            seen.add(dsu.find(stone[0]));
+        return N - seen.size();
+    }
+
+    /**
+     * DFS
+     * @param stones
+     * @return
+     */
     public int removeStones(int[][] stones) {
         Map<String, List<int[]>> mapping = new HashMap<>();
         for (int[] stone : stones) {
