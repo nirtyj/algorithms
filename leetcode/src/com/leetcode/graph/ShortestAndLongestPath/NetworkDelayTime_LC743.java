@@ -35,7 +35,8 @@ import java.util.PriorityQueue;
 public class NetworkDelayTime_LC743 {
 
     /**
-     * Leetcode verified
+     * Leetcode verified - Dijkstra's algorithm
+     * https://leetcode.com/problems/network-delay-time/discuss/183873/Java-solutions-using-Dijkstra-FloydWarshall-and-Bellman-Ford-algorithm
      * @param times
      * @param N
      * @param K
