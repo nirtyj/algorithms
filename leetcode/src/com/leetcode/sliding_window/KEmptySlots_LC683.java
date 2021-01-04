@@ -1,5 +1,6 @@
 package com.leetcode.sliding_window;
 
+import java.util.Objects;
 import java.util.TreeSet;
 
 /**
@@ -26,6 +27,20 @@ import java.util.TreeSet;
  * Output: -1
  */
 public class KEmptySlots_LC683 {
+    private String id;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        KEmptySlots_LC683 that = (KEmptySlots_LC683) o;
+        return Objects.equals(id, that.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
 
     /**
      * Treeset - find lower / higher and check the diff.
