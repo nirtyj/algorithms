@@ -1,4 +1,4 @@
-package com.leetcode.hard;
+package com.leetcode.trees.segment_trees;
 
 public class RangeSumQuery2DMutable_LC308 {
 
