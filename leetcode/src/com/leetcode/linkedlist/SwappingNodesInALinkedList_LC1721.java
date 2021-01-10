@@ -28,8 +28,45 @@ import com.leetcode.common.ListNode;
  * Output: [1,2,3]
  */
 public class SwappingNodesInALinkedList_LC1721 {
+
     /**
-     * Find the size then do it.
+     * Single pass
+     * @param head
+     * @param k
+     * @return
+     */
+    public ListNode swapNodesSinglePass(ListNode head, int k) {
+        if (head.next == null) {
+            return head;
+        }
+        ListNode startK = null;
+        ListNode endK = null;
+        ListNode temp = head;
+        int i = 1;
+        int j = 1 - k;
+        while(temp != null){
+            if (i == k) {
+                startK = temp;
+            }
+            if (endK != null){
+                endK = endK.next;
+            }
+            temp = temp.next;
+            if (j == 0) {
+                endK = head;
+            }
+            i++;
+            j++;
+        }
+
+        int tempVal = endK.val;
+        endK.val = startK.val;
+        startK.val = tempVal;
+        return head;
+    }
+
+    /**
+     * Find the size then do it. Double pass
      * @param head
      * @param k
      * @return
