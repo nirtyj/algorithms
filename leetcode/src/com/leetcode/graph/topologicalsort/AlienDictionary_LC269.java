@@ -1,10 +1,8 @@
 package com.leetcode.graph.topologicalsort;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.LinkedHashMap;
-import java.util.LinkedHashSet;
-import java.util.Stack;
 
 /**
  * There is a new alien language which uses the latin alphabet.
@@ -43,82 +41,54 @@ public class AlienDictionary_LC269 {
      * @return
      */
     public String alienOrder(String[] words) {
-        if (words.length == 0) {
-            return "";
-        }
-        HashMap<Character, HashSet<Character>> indegree = new LinkedHashMap<>();
-        // init
+        HashMap<Character, HashSet<Character>> inDegree = new HashMap<>();
         for (String word : words) {
-            for (int k = 0; k < word.length(); k++) {
-                indegree.putIfAbsent(word.charAt(k), new LinkedHashSet<>());
+            for (char c : word.toCharArray()) {
+                inDegree.putIfAbsent(c, new HashSet<>());
             }
         }
-
         for (int i = 0; i < words.length - 1; i++) {
             String word1 = words[i];
             String word2 = words[i + 1];
-
-            // Check that word2 is not a prefix of word1.
             if (word1.length() > word2.length() && word1.startsWith(word2)) {
-                return "";
+                return ""; // invalid order
             }
-
             for (int j = 0; j < Math.min(word1.length(), word2.length()); j++) {
                 if (word1.charAt(j) != word2.charAt(j)) {
-                    indegree.get(word2.charAt(j)).add(word1.charAt(j));
+                    HashSet<Character> ins = inDegree.get(word2.charAt(j));
+                    ins.add(word1.charAt(j));
                     break;
                 }
             }
         }
-
-        // one element for each course for tracking visiting
-        HashMap<Character, Integer> seen = new HashMap<>();
-
-        // stack to hold the visited nodes
-        Stack<Character> stack = new Stack<>();
-
-        // for each course, find the visited
-        for (Character c : indegree.keySet()) {
-            if (!topologicalSort(seen, indegree, c, stack)) {
+        HashMap<Character, Integer> visited = new HashMap<>();
+        ArrayList<Character> order = new ArrayList<>();
+        for (Character c : inDegree.keySet()) {
+            if (!topologicalSort(c, inDegree, visited, order)) {
                 return "";
             }
         }
-
         StringBuilder sb = new StringBuilder();
-        // convert stack to result
-        while (!stack.empty())
-            sb.append(stack.pop());
-
-        return sb.reverse().toString();
-
+        order.stream().forEach(c -> sb.append(c));
+        return sb.toString();
     }
 
-
-    private boolean topologicalSort(HashMap<Character, Integer> seen,
-                                    HashMap<Character, HashSet<Character>> reverseIndex,
-                                    Character c,
-                                    Stack<Character> stack) {
-        if (seen.containsKey(c)) {
-            if (seen.get(c) == -1) {
+    private boolean topologicalSort(Character key, HashMap<Character, HashSet<Character>> inDegree,
+                                    HashMap<Character, Integer> visited, ArrayList<Character> order) {
+        if (visited.getOrDefault(key, 0) == -1) {
+            return false;
+        }
+        if (visited.getOrDefault(key, 0) == 1) {
+            return true;
+        }
+        visited.put(key, -1);
+        for (Character in : inDegree.get(key)) {
+            if (!topologicalSort(in, inDegree, visited, order)) {
                 return false;
-            } else {
-                return true;
             }
         }
-
-        // currently visiting
-        seen.put(c, -1);
-
-        HashSet<Character> vals = reverseIndex.get(c);
-        for (Character val : vals) {
-            if (!topologicalSort(seen, reverseIndex, val, stack))
-                return false;
-        }
-
-        // mark as visited
-        seen.put(c, 1);
-
-        stack.push(c);
+        visited.put(key, 1);
+        order.add(key);
         return true;
     }
 }
