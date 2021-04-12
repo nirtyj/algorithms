@@ -63,7 +63,7 @@ public class FruitIntoBacketsSlidingWindow_LC904 {
             count.put(tree[j], count.getOrDefault(tree[j], 0) + 1);
             if (count.size() > 2) {
                 count.put(tree[i], count.get(tree[i]) - 1);
-                if (count.get(tree[i]) == 0 ) {
+                if (count.get(tree[i]) == 0 ) { // optimizing for O(2) memory.
                     count.remove(tree[i]);
                 }
                 i++;
