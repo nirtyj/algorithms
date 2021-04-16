@@ -63,4 +63,10 @@ public class HandyUtils {
          * The tailMap is {15=4, 20=Geeks, 25=Welcomes, 30=You}
          */
     }
+
+    public void stringStartingAtCertainPosition(){
+        String S = "foobar";
+        String match = "bar";
+        S.startsWith(match, 2); // returns true
+    }
 }
