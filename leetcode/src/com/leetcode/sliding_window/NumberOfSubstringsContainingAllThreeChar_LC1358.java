@@ -36,30 +36,17 @@ public class NumberOfSubstringsContainingAllThreeChar_LC1358 {
      * @return
      */
     public int numberOfSubstringsSlidingWindow(String s) {
-        int count[] = {0, 0, 0}, res = 0 , i = 0;
-        for (int j = 0; j < s.length(); j++) {
-            count[s.charAt(j) - 'a']++;
-            while (count[0] > 0 && count[1] > 0 && count[2] > 0){ // if all three chars have been seen
-                count[s.charAt(i) - 'a']--;
-                i++;
+        int count[] = {0, 0, 0}, res = 0;
+        int j = 0; // back pointer
+        int ans = 0;
+        for (int i = 0; i < s.length(); i++) { // front pointer
+            count[s.charAt(i) - 'a']++;
+            while(j <= i && count[0] > 0 && count[1] > 0 && count[2] > 0){
+                ans++; // keep the previous sum as its substrings
+                count[s.charAt(j) - 'a']--; // modify the condition
+                j++; // increase the back pointer.
             }
-            res += i;
-        }
-        return res;
-    }
-
-    /**
-     * Use index position and calculate. all chars left of min of last is substring
-     * @param s
-     * @return
-     */
-    public int numberOfSubstringsIndexPosition(String s) {
-        int last[] = {-1, -1, -1}, res = 0;
-        for (int i = 0; i < s.length(); ++i) {
-            last[s.charAt(i) - 'a'] = i;
-            if (last[0] > -1 && last[1] > -1 && last[2] > -1) { // if all three chars have been seen
-                res += 1 + Math.min(last[0], Math.min(last[1], last[2]));
-            }
+            res = res + ans;
         }
         return res;
     }
