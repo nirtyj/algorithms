@@ -1,5 +1,7 @@
 # Sliding Window
 
+![image alt <](question_variants.png)
+
 ## Most common pattern
 ***LC1438***
 1. Have a counter or hash-map to count specific array input
@@ -19,9 +21,6 @@
 ## Things to worry about
 1. If calculating a sum - always use a double
 2. corner cases are very important - left < right, left <= right, left <= 0, right >= len - 1 etc.,
-
-## Images
-[1]: question_variants.png
 
 ## Reading links
 1. https://leetcode.com/discuss/study-guide/657507/Sliding-Window-for-Beginners-Problems-or-Template-or-Sample-Solutions
