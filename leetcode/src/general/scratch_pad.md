@@ -1,0 +1,12 @@
+#References yet to be read
+
+1. https://leetcode.com/discuss/general-discussion/494279/Comprehensive-Data-Structure-and-Algorithm-Study-Guide
+2. https://leetcode.com/discuss/general-discussion/1000929/Solved-all-dynamic-programming-(dp)-problems-in-7-months.
+3. https://leetcode.com/discuss/general-discussion/458695/Dynamic-Programming-Patterns
+4. https://leetcode.com/discuss/general-discussion/662866/DP-for-Beginners-Problems-or-Patterns-or-Sample-Solutions
+5. https://leetcode.com/discuss/general-discussion/475924/My-experience-and-notes-for-learning-DP
+6. https://leetcode.com/discuss/general-discussion/651719/How-to-solve-DP-String-Template-and-4-Steps-to-be-followed.
+7. https://leetcode.com/discuss/general-discussion/997498/Multithreading-Concurrent-Programming-for-Beginners
+8. https://leetcode.com/discuss/general-discussion/655708/Graph-For-Beginners-Problems-or-Pattern-or-Sample-Solutions
+9. https://leetcode.com/discuss/general-discussion/969327/Graph-Algorithms-One-Place-or-Dijkstra-or-Bellman-Ford-or-Floyd-Warshall-or-Prims-or-Kruskals-or-DSU
+10. https://leetcode.com/discuss/general-discussion/669996/Greedy-for-Beginners-Problems-or-Sample-solutions
