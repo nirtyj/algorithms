@@ -1,5 +1,7 @@
 #References yet to be read
 
+**https://leetcode.com/discuss/general-discussion/665604/Important-and-Useful-links-from-all-over-the-LeetCode**
+
 1. https://leetcode.com/discuss/general-discussion/494279/Comprehensive-Data-Structure-and-Algorithm-Study-Guide
 2. https://leetcode.com/discuss/general-discussion/1000929/Solved-all-dynamic-programming-(dp)-problems-in-7-months.
 3. https://leetcode.com/discuss/general-discussion/458695/Dynamic-Programming-Patterns
@@ -11,7 +13,7 @@
 9. https://leetcode.com/discuss/general-discussion/969327/Graph-Algorithms-One-Place-or-Dijkstra-or-Bellman-Ford-or-Floyd-Warshall-or-Prims-or-Kruskals-or-DSU
 10. https://leetcode.com/discuss/general-discussion/669996/Greedy-for-Beginners-Problems-or-Sample-solutions
 11. https://leetcode.com/discuss/interview-experience/1172461/how-i-finally-got-some-awesome-offers
-
+12. ***https://leetcode.com/discuss/study-guide/448285/List-of-questions-sorted-by-common-patterns***
 # Best Leetcode users
 1. wh0ami: Study Guides - https://leetcode.com/discuss/study-guide?currentPage=1&orderBy=most_relevant&query=wh0ami
 2. Lee215
