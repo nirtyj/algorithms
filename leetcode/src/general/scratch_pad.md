@@ -10,3 +10,8 @@
 8. https://leetcode.com/discuss/general-discussion/655708/Graph-For-Beginners-Problems-or-Pattern-or-Sample-Solutions
 9. https://leetcode.com/discuss/general-discussion/969327/Graph-Algorithms-One-Place-or-Dijkstra-or-Bellman-Ford-or-Floyd-Warshall-or-Prims-or-Kruskals-or-DSU
 10. https://leetcode.com/discuss/general-discussion/669996/Greedy-for-Beginners-Problems-or-Sample-solutions
+11. https://leetcode.com/discuss/interview-experience/1172461/how-i-finally-got-some-awesome-offers
+
+# Best Leetcode users
+1. wh0ami: Study Guides - https://leetcode.com/discuss/study-guide?currentPage=1&orderBy=most_relevant&query=wh0ami
+2. Lee215

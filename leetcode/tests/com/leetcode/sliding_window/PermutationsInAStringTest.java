@@ -9,19 +9,19 @@ public class PermutationsInAStringTest {
 
     @Test
     public void test() {
-        PermutationsInAString ps = new PermutationsInAString();
+        PermutationsInAString_LC567 ps = new PermutationsInAString_LC567();
         assertFalse(ps.checkInclusion("ab", "eidboaooo"));
     }
 
     @Test
     public void test2() {
-        PermutationsInAString ps = new PermutationsInAString();
+        PermutationsInAString_LC567 ps = new PermutationsInAString_LC567();
         assertTrue(ps.checkInclusion("ab", "eidbaooo"));
     }
 
     @Test
     public void test3() {
-        PermutationsInAString ps = new PermutationsInAString();
+        PermutationsInAString_LC567 ps = new PermutationsInAString_LC567();
         assertTrue(ps.checkInclusion("trinitrophenylmethylnitramine", "dinitrophenylhydrazinetrinitrophenylmethylnitramine"));
     }
 }

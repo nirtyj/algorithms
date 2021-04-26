@@ -19,7 +19,7 @@ import java.util.Map;
  * The input strings only contain lower case letters.
  * The length of both given strings is in range [1, 10,000].
  */
-public class PermutationsInAString {
+public class PermutationsInAString_LC567 {
 
     /**
      * Leetcode verified
