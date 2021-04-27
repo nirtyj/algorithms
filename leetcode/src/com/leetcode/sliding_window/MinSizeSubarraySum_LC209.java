@@ -1,4 +1,4 @@
-package com.leetcode.subarrays;
+package com.leetcode.sliding_window;
 
 import java.util.LinkedHashMap;
 
@@ -8,27 +8,25 @@ import java.util.LinkedHashMap;
  * For example, given the array [2,3,1,2,4,3] and s = 7,
  * the subarray [4,3] has the minimal length under the problem constraint.
  */
-public class MinSizeSubarraySum {
+public class MinSizeSubarraySum_LC209 {
 
     /**
      * Leetcode verified
      *
-     * @param s
+     * @param target
      * @param nums
      * @return
      */
-    public int minSubArrayLen(int s, int[] nums) {
+    public int minSubArrayLen(int target, int[] nums) {
         if (nums == null || nums.length == 0)
             return 0;
-        int i = 0, j = 0, sum = 0, min = Integer.MAX_VALUE;
-        while (j < nums.length) {
-            sum = sum + nums[j];
-            j++;
-
-            while (sum >= s) {
-                min = Math.min(min, j - i);
-                sum = sum - nums[i];
-                i++;
+        int begin = 0, sum = 0, min = Integer.MAX_VALUE;
+        for (int end = 0; end < nums.length; end++) {
+            sum = sum + nums[end];
+            while (sum >= target) {
+                min = Math.min(min, end - begin + 1);
+                sum = sum - nums[begin];
+                begin++;
             }
         }
         return min == Integer.MAX_VALUE ? 0 : min;

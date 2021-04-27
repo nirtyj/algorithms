@@ -33,27 +33,27 @@ public class LongestContinuousSubarrayWithAbsoluteDiffLessThanorEqualtoLimit_LC1
      */
     public int longestSubarray(int[] nums, int limit) {
         int max = 0;
-        int left = 0;
+        int begin = 0;
         Deque<Integer> maxd = new ArrayDeque<>(); // LinkedList also to maintain maxes.
         Deque<Integer> mind = new ArrayDeque<>(); // LinkedList also to maintain mins.
-        for (int right = 0; right < nums.length; right++) {
+        for (int end = 0; end < nums.length; end++) {
 
-            while (!maxd.isEmpty() && nums[right] > maxd.peekLast()) // pops until this is bigger
+            while (!maxd.isEmpty() && nums[end] > maxd.peekLast()) // pops until this is bigger
                 maxd.pollLast();
-            while (!mind.isEmpty() && nums[right] < mind.peekLast()) // pops until this is the lower.
+            while (!mind.isEmpty() && nums[end] < mind.peekLast()) // pops until this is the lower.
                 mind.pollLast();
 
-            maxd.add(nums[right]); // add right now.
-            mind.add(nums[right]); // add right now.
+            maxd.add(nums[end]); // add right now.
+            mind.add(nums[end]); // add right now.
 
-            while (Math.abs(maxd.peek() - mind.peek()) > limit && left <= right) { // find the lowest - highest diff
-                if (maxd.peek() == nums[left]) // if the left is bigger one, remove that.
+            while (Math.abs(maxd.peek() - mind.peek()) > limit && begin <= end) { // find the lowest - highest diff
+                if (maxd.peek() == nums[begin]) // if the left is bigger one, remove that.
                     maxd.poll();
-                if (mind.peek() == nums[left]) // if the left is smaller one, remove that.
+                if (mind.peek() == nums[begin]) // if the left is smaller one, remove that.
                     mind.poll();
-                left++;
+                begin++;
             }
-            max = Math.max(max, right - left + 1);  // compute max
+            max = Math.max(max, end - begin + 1);  // compute max
         }
         return max;
     }

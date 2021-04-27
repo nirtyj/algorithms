@@ -24,7 +24,6 @@ package com.leetcode.sliding_window;
  */
 public class MaxConsecutiveOnesIII_LC1004 {
 
-
     /**
      * Leetcode verified O(n)
      * https://leetcode.com/discuss/general-discussion/657507/Sliding-Window-for-Beginners-Problems-or-Template-or-Sample-Solutions
@@ -34,19 +33,19 @@ public class MaxConsecutiveOnesIII_LC1004 {
      * @return
      */
     public int longestOnes(int[] A, int K) {
-        int i = 0, j = 0;
+        int begin = 0;
         int result = Integer.MIN_VALUE;
-        for (j = 0; j < A.length; j++) {
-            if (A[j] == 0) {
+        for (int end = 0; end < A.length; end++) {
+            if (A[end] == 0) {
                 K--;
             }
-            while (K < 0 && i < A.length) { // if also works here
-                if (A[i] == 0) {
+            while (K < 0) {
+                if (A[begin] == 0) {
                     K++;
                 }
-                i++;
+                begin++;
             }
-            result = Math.max(result, j - i + 1);
+            result = Math.max(result, end - begin + 1);
         }
         return result;
     }

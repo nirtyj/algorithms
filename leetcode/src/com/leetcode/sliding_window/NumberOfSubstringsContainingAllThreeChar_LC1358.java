@@ -35,19 +35,19 @@ public class NumberOfSubstringsContainingAllThreeChar_LC1358 {
      * @param s
      * @return
      */
-    public int numberOfSubstringsSlidingWindow(String s) {
-        int count[] = {0, 0, 0}, res = 0;
-        int j = 0; // back pointer
+    public int numberOfSubstrings(String s) {
+        int count[] = {0, 0, 0}, result = 0;
+        int begin = 0; // back pointer
         int ans = 0;
-        for (int i = 0; i < s.length(); i++) { // front pointer
-            count[s.charAt(i) - 'a']++;
-            while(j <= i && count[0] > 0 && count[1] > 0 && count[2] > 0){
+        for (int end = 0; end < s.length(); end++) {
+            count[s.charAt(end) - 'a']++;
+            while(begin <= end && count[0] > 0 && count[1] > 0 && count[2] > 0){
                 ans++; // keep the previous sum as its substrings
-                count[s.charAt(j) - 'a']--; // modify the condition
-                j++; // increase the back pointer.
+                count[s.charAt(begin) - 'a']--; // modify the condition
+                begin++; // increase the back pointer.
             }
-            res = res + ans;
+            result = result + ans;
         }
-        return res;
+        return result;
     }
 }

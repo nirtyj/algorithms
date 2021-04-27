@@ -57,18 +57,18 @@ public class FruitIntoBacketsSlidingWindow_LC904 {
      */
     public int totalFruit(int[] tree) {
         int result = 0; // final max
-        int i = 0;
-        HashMap<Integer, Integer> count = new HashMap<>();
-        for (int j = 0; j < tree.length; j++){
-            count.put(tree[j], count.getOrDefault(tree[j], 0) + 1);
+        int begin = 0;
+        HashMap<Integer, Integer> count = new HashMap<Integer, Integer>();
+        for (int end = 0; end < tree.length; end++){
+            count.put(tree[end], count.getOrDefault(tree[end], 0) + 1);
             if (count.size() > 2) {
-                count.put(tree[i], count.get(tree[i]) - 1);
-                if (count.get(tree[i]) == 0 ) { // optimizing for O(2) memory.
-                    count.remove(tree[i]);
+                count.put(tree[begin], count.get(tree[begin]) - 1);
+                if (count.get(tree[begin]) == 0 ) {
+                    count.remove(tree[begin]);
                 }
-                i++;
+                begin++;
             }
-            result = Math.max(result, j - i + 1);
+            result = Math.max(result, end - begin + 1);
         }
         return result;
     }
