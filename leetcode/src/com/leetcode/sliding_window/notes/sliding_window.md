@@ -27,31 +27,34 @@
 5. Check the minimum/max/find result.
 
 ### Code Example
-```
-   public int lengthOfLongestSubstringKDistinct(String s, int k) {
-        HashMap<Character, Integer> map = new HashMap<>();
-        int begin = 0;
-        int result = 0;
-        int counter = 0;
-        for (int end = 0; end < s.length(); end++) {
-            char c = s.charAt(end);
-            map.put(c, map.getOrDefault(c, 0) + 1);
-            if (map.get(c) == 1)
-                counter++;
 
-            while (counter > k) {
-                char beginC = s.charAt(begin);
-                map.put(beginC, map.get(beginC) - 1);
-                if (map.get(beginC) == 0) {
-                    counter--;
-                }
-                begin++;
+```java
+public class LongestSubstringWithAtMostKDistinctCharacters_LC340 {
+   public int lengthOfLongestSubstringKDistinct(String s, int k) {
+      HashMap<Character, Integer> map = new HashMap<>();
+      int begin = 0;
+      int result = 0;
+      int counter = 0;
+      for (int end = 0; end < s.length(); end++) {
+         char c = s.charAt(end);
+         map.put(c, map.getOrDefault(c, 0) + 1);
+         if (map.get(c) == 1)
+            counter++;
+
+         while (counter > k) {
+            char beginC = s.charAt(begin);
+            map.put(beginC, map.get(beginC) - 1);
+            if (map.get(beginC) == 0) {
+               counter--;
             }
-            // update max
-            result = Math.max(end - begin + 1, result);
-        }
-        return result;
-    }
+            begin++;
+         }
+         // update max
+         result = Math.max(end - begin + 1, result);
+      }
+      return result;
+   }
+}
 ```
 ### Problems
 - LC 3 - https://leetcode.com/problems/longest-substring-without-repeating-characters/
