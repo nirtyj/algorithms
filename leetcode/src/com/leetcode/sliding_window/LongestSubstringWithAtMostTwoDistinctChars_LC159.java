@@ -3,29 +3,27 @@ package com.leetcode.sliding_window;
 import java.util.HashMap;
 
 /**
- * Given a string, find the length of the longest substring T that contains at most k distinct characters.
+ * Given a string, find the length of the longest substring T that contains at most 2 distinct characters.
  * <p>
- * For example, Given s = “eceba” and k = 2,
- * <p>
+ * For example, Given s = “eceba”,
  * T is "ece" which its length is 3.
  */
-public class LongstSubstringWithAtMostKDistinctCharacters {
+public class LongestSubstringWithAtMostTwoDistinctChars_LC159 {
 
     /**
      * Leetcode verified
      *
      * @param s
-     * @param k
      * @return
      */
-    public int lengthOfLongestSubstringKDistinct(String s, int k) {
+    public int lengthOfLongestSubstringTwoDistinct(String s) {
         HashMap<Character, Integer> map = new HashMap<>();
         int begin = 0;
-        int end = 0;
         int maxLength = 0;
         int counter = 0;
-        while (end < s.length()) {
-            char c = s.charAt(end++);
+        int k = 2;
+        for (int end = 0 ; end < s.length(); end++) {
+            char c = s.charAt(end);
             map.put(c, map.getOrDefault(c, 0) + 1);
             if (map.get(c) == 1)
                 counter++;
@@ -39,9 +37,8 @@ public class LongstSubstringWithAtMostKDistinctCharacters {
                 begin++;
             }
             // update max
-            maxLength = Math.max(end - begin, maxLength);
+            maxLength = Math.max(end - begin + 1, maxLength);
         }
-
         return maxLength;
     }
 }

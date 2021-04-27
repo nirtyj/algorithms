@@ -15,7 +15,7 @@ import java.util.HashMap;
  * <p>
  * If there are multiple such windows, you are guaranteed that there will always be only one unique minimum window in S.
  */
-public class MinimumWindowSubstring {
+public class MinimumWindowSubstring_LC76 {
 
     /**
      * Leetcode verified
@@ -27,52 +27,42 @@ public class MinimumWindowSubstring {
     public String minWindow(String s, String t) {
         if (t.length() > s.length())
             return "";
-
         HashMap<Character, Integer> map = new HashMap<>();
         for (int i = 0; i < t.length(); i++) {
             int count = map.getOrDefault(t.charAt(i), 0);
             map.put(t.charAt(i), ++count);
         }
-
         int counter = map.size();
         int begin = 0;
-        int end = 0;
         int minLength = Integer.MAX_VALUE;
-        int head = 0;
-        while (end < s.length()) {
-
+        int resultStart = 0;
+        for (int end = 0; end < s.length(); end++) {
             char c = s.charAt(end);
             if (map.containsKey(c)) {
                 int hitCounter = map.get(c);
-                hitCounter--;
-                map.put(c, hitCounter);
+                map.put(c, --hitCounter);
                 if (map.get(c) == 0) {
                     counter--;
                 }
             }
-            end++;
             while (counter == 0) {
                 char beginC = s.charAt(begin);
                 if (map.containsKey(beginC)) {
                     int hitCounter = map.get(beginC);
-                    hitCounter++;
-                    map.put(beginC, hitCounter);
+                    map.put(beginC, ++hitCounter);
                     if (map.get(beginC) > 0) {
                         counter++;
                     }
                 }
-
-                if (end - begin < minLength) {
-                    minLength = end - begin;
-                    head = begin;
+                if (end - begin + 1 < minLength) {
+                    minLength = end - begin + 1;
+                    resultStart = begin;
                 }
                 begin++;
             }
         }
-
         if (minLength == Integer.MAX_VALUE)
             return "";
-        return s.substring(head, head + minLength);
-
+        return s.substring(resultStart, resultStart + minLength);
     }
 }

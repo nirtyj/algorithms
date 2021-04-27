@@ -29,7 +29,7 @@ import java.util.Map;
  * The substring with start index = 1 is "ba", which is an anagram of "ab".
  * The substring with start index = 2 is "ab", which is an anagram of "ab".
  */
-public class FindAllAnagramsInAString {
+public class FindAllAnagramsInAString_LC438 {
 
     /**
      * Leetcode verified
@@ -46,17 +46,16 @@ public class FindAllAnagramsInAString {
         for (char c : t.toCharArray()) {
             map.put(c, map.getOrDefault(c, 0) + 1);
         }
-        int counter = map.size();
 
-        int begin = 0, end = 0;
-        while (end < s.length()) {
+        int counter = map.size();
+        int begin = 0;
+        for (int end = 0; end < s.length(); end++) {
             char c = s.charAt(end);
             if (map.containsKey(c)) {
                 map.put(c, map.get(c) - 1);
                 if (map.get(c) == 0)
                     counter--;
             }
-            end++;
 
             while (counter == 0) {
                 char beginC = s.charAt(begin);
@@ -66,12 +65,11 @@ public class FindAllAnagramsInAString {
                         counter++;
                     }
                 }
-                if (end - begin == t.length()) {
+                if (end - begin + 1 == t.length()) {
                     result.add(begin);
                 }
                 begin++;
             }
-
         }
         return result;
     }

@@ -1,44 +1,59 @@
 # Sliding Window
 
-![image alt <](question_variants.png)
-
-## Most common pattern
-***LC1438***
-1. Have a counter or hash-map to count specific array input
-2. two pointers - left, right.
-3. outer loop for right until end.
-4. inner loop for left;
-   as long as either window condition and/or another condition is satisfied / not satisfied. - move the left pointer.
-5. Check the minimum/max/find result.
-
-## Take either from start or end -
-***LC1423, LC1658***
-1. Fit everything from start until the window condition is satisfied.
-2. set right to end.
-3. now remove left, increase right
-4. Check the minimum/max/find result
-
-## Things to worry about
-1. If calculating a sum - always use a double
-2. corner cases are very important - left < right, left <= right, left <= 0, right >= len - 1 etc.,
-
 ## Types of Sliding Window:
 
-1. Fast & Slow
-   - Bit flip
-   - Minimum Window substring
-   - Consecutive subarray  sum
-2. Fast & Catch up
-   - Buy Sell stocks
-   - Max consecutive sum
-3. Fast & Lagging (constant slow)
-   - House Robber
+1. Fast & Slow (slow pointer moves incrementally independently to the fast based on a condition)
+   - LongestSubstringWithoutRepeatingCharacters_LC3
+   - MinimumWindowSubstring_LC76
+   - LongestSubstringWithAtMostTwoDistinctChars_LC159
+   - LongestSubstringWithAtMostKDistinctCharacters_LC340
+   - LongestRepeatingCharacterReplacement_LC424
+   - FindAllAnagramsInAString_LC438
+2. Fast & Catch up (slow pointer jumps & resets independently to the fast based on a condition)
+   - SubstringWithConcatenationOfAllWords_LC30
+3. Fast & Lagging (slow pointer moves along with the fast based on a constant window size)
+   - PermutationsInAString_LC567
 4. Front & Back
-   - Rainwater
-   - Sorted Two Sum
 
 ## Sliding Window Template - 1
 **https://leetcode.com/problems/find-all-anagrams-in-a-string/discuss/92007/sliding-window-algorithm-template-to-solve-all-the-leetcode-substring-search-problem**
+
+### Steps
+1. Have a counter and/or hash-map to count specific array input
+2. two pointers - begin, end.
+3. outer for end until the end of the string / array.
+4. inner while loop for moving begin;
+   as long as either window condition and/or another condition is satisfied / not satisfied. - move the begin pointer.
+5. Check the minimum/max/find result.
+
+### Code Example
+```
+   public int lengthOfLongestSubstringKDistinct(String s, int k) {
+        HashMap<Character, Integer> map = new HashMap<>();
+        int begin = 0;
+        int result = 0;
+        int counter = 0;
+        for (int end = 0; end < s.length(); end++) {
+            char c = s.charAt(end);
+            map.put(c, map.getOrDefault(c, 0) + 1);
+            if (map.get(c) == 1)
+                counter++;
+
+            while (counter > k) {
+                char beginC = s.charAt(begin);
+                map.put(beginC, map.get(beginC) - 1);
+                if (map.get(beginC) == 0) {
+                    counter--;
+                }
+                begin++;
+            }
+            // update max
+            result = Math.max(end - begin + 1, result);
+        }
+        return result;
+    }
+```
+### Problems
 - LC 3 - https://leetcode.com/problems/longest-substring-without-repeating-characters/
 - LC 30 - https://leetcode.com/problems/substring-with-concatenation-of-all-words/
 - LC 76 - https://leetcode.com/problems/minimum-window-substring/
@@ -63,7 +78,15 @@
 - LC 1358 - https://leetcode.com/problems/number-of-substrings-containing-all-three-characters/
 - LC 1438 - https://leetcode.com/problems/longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit/
 
+
+## Things to worry about
+1. If calculating a sum - always use a double
+2. corner cases are very important - left < right, left <= right, left <= 0, right >= len - 1 etc.,
+
 ## Reading links
 1. https://leetcode.com/discuss/study-guide/657507/Sliding-Window-for-Beginners-Problems-or-Template-or-Sample-Solutions
 2. https://medium.com/outco/how-to-solve-sliding-window-problems-28d67601a66
 3. https://leetcode.com/problems/find-all-anagrams-in-a-string/discuss/92007/sliding-window-algorithm-template-to-solve-all-the-leetcode-substring-search-problem
+
+## Example Image link
+![image alt <](question_variants.png)

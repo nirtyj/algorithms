@@ -8,7 +8,7 @@ public class FindAllAnagramsInAStringTest {
 
     @Test
     public void test() {
-        FindAllAnagramsInAString ana = new FindAllAnagramsInAString();
+        FindAllAnagramsInAString_LC438 ana = new FindAllAnagramsInAString_LC438();
         List<Integer> vals = ana.findAnagrams("cbaebabacd", "abc");
         System.out.println();
     }
