@@ -94,7 +94,7 @@ public class LongestSubstringWithAtMostKDistinctCharacters_LC340 {
 - LC 239 - https://leetcode.com/problems/sliding-window-maximum/
 - LC 862 - https://leetcode.com/problems/shortest-subarray-with-sum-at-least-k/
 - LC 1208 - https://leetcode.com/problems/get-equal-substrings-within-budget/
-- LC 1234 - https://leetcode.com/problems/replace-the-substring-for-balanced-string/s
+- LC 1234 - https://leetcode.com/problems/replace-the-substring-for-balanced-string/
 
 ## Things to worry about
 1. If calculating a sum - always use a double
