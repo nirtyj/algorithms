@@ -48,9 +48,9 @@ public class LongestContinuousSubarrayWithAbsoluteDiffLessThanorEqualtoLimit_LC1
 
             while (Math.abs(maxd.peek() - mind.peek()) > limit && begin <= end) { // find the lowest - highest diff
                 if (maxd.peek() == nums[begin]) // if the left is bigger one, remove that.
-                    maxd.poll();
+                    maxd.pollFirst();
                 if (mind.peek() == nums[begin]) // if the left is smaller one, remove that.
-                    mind.poll();
+                    mind.pollFirst();
                 begin++;
             }
             max = Math.max(max, end - begin + 1);  // compute max

@@ -24,10 +24,11 @@ different from the one used in solving tabulation or memoization problems.
    - GetEqualSubstringsWithinBudget_LC1208
    - CountNumberOfNiceArrays_LC1248
    - NumberOfSubstringsContainingAllThreeChar_LC1358
-   - LongestContinuousSubarrayWithAbsoluteDiffLessThanorEqualtoLimit_LC1438
+   - LongestContinuousSubarrayWithAbsoluteDiffLessThanorEqualtoLimit_LC1438 (2 dequeues)
 2. Fast & Catch up (slow pointer jumps & resets independently to the fast based on a condition)
    - ***Use a deque to store the jump values of start pointer***
    - SubstringWithConcatenationOfAllWords_LC30
+   - ShortestSubarrayWithSumAtLeastK_LC862 (1 deque + 1 prefix sum array)
 3. Fast & Lagging (slow pointer moves along with the fast based on a constant window size)
    - PermutationsInAString_LC567
 4. Front & Back
@@ -86,6 +87,7 @@ public class LongestSubstringWithAtMostKDistinctCharacters_LC340 {
 - LC 424 - https://leetcode.com/problems/longest-repeating-character-replacement/
 - LC 438 - https://leetcode.com/problems/find-all-anagrams-in-a-string/
 - LC 567 - https://leetcode.com/problems/permutation-in-string/description/
+- LC 862 - https://leetcode.com/problems/shortest-subarray-with-sum-at-least-k/
 - LC 904 - https://leetcode.com/problems/fruit-into-baskets/
 - LC 992 - https://leetcode.com/problems/subarrays-with-k-different-integers/
 - LC 1004 - https://leetcode.com/problems/max-consecutive-ones-iii/
@@ -96,7 +98,6 @@ public class LongestSubstringWithAtMostKDistinctCharacters_LC340 {
 
 ### TODO:
 - LC 239 - https://leetcode.com/problems/sliding-window-maximum/
-- LC 862 - https://leetcode.com/problems/shortest-subarray-with-sum-at-least-k/
 - LC 1234 - https://leetcode.com/problems/replace-the-substring-for-balanced-string/
 
 ## Things to worry about
