@@ -14,6 +14,13 @@
 10. https://leetcode.com/discuss/general-discussion/669996/Greedy-for-Beginners-Problems-or-Sample-solutions
 11. https://leetcode.com/discuss/interview-experience/1172461/how-i-finally-got-some-awesome-offers
 12. ***https://leetcode.com/discuss/study-guide/448285/List-of-questions-sorted-by-common-patterns***
+
+
+# System Design study links
+1. https://github.com/checkcheckzz/system-design-interview
+2. 
+
 # Best Leetcode users
 1. wh0ami: Study Guides - https://leetcode.com/discuss/study-guide?currentPage=1&orderBy=most_relevant&query=wh0ami
 2. Lee215
+3. Study Notes by topics - https://github.com/xiaoylu/leetcode_category
