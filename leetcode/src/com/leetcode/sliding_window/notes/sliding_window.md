@@ -16,15 +16,18 @@ different from the one used in solving tabulation or memoization problems.
    - MinimumWindowSubstring_LC76
    - LongestSubstringWithAtMostTwoDistinctChars_LC159
    - MinSizeSubarraySum_LC209
+   - SlidingWindowMaximum_LC239 (Monotonically increasing subarray)
    - LongestSubstringWithAtMostKDistinctCharacters_LC340
    - LongestRepeatingCharacterReplacement_LC424
    - FindAllAnagramsInAString_LC438
    - FruitIntoBacketsSlidingWindow_LC904
+   - BinarySubarraysWithSum_LC930 (prefix sum)
    - MaxConsecutiveOnesIII_LC1004
    - GetEqualSubstringsWithinBudget_LC1208
    - CountNumberOfNiceArrays_LC1248
    - NumberOfSubstringsContainingAllThreeChar_LC1358
    - LongestContinuousSubarrayWithAbsoluteDiffLessThanorEqualtoLimit_LC1438 (2 dequeues)
+   - ReplaceTheSubstringForBalancedString_LC1234 (***Inverse Sliding Window - Care count outside of sliding window***)
 2. Fast & Catch up (slow pointer jumps & resets independently to the fast based on a condition)
    - ***Use a deque to store the jump values of start pointer***
    - SubstringWithConcatenationOfAllWords_LC30
@@ -83,6 +86,7 @@ public class LongestSubstringWithAtMostKDistinctCharacters_LC340 {
 - LC 76 - https://leetcode.com/problems/minimum-window-substring/
 - LC 159 - https://leetcode.com/problems/longest-substring-with-at-most-two-distinct-characters/
 - LC 209 - https://leetcode.com/problems/minimum-size-subarray-sum/
+- LC 239 - https://leetcode.com/problems/sliding-window-maximum/
 - LC 340 - https://leetcode.com/problems/longest-substring-with-at-most-k-distinct-characters/
 - LC 424 - https://leetcode.com/problems/longest-repeating-character-replacement/
 - LC 438 - https://leetcode.com/problems/find-all-anagrams-in-a-string/
@@ -92,17 +96,22 @@ public class LongestSubstringWithAtMostKDistinctCharacters_LC340 {
 - LC 992 - https://leetcode.com/problems/subarrays-with-k-different-integers/
 - LC 1004 - https://leetcode.com/problems/max-consecutive-ones-iii/
 - LC 1208 - https://leetcode.com/problems/get-equal-substrings-within-budget/
+- LC 1234 - https://leetcode.com/problems/replace-the-substring-for-balanced-string/
 - LC 1248 - https://leetcode.com/problems/count-number-of-nice-subarrays/
 - LC 1358 - https://leetcode.com/problems/number-of-substrings-containing-all-three-characters/
 - LC 1438 - https://leetcode.com/problems/longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit/
 
-### TODO:
-- LC 239 - https://leetcode.com/problems/sliding-window-maximum/
-- LC 1234 - https://leetcode.com/problems/replace-the-substring-for-balanced-string/
-
 ## Things to worry about
 1. If calculating a sum - always use a double
 2. Corner cases are very important - end < length, end - begin + 1 = length
+3. Solving Subarrays - usually a prefix sum / sliding window with 
+   - Atmost (s) is the count of subarrays whose sum <= s,
+   - Atmost (s-1) is the count of subarrays whose sum <= s-1,
+   - if you subtract them, all you get is subarrays whose sum exactly == s.
+4. To track max or min in a subrange, use a monotonically increasing/decreasing subarray with Deque.
+   - Deque usually stores the indexes.
+   - one while loop to maintain the max size
+   - one while loop to maintain strict monotonic order.
 
 ## Other Reading links
 1. https://medium.com/outco/how-to-solve-sliding-window-problems-28d67601a66

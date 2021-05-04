@@ -85,24 +85,23 @@ public class LongestContinuousSubarrayWithAbsoluteDiffLessThanorEqualtoLimit_LC1
      * Naive - O(n*n)
      */
     public int longestSubarrayNaive(int[] nums, int limit) {
-
         int lowest = nums[0];
         int highest = nums[0];
         int max = 0;
-        int j=0;
-        for(int i=0;i<nums.length;i++){
+        int j = 0;
+        for (int i = 0; i < nums.length; i++) {
             lowest = Math.min(lowest, nums[i]);
             highest = Math.max(highest, nums[i]);
-            if  (Math.abs(lowest - highest) <= limit){
-                max = Math.max(max, i-j+1);
+            if (Math.abs(lowest - highest) <= limit) {
+                max = Math.max(max, i - j + 1);
             } else {
-                while(Math.abs(lowest - highest) > limit && j <= i){
+                while (Math.abs(lowest - highest) > limit && j <= i) {
                     j++;
-                    lowest = findLowest(nums, j , i);
+                    lowest = findLowest(nums, j, i);
                     highest = findHighest(nums, j, i);
                 }
-                if  (Math.abs(lowest - highest) <= limit){
-                    max = Math.max(max, i-j+1);
+                if (Math.abs(lowest - highest) <= limit) {
+                    max = Math.max(max, i - j + 1);
                 }
             }
         }

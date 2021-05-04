@@ -15,6 +15,8 @@
 11. https://leetcode.com/discuss/interview-experience/1172461/how-i-finally-got-some-awesome-offers
 12. ***https://leetcode.com/discuss/study-guide/448285/List-of-questions-sorted-by-common-patterns***
 
+# Algorithm & Data structures study links
+1. https://github.com/jwasham/coding-interview-university
 
 # System Design study links
 1. https://github.com/checkcheckzz/system-design-interview
@@ -24,3 +26,12 @@
 1. wh0ami: Study Guides - https://leetcode.com/discuss/study-guide?currentPage=1&orderBy=most_relevant&query=wh0ami
 2. Lee215
 3. Study Notes by topics - https://github.com/xiaoylu/leetcode_category
+
+
+# Order of study
+1. Sliding Window
+2. Binary Search
+3. Dynamic programming
+4. Design/Implement LRU Cache, etc., - https://leetcode.com/explore/interview/card/google/65/design-4/
+5. Graphs
+6. Trees

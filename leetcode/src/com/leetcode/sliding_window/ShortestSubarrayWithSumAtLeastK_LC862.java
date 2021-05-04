@@ -47,9 +47,10 @@ public class ShortestSubarrayWithSumAtLeastK_LC862 {
                 result = Math.min(result, end - deque.pollFirst());
                 // keep updating the min as long as the sum is higher than K
             }
+            int currentSum = prefixSum[end];
             // keeps a monotonically increasing index values of A based on prefix sum.
-            while (deque.size() > 0 && prefixSum[end] <= prefixSum[deque.getLast()]) {
-                // updates it as long as its monotonically not increasing
+            while (deque.size() > 0 && currentSum <= prefixSum[deque.getLast()]) {
+                // pop from the end until its monotonically not increasing
                 deque.pollLast();
             }
             deque.addLast(end);
