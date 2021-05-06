@@ -1,8 +1,8 @@
 # Binary Search
 
 ## When to Use
-1. If we can discover some kind of monotonicity, for example, if condition(k) is True then condition(k + 1) is True, then we can consider binary search.
-2. There exists a function that can map elements in left half to True, and the other half to False, or vice versa
+1. There exists a ***defined search space where the answer lie within the range of left min and right max*** and a ***function/condition that can split elements in the search space with left half to True, and the other half to False***, or vice versa
+2. If we can discover some kind of monotonicity, for example, if condition(k) is True then condition(k + 1) is True, then we can consider binary search.
 
 ## Template 
 1. **https://leetcode.com/discuss/study-guide/786126/python-powerful-ultimate-binary-search-template-solved-many-problems**
@@ -36,7 +36,9 @@ def binary_search(array): # int
     // Handle corner cases 
     i.e input of 0 or 1 or null
     
-    left, right = min(search_space), max(search_space) # could be [0, n], [1, n] etc. Depends on problem
+    left = min(search_space)
+    right = max(search_space)
+    
     // use long if there is overflow possibility
     while left < right:
         mid = left + (right - left) / 2
@@ -46,7 +48,7 @@ def binary_search(array): # int
             left = mid + 1
     return left
     
-    def condition(value): # boolean
+    def condition(value): # a funtion to split the search space to true / false.
         pass
 ```
 
@@ -81,9 +83,9 @@ def binary_search(array): # int
 - LC 410 - https://leetcode.com/problems/split-array-largest-sum/
 - LC 875 - https://leetcode.com/problems/koko-eating-bananas/
 - LC 1011 - https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/
+- LC 1482 - https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/
 
 ## TODO
-- https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/
 - https://leetcode.com/problems/kth-smallest-number-in-multiplication-table/description/
 - https://leetcode.com/problems/find-k-th-smallest-pair-distance/
 - https://leetcode.com/problems/ugly-number-iii/
