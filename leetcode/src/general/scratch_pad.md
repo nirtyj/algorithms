@@ -29,7 +29,6 @@
 
 
 # Order of study
-1. Sliding Window
 2. Binary Search
 3. Dynamic programming
 4. Design/Implement LRU Cache, etc., - https://leetcode.com/explore/interview/card/google/65/design-4/
