@@ -83,13 +83,13 @@ def binary_search(array): # int
 - LC 410 - https://leetcode.com/problems/split-array-largest-sum/
 - LC 875 - https://leetcode.com/problems/koko-eating-bananas/
 - LC 1011 - https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/
+- LC 1201 - https://leetcode.com/problems/ugly-number-iii/
+- LC 1283 - https://leetcode.com/problems/find-the-smallest-divisor-given-a-threshold/
 - LC 1482 - https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/
 
 ## TODO
 - https://leetcode.com/problems/kth-smallest-number-in-multiplication-table/description/
 - https://leetcode.com/problems/find-k-th-smallest-pair-distance/
-- https://leetcode.com/problems/ugly-number-iii/
-- https://leetcode.com/problems/find-the-smallest-divisor-given-a-threshold/
+
 - https://leetcode.com/problems/divide-chocolate/
 - https://leetcode.com/problems/minimize-max-distance-to-gas-station/
-- https://leetcode.com/problems/split-array-largest-sum/
