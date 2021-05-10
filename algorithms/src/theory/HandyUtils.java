@@ -69,4 +69,11 @@ public class HandyUtils {
         String match = "bar";
         S.startsWith(match, 2); // returns true
     }
+
+    /**
+     * Sum of array util
+     */
+    public void findSumOfArray(){
+        Arrays.stream(new int[]{1, 2, 3,4}).sum();
+    }
 }

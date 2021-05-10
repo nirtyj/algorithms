@@ -28,6 +28,9 @@
             left = mid + 1
     ```
 3. Decide return value. Is it return left or return left - 1? Remember this: after exiting the while loop, ***left is the minimal k satisfying the condition function***;
+4. If using left = mid; then use the condition middle = (left + right + 1)/2; https://leetcode.com/problems/divide-chocolate/. 
+   This is because, you are increasing the right = mid, you need to use the left lower mid for middle. left + (right - left) / 2;
+   if you are using left = mid, you need to use the right upper mid for middle.  (left + right + 1)/2;
 
 ## Sample Code
 ```
@@ -41,11 +44,11 @@ def binary_search(array): # int
     
     // use long if there is overflow possibility
     while left < right:
-        mid = left + (right - left) / 2
+        mid = left + (right - left) / 2 // change to middle = left + right + 1
         if condition(mid):
-            right = mid
+            right = mid // if you need to use left = mid
         else:
-            left = mid + 1
+            left = mid + 1 // right = mid - 1;
     return left
     
     def condition(value): # a funtion to split the search space to true / false.
@@ -80,8 +83,11 @@ def binary_search(array): # int
 - LC 278 - https://leetcode.com/problems/first-bad-version/
 
 ### Intermediate Applications - define a search space with left & right, and implement a custom condition
+#### custom condition can use n * n algorithm or a heap or sliding window or even a binary search
 - LC 410 - https://leetcode.com/problems/split-array-largest-sum/
 - LC 668 - https://leetcode.com/problems/kth-smallest-number-in-multiplication-table/description/
+- LC 719 - https://leetcode.com/problems/find-k-th-smallest-pair-distance/
+- LC 774 - https://leetcode.com/problems/minimize-max-distance-to-gas-station/  
 - LC 875 - https://leetcode.com/problems/koko-eating-bananas/
 - LC 1011 - https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/
 - LC 1201 - https://leetcode.com/problems/ugly-number-iii/
@@ -89,6 +95,4 @@ def binary_search(array): # int
 - LC 1482 - https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/
 
 ## TODO
-- https://leetcode.com/problems/find-k-th-smallest-pair-distance/
 - https://leetcode.com/problems/divide-chocolate/
-- https://leetcode.com/problems/minimize-max-distance-to-gas-station/
