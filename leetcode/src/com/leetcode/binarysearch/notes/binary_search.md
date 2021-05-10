@@ -7,6 +7,7 @@
 ## Template 
 1. **https://leetcode.com/discuss/study-guide/786126/python-powerful-ultimate-binary-search-template-solved-many-problems**
 2. **https://leetcode.com/problems/binary-search/discuss/423162/Binary-Search-101-The-Ultimate-Binary-Search-Handbook**
+3. **https://leetcode.com/discuss/general-discussion/691825/Binary-Search-for-Beginners-Problems-or-Patterns-or-Sample-solutions**
 
 # Steps
 
@@ -91,8 +92,32 @@ def binary_search(array): # int
 - LC 875 - https://leetcode.com/problems/koko-eating-bananas/
 - LC 1011 - https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/
 - LC 1201 - https://leetcode.com/problems/ugly-number-iii/
+- LC 1232 - https://leetcode.com/problems/divide-chocolate/
 - LC 1283 - https://leetcode.com/problems/find-the-smallest-divisor-given-a-threshold/
 - LC 1482 - https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/
 
 ## TODO
-- https://leetcode.com/problems/divide-chocolate/
+
+### Difficult to figure out if Binary Search can be applied.
+https://leetcode.com/problems/sum-of-mutated-array-closest-to-target/
+
+### Tricky Binary Search
+https://leetcode.com/problems/find-peak-element/
+https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/
+https://leetcode.com/problems/search-in-rotated-sorted-array/
+https://leetcode.com/problems/missing-element-in-sorted-array/
+
+### Simple Binary Search
+https://leetcode.com/problems/find-smallest-letter-greater-than-target/
+https://leetcode.com/problems/peak-index-in-a-mountain-array/
+https://leetcode.com/problems/h-index-ii/
+https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/
+
+### Using C++ STL upper bound for binary search
+https://leetcode.com/problems/time-based-key-value-store/
+https://leetcode.com/problems/online-election/
+https://leetcode.com/problems/random-pick-with-weight/
+https://leetcode.com/problems/find-right-interval/
+
+### Binary search based on condition on 2 arrays
+https://leetcode.com/problems/median-of-two-sorted-arrays/

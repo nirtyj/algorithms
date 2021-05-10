@@ -29,8 +29,37 @@
 
 
 # Order of study
-2. Binary Search
-3. Dynamic programming
-4. Design/Implement LRU Cache, etc., - https://leetcode.com/explore/interview/card/google/65/design-4/
-5. Graphs
-6. Trees
+3. Design/Implement LRU Cache, etc., - https://leetcode.com/explore/interview/card/google/65/design-4/
+4. Graphs
+5. Trees
+6. Dynamic programming
+
+# Courses
+1. Object oriented Design - https://www.educative.io/courses/grokking-the-object-oriented-design-interview
+2. Dynamic Programming - https://www.educative.io/courses/grokking-dynamic-programming-patterns-for-coding-interviews
+3. Graphs -  https://www.udemy.com/course/graph-theory-algorithms/
+4. System Design I - https://www.educative.io/courses/grokking-the-system-design-interview
+5. System Design II - https://courses.systeminterview.com/courses/take/system-design-interview-an-insider-s-guide
+
+
+# Google Topics:
+
+https://leetcode.com/discuss/explore/google/403885/Should-I-know-how-to-implement-min-cut-max-flow-Dijkstra's-and-A*-by-heart
+Here's a list of topics I found helpful for Google. These are based on questions I found tagged with Google across LeetCode and conversations with recruiters/interview-experiences.
+
+Topological sort
+DFS/BFS
+2-D Matrix Prefix Sum
+Binary Search over functions
+Quick sort/Quick select
+Merge sort
+Dijkstra/Bellman Ford/ Floyd Warshall/ Kruskals Minimum Spanning Tree
+UnionFind
+Trie
+Min-max Games
+Cycle Detection
+Intervals
+Segment Tree
+KMP
+Bridges/Articulation point/Tarjan SCC
+Euler's Path/Circuit/Hierholzer's Algorithm
