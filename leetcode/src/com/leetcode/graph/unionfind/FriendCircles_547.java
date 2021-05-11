@@ -34,6 +34,40 @@ import com.leetcode.common.DisjointSetUnion;
  */
 public class FriendCircles_547 {
 
+    int[] parent;
+    int find(int x) {
+        if (x == parent[x]) {
+            return x;
+        } else {
+            return find(parent[x]);
+        }
+    }
+
+    public int findCircleNumUnionFind(int[][] isConnected) {
+        parent = new int[isConnected.length];
+        // init union find
+        for (int i = 0; i < isConnected.length; i++) {
+            parent[i] = i;
+        }
+
+        // connect them if they are directly or indirectly
+        for (int i = 0; i < isConnected.length; i++) {
+            for (int j = 0; j < isConnected[0].length; j++) {
+                if (isConnected[i][j] == 1 && i != j) {
+                    int groupi = find(i);
+                    int groupj = find(j);
+                    parent[groupj] = groupi;
+                }
+            }
+        }
+
+        int size = 0;
+        for (int i = 0; i < parent.length; i++) {
+            if (find(i) == i) size++; // find how many groups - if they have parent as themselves.
+        }
+        return size;
+    }
+
     /**
      * Leetcode verified
      * @param M

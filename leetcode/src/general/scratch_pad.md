@@ -14,7 +14,8 @@
 10. https://leetcode.com/discuss/general-discussion/669996/Greedy-for-Beginners-Problems-or-Sample-solutions
 11. https://leetcode.com/discuss/interview-experience/1172461/how-i-finally-got-some-awesome-offers
 12. ***https://leetcode.com/discuss/study-guide/448285/List-of-questions-sorted-by-common-patterns***
-
+13. https://leetcode.com/discuss/interview-question/1140451/helpful-list-of-leetcode-posts-on-system-design-at-facebook-google-amazon-uber-microsoft
+    
 # Algorithm & Data structures study links
 1. https://github.com/jwasham/coding-interview-university
 
@@ -26,7 +27,6 @@
 1. wh0ami: Study Guides - https://leetcode.com/discuss/study-guide?currentPage=1&orderBy=most_relevant&query=wh0ami
 2. Lee215
 3. Study Notes by topics - https://github.com/xiaoylu/leetcode_category
-
 
 # Order of study
 3. Design/Implement LRU Cache, etc., - https://leetcode.com/explore/interview/card/google/65/design-4/
@@ -43,23 +43,4 @@
 
 
 # Google Topics:
-
 https://leetcode.com/discuss/explore/google/403885/Should-I-know-how-to-implement-min-cut-max-flow-Dijkstra's-and-A*-by-heart
-Here's a list of topics I found helpful for Google. These are based on questions I found tagged with Google across LeetCode and conversations with recruiters/interview-experiences.
-
-Topological sort
-DFS/BFS
-2-D Matrix Prefix Sum
-Binary Search over functions
-Quick sort/Quick select
-Merge sort
-Dijkstra/Bellman Ford/ Floyd Warshall/ Kruskals Minimum Spanning Tree
-UnionFind
-Trie
-Min-max Games
-Cycle Detection
-Intervals
-Segment Tree
-KMP
-Bridges/Articulation point/Tarjan SCC
-Euler's Path/Circuit/Hierholzer's Algorithm

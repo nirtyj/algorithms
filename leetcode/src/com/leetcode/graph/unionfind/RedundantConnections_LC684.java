@@ -27,7 +27,37 @@ package com.leetcode.graph.unionfind;
  * The size of the input 2D-array will be between 3 and 1000.
  * Every integer represented in the 2D-array will be between 1 and N, where N is the size of the input array.
  */
-public class RedundantConnections {
+public class RedundantConnections_LC684 {
+
+    int[] parent;
+    int find(int x){
+        if (parent[x] == x){
+            return x;
+        } else {
+            return find(parent[x]);
+        }
+    }
+
+    public int[] findRedundantConnection(int[][] edges) {
+        int n = edges.length;
+        parent = new int[n + 1];
+        for (int i = 1; i <= n; i++) {
+            parent[i] = i;
+        }
+
+        int[] result = null;
+        for (int i = 0; i < n; i++) {
+            int group1 = find(edges[i][0]);
+            int group2 = find(edges[i][1]);
+            if (group1 != group2){
+                parent[group2] = group1; // union
+            } else {
+                result = new int[] {edges[i][0], edges[i][1]};
+            }
+        }
+        return result;
+    }
+
     /**
      * Leetcode verified
      *
@@ -35,7 +65,7 @@ public class RedundantConnections {
      * @param edges
      * @return
      */
-    public int[] findRedundantConnection(int[][] edges) {
+    public int[] findRedundantConnectionDSU(int[][] edges) {
         int[] dsu = new int[edges.length + 1];
         for (int i = 0; i < edges.length + 1; i++)
             dsu[i] = i;
