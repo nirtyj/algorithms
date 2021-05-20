@@ -12,7 +12,13 @@
 
 O(V + E)
 
-## Algorithm
+## Applications
+1. Program build dependencies
+2. Course schedule ordering
+3. Event/Job scheduling
+4. Assembly instructions
+
+## Basic Algorithm
 
 1. Construct a map of node to outgoing edges (it is in-degree if its courses order / build dependencies)
 2. Create a visited map with three states -> -1 currently visiting (loop detection), 0 - un visited, 1 - previously visited.
@@ -20,6 +26,10 @@ O(V + E)
 4. Pop the stack until empty to add to the result list for final order
 
 ## Khan's Algorithm
+
+***Need to build an additional map with each node -> in degree count***
+
+***Use a queue to track nodes to visit***
 
 1. Use the nodes that has no incoming edges first.
 2. Once visited, remove the incoming edge. 
