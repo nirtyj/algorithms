@@ -1,4 +1,4 @@
-package com.leetcode.graph.ShortestAndLongestPath;
+package com.leetcode.graph.dijkstras;
 
 import java.util.ArrayList;
 import java.util.HashMap;
