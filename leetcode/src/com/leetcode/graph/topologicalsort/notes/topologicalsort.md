@@ -7,6 +7,7 @@
 3. How to find if a graph is a DAG ? Use, tarzan's strongly connected components or use -1 as below to track loops.
 4. There can be many Topological ordering (not unique)
 5. Trees have topological order. Pick from the child one by one.
+6. Find the single source shortest / longest path (by multiple each edge by -1, take result and * -1) from one node to all other nodes in the graph
 
 ## complexity
 
@@ -27,10 +28,39 @@ O(V + E)
 
 ## Khan's Algorithm
 
-***Need to build an additional map with each node -> in degree count***
+### Pre-requisites
+1. Need a Map of Node -> list of outgoing edges
+2. Need to build an additional map with each node -> in degree count
+3. Use a queue to track nodes to visit with nodes whose indegree == 0
+4. Use a list to store the nodes visited for the result
 
-***Use a queue to track nodes to visit***
+### Algorithm
+1. Add to the Queue, the nodes that has no incoming edges first
+2. Once visited, Add that to result list
+3. Visit its neighbors & reduce in-degree count
+4. if in-degree count is 0, offer it to the queue
 
-1. Use the nodes that has no incoming edges first.
-2. Once visited, remove the incoming edge. 
-3. Add those next nodes, that has no incoming edges. then go to step 1.
+### Template
+```java
+    private List<Integer> topologicalSortUtil(Map<Integer, List<Integer>> graph, int[] indegree, int n) {
+        Queue<Integer> queue = new LinkedList<>();
+        for (Map.Entry<Integer, List<Integer>> entry : graph.entrySet()) {
+            if (indegree[entry.getKey()] == 0) {
+                queue.add(entry.getKey());
+            }
+        }
+
+        List<Integer> result = new ArrayList<>();
+        while (!queue.isEmpty()) {
+            Integer node = queue.poll();
+            result.add(node);
+            for (int neighbor : graph.get(node)) {
+                indegree[neighbor]--;
+                if (indegree[neighbor] == 0) {
+                    queue.offer(neighbor);
+                }
+            }
+        }
+        return result.size() == n ? result : new ArrayList<>();
+    }
+```
