@@ -2,12 +2,13 @@
 
 ## when to use
 
-1. Cannot be used when there is a cycle.
-2. Used when the given graph is a DAG (Directed Acyclic graph).
-3. How to find if a graph is a DAG ? Use, tarzan's strongly connected components or use -1 as below to track loops.
-4. There can be many Topological ordering (not unique)
-5. Trees have topological order. Pick from the child one by one.
-6. Find the single source shortest / longest path (by multiple each edge by -1, take result and * -1) from one node to all other nodes in the graph
+1. Used when the given graph is a DAG (Directed Acyclic graph). i .e Cannot be used when there is a cycle.
+2. How to find if a graph is a DAG ? 
+   - Use, use -1 as naive algorithm to track in current loop.
+   - Use, result.size() == total nodes for loop check in Khan's algorithm.
+3. There can be many Topological ordering (not unique)
+4. Trees have topological order. Pick from the child one by one.
+5. Find the single source shortest / longest path (by multiple each edge by -1, take result and * -1) from one node to all other nodes in the graph
 
 ## complexity
 
