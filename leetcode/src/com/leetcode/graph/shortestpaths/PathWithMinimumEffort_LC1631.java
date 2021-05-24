@@ -1,4 +1,4 @@
-package com.leetcode.graph.dijkstras;
+package com.leetcode.graph.shortestpaths;
 
 import java.util.Arrays;
 import java.util.Comparator;

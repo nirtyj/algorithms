@@ -1,4 +1,4 @@
-package com.leetcode.graph.ShortestAndLongestPath;
+package com.leetcode.graph.shortestpaths;
 
 import java.util.Arrays;
 
